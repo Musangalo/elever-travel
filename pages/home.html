@@ -1,0 +1,251 @@
+<!-- ============================================
+   HOME PAGE WITH FEATURED IMAGES
+   ============================================ -->
+
+<!-- HERO SECTION -->
+<section class="hero" aria-label="Hero section">
+  <div class="hero-bg" role="img" aria-label="Aerial view of African landscape"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Kampala · Uganda · The World</p>
+    <h1 class="hero-title">Where Every Journey<br>Becomes <em>Extraordinary</em></h1>
+    <p class="hero-subtitle">Bespoke luxury travel experiences — from the pearls of Uganda to the world's most coveted destinations. Full-service, fully curated, flawlessly delivered.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="showPage('contact')">Start Planning</button>
+      <button class="btn-outline" onclick="showPage('packages')">Explore Packages</button>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip" role="list" aria-label="Our credentials">
+  <div class="trust-item" role="listitem">
+    <span class="trust-icon" aria-hidden="true">✦</span> Licensed Travel Agency — Uganda
+  </div>
+  <div class="trust-item" role="listitem">
+    <span class="trust-icon" aria-hidden="true">✦</span> Worldwide Tour Operator Network
+  </div>
+  <div class="trust-item" role="listitem">
+    <span class="trust-icon" aria-hidden="true">✦</span> Visa Guidance & Documentation
+  </div>
+  <div class="trust-item" role="listitem">
+    <span class="trust-icon" aria-hidden="true">✦</span> 24/7 Concierge Support
+  </div>
+  <div class="trust-item" role="listitem">
+    <span class="trust-icon" aria-hidden="true">✦</span> Tailored Luxury Packages
+  </div>
+</div>
+
+<!-- ============================================
+   FEATURED IMAGES GALLERY
+   ============================================ -->
+<section style="background: var(--dark-2); padding: 4rem 4rem 2rem 4rem;">
+  <div class="section-eyebrow">Experience the Extraordinary</div>
+  <h2 class="section-title">A World of <em>Wonders</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text" style="max-width: 700px;">From the misty mountains of Bwindi to the vast savannahs of Queen Elizabeth, every destination tells a story. Here's a glimpse of what awaits you.</p>
+  
+  <!-- Featured Image Grid -->
+  <div class="featured-grid featured-grid-4">
+    <div class="featured-image" onclick="showPage('destinations')">
+      <img src="https://images.unsplash.com/photo-1591389703635-e15a07b842d7?w=600&q=80" alt="Gorilla trekking in Bwindi Forest" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" loading="lazy" decoding="async">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Gorilla Trekking</h3>
+        <p style="color: var(--text-light); font-size: 0.8rem;">Bwindi Forest, Uganda</p>
+      </div>
+    </div>
+    
+    <div class="featured-image" onclick="showPage('destinations')">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Queen Elizabeth National Park safari" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" loading="lazy" decoding="async">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Wildlife Safari</h3>
+        <p style="color: var(--text-light); font-size: 0.8rem;">Queen Elizabeth NP, Uganda</p>
+      </div>
+    </div>
+    
+    <div class="featured-image" onclick="showPage('destinations')">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Luxury honeymoon destination in Bali" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" loading="lazy" decoding="async">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Romantic Getaways</h3>
+        <p style="color: var(--text-light); font-size: 0.8rem;">Bali, Indonesia</p>
+      </div>
+    </div>
+    
+    <div class="featured-image" onclick="showPage('destinations')">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai luxury cityscape" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" loading="lazy" decoding="async">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Urban Luxury</h3>
+        <p style="color: var(--text-light); font-size: 0.8rem;">Dubai, UAE</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Row of Featured Images -->
+  <div class="featured-grid featured-grid-2">
+    <div class="featured-image" onclick="showPage('destinations')">
+      <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Ssese Islands on Lake Victoria" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" loading="lazy" decoding="async">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Island Retreats</h3>
+        <p style="color: var(--text-light); font-size: 0.8rem;">Ssese Islands, Lake Victoria</p>
+      </div>
+    </div>
+    
+    <div class="featured-image" onclick="showPage('destinations')">
+      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Maldives overwater bungalows" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" loading="lazy" decoding="async">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Overwater Paradise</h3>
+        <p style="color: var(--text-light); font-size: 0.8rem;">Maldives</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section style="background: var(--dark);" aria-labelledby="services-heading">
+  <div class="section-eyebrow">What We Offer</div>
+  <h2 id="services-heading" class="section-title">Full-Service Travel,<br><em>Seamlessly Managed</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text">From your first visa query to your last airport transfer — we handle everything, so you experience everything.</p>
+  
+  <div class="services-grid" style="margin-top: 3rem;">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-title">Visa Planning & Guidance</div>
+      <div class="service-desc">Expert consultation on visa requirements, documentation, and application strategies for destinations worldwide.</div>
+      <span class="service-tag">Hassle-free</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-title">Hotel & Accommodation</div>
+      <div class="service-desc">Curated luxury stays — from Kampala's finest urban hotels to remote safari lodges and international 5-star properties.</div>
+      <span class="service-tag">Premium</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-title">Ticketing & Flights</div>
+      <div class="service-desc">Best-in-class airfare sourcing, business class arrangements, and seamless multi-leg itinerary management.</div>
+      <span class="service-tag">Best rates</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-title">Airport Transfers</div>
+      <div class="service-desc">Private luxury ground transfers from airport to hotel and beyond — punctual, comfortable, stress-free.</div>
+      <span class="service-tag">Door-to-door</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-title">Uganda Local Tours</div>
+      <div class="service-desc">Gorilla trekking, Queen Elizabeth safaris, Nile adventures, Bwindi Forest — Uganda's finest, expertly guided.</div>
+      <span class="service-tag">Authentic</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-title">Global Tour Partnerships</div>
+      <div class="service-desc">Access our network of vetted tour operators across Africa, Europe, Asia, and the Americas for world-class experiences.</div>
+      <span class="service-tag">Worldwide</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">07</div>
+      <div class="service-title">Restaurant Reservations</div>
+      <div class="service-desc">We secure coveted tables at the finest restaurants worldwide — from Kampala's acclaimed dining rooms to Michelin-starred establishments across the globe.</div>
+      <span class="service-tag">Fine Dining</span>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES SECTION -->
+<section style="background: var(--dark-2);" aria-labelledby="packages-heading">
+  <div class="section-eyebrow">Travel Collections</div>
+  <h2 id="packages-heading" class="section-title">Crafted for Every<br><em>Chapter of Life</em></h2>
+  <div class="gold-line"></div>
+  <div class="packages-grid">
+    <div class="pkg-card">
+      <div class="pkg-img" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=700&q=80');" role="img" aria-label="Uganda gorilla safari landscape">
+        <span class="pkg-badge">Safari & Wildlife</span>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-name">Uganda Gorilla Safari</div>
+        <div class="pkg-desc">Track mountain gorillas in Bwindi, cruise the Kazinga Channel, and discover the Pearl of Africa.</div>
+        <ul class="pkg-features">
+          <li>Gorilla trekking permits included</li>
+          <li>Luxury lodge accommodation</li>
+          <li>Private guided safari drives</li>
+          <li>All transfers & flights</li>
+        </ul>
+        <button class="pkg-cta" onclick="showPage('contact')">Enquire Now</button>
+      </div>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-img" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80');" role="img" aria-label="Bali honeymoon destination">
+        <span class="pkg-badge">Honeymoon</span>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-name">Romance Getaway</div>
+        <div class="pkg-desc">From Bali's rice terraces to Maldivian overwater villas — a honeymoon crafted perfectly for two.</div>
+        <ul class="pkg-features">
+          <li>Private villa or overwater bungalow</li>
+          <li>Couples spa & dining experiences</li>
+          <li>Sunset cruises & surprises</li>
+          <li>Full visa & transfer support</li>
+        </ul>
+        <button class="pkg-cta" onclick="showPage('contact')">Enquire Now</button>
+      </div>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-img" style="background-image: url('https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=700&q=80');" role="img" aria-label="Executive business travel">
+        <span class="pkg-badge">Business Travel</span>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-name">Executive Travel Suite</div>
+        <div class="pkg-desc">Seamless business travel management — from visa to VIP lounge, your itinerary perfectly executed.</div>
+        <ul class="pkg-features">
+          <li>Business class flights & priority seating</li>
+          <li>Executive hotel suites worldwide</li>
+          <li>Meet & greet airport services</li>
+          <li>On-call concierge support</li>
+        </ul>
+        <button class="pkg-cta" onclick="showPage('contact')">Enquire Now</button>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 3rem;">
+    <button class="btn-outline" onclick="showPage('packages')">View All Packages</button>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testi-section" aria-labelledby="testi-heading">
+  <div class="section-eyebrow">Client Stories</div>
+  <h2 id="testi-heading" class="section-title">Voices of Our <em>Travellers</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+      <blockquote class="testi-text">"Elever turned our honeymoon dream into an absolute reality. Every detail, from the Bali villa to the sunset dinner — flawlessly arranged. We didn't have to worry about a thing."</blockquote>
+      <div class="testi-author">Brian Micah — <span>Nairobi, Kenya</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+      <blockquote class="testi-text">"The gorilla trekking in Bwindi was the most profound experience of my life. Elever handled our visas, lodge bookings, and guided every step. Exceptional professionalism."</blockquote>
+      <div class="testi-author">Musangalo John. — <span>Dar es Salaam, Tanzania</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+      <blockquote class="testi-text">"As a business traveller, I need reliability. Elever's executive travel packages have saved me hours of planning each trip. Their attention to detail is unmatched."</blockquote>
+      <div class="testi-author">Amara B. — <span>Lagos, Nigeria</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- UGANDAN BANNER -->
+<section style="background: var(--dark); padding: 0 0 6rem;">
+  <div style="height: 55vh; position: relative; display: flex; align-items: flex-end; background: linear-gradient(to bottom, rgba(var(--overlay-rgb),0.1), rgba(var(--overlay-rgb),0.9)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1800&q=80') center/cover;" role="img" aria-label="Uganda landscape">
+    <div style="padding: 4rem;">
+      <div class="section-eyebrow">The Pearl of Africa</div>
+      <h2 class="section-title" style="max-width: 600px;">Uganda Awaits — <em>Wilder Than You Imagine</em></h2>
+      <button class="btn-primary" onclick="showPage('destinations')">Explore Uganda</button>
+    </div>
+  </div>
+</section>

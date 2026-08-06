@@ -1,0 +1,101 @@
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  nav.scrolled { padding: 1rem 2rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 4rem 2rem; }
+  .trust-strip { padding: 1.5rem 2rem; }
+  .about-grid,
+  .packages-intro,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-image { height: 320px; }
+  .dest-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .page-hero { padding: 3rem 2rem; }
+  .pkg-full { padding: 3.5rem 2rem; }
+  .pkg-full-inner,
+  .pkg-full-inner.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+  }
+  .pkg-highlights { grid-template-columns: 1fr; }
+  .pkg-gallery { grid-template-rows: 220px 150px; }
+  footer { padding: 3rem 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 500px) {
+  .dest-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .plan-float { display: none !important; }
+}
+/* ============================================
+   IMAGE GRID RESPONSIVENESS (added)
+   ============================================ */
+@media (max-width: 900px) {
+  .hero { min-height: 560px; }
+  .featured-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .featured-grid-4 .featured-image { height: 200px; }
+  .featured-grid-2 .featured-image { height: 200px; }
+  .mini-gallery-4 { grid-template-columns: repeat(3, 1fr); }
+  .mini-gallery-item { height: 160px; }
+  .dest-gallery { grid-template-columns: 1fr 1fr; }
+  .dest-gallery-item { height: 220px; }
+  .icon-card-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .about-image { height: 300px; }
+  .dest-card { height: 260px; }
+  .pkg-img { height: 190px; }
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 480px; }
+  .featured-grid-4,
+  .featured-grid-2 { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .featured-grid-4 .featured-image,
+  .featured-grid-2 .featured-image { height: 150px; }
+  .mini-gallery-4 { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+  .mini-gallery-item { height: 130px; }
+  .dest-gallery { grid-template-columns: 1fr; gap: 0.5rem; }
+  .dest-gallery-item { height: 220px; }
+  .icon-card-grid { grid-template-columns: 1fr; }
+  .about-image { height: 240px; }
+  .dest-card { height: 220px; }
+  .pkg-gallery { grid-template-rows: 180px 130px; }
+  .pkg-img { height: 170px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 400px) {
+  .featured-grid-4,
+  .featured-grid-2 { grid-template-columns: 1fr; }
+  .featured-grid-4 .featured-image,
+  .featured-grid-2 .featured-image { height: 190px; }
+  .mini-gallery-4 { grid-template-columns: repeat(2, 1fr); }
+  .mini-gallery-item { height: 110px; }
+  .stats-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   FOOTER OVERFLOW FIX
+   ============================================ */
+@media (max-width: 640px) {
+  footer { padding: 2.5rem 1.2rem; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
