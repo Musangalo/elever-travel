@@ -6,6 +6,7 @@
   nav.scrolled { padding: 1rem 2rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  .nav-logo svg { width: 260px; }
   section { padding: 4rem 2rem; }
   .trust-strip { padding: 1.5rem 2rem; }
   .about-grid,
@@ -110,4 +111,41 @@
 
 @media (max-width: 500px) {
   .detail-panel { padding: 2rem 1.2rem; }
+}
+
+/* ============================================
+   NAV LOGO / FOOTER LOGO RESPONSIVENESS
+   (logos previously had zero responsive sizing,
+   causing horizontal overflow on narrow phones)
+   ============================================ */
+@media (max-width: 640px) {
+  nav { padding: 0.9rem 1.2rem; gap: 0.5rem; }
+  nav.scrolled { padding: 0.7rem 1.2rem; }
+  .nav-logo svg { width: 190px; }
+  footer svg { width: 260px !important; height: auto !important; }
+}
+
+@media (max-width: 420px) {
+  nav { padding: 0.7rem 0.8rem; }
+  .nav-logo svg { width: 155px; }
+  .theme-toggle-wrapper { margin-right: 0; gap: 0.3rem; }
+  footer svg { width: 220px !important; }
+}
+
+/* ============================================
+   ABOUT PAGE REASON BLOCKS -- stack with image
+   on top, text below, on mobile (both variants)
+   ============================================ */
+@media (max-width: 900px) {
+  .reason-block,
+  .reason-block-reverse {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-top: 2.75rem;
+  }
+  .reason-block .reason-image,
+  .reason-block-reverse .reason-image { order: -1; }
+  .reason-block .reason-text,
+  .reason-block-reverse .reason-text { order: 2; }
+  .reason-image { height: 240px; }
 }

@@ -2,20 +2,20 @@
    ROOT VARIABLES & RESET
    ============================================ */
 :root {
-  --gold: #C4703F;
-  --gold-light: #D08D66;
-  --gold-dark: #8C4F2B;
-  --dark: #15201B;
-  --dark-2: #21322B;
-  --dark-3: #314B3F;
-  --dark-4: #0F1713;
-  --cream: #F3EBDD;
-  --cream-2: #EBDEC6;
-  --text-light: #A99C89;
-  --text-muted: #8B7B65;
+  --gold: #B98B4E;
+  --gold-light: #C7A373;
+  --gold-dark: #866335;
+  --dark: #0F1E19;
+  --dark-2: #19322A;
+  --dark-3: #274E41;
+  --dark-4: #0A1410;
+  --cream: #F4EFE2;
+  --cream-2: #ECE3CC;
+  --text-light: #9B9384;
+  --text-muted: #7A7263;
   --white: #FFFFFF;
-  --accent-rgb: 196,112,63;
-  --overlay-rgb: 21,32,27;
+  --accent-rgb: 185,139,78;
+  --overlay-rgb: 15,30,25;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -71,6 +71,15 @@ nav.scrolled {
   flex-direction: column;
   line-height: 1;
   cursor: pointer;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.nav-logo svg {
+  display: block;
+  width: 340px;
+  height: auto;
+  max-width: 100%;
+  transition: width 0.3s;
 }
 .nav-links {
   display: flex;
@@ -752,6 +761,7 @@ section { padding: 6rem 4rem; }
 /* ============================================
    FOOTER
    ============================================ */
+footer svg { max-width: 100%; height: auto; }
 footer {
   background: #080808;
   border-top: 1px solid rgba(var(--accent-rgb),0.12);
@@ -1145,4 +1155,25 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-top: 2rem;
+}
+
+/* ============================================
+   ABOUT PAGE "WHY CHOOSE US" REASON BLOCKS
+   ============================================ */
+.reason-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  align-items: center;
+}
+.reason-block .reason-text { order: 1; }
+.reason-block .reason-image { order: 2; }
+.reason-block-reverse .reason-text { order: 2; }
+.reason-block-reverse .reason-image { order: 1; }
+.reason-image {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
 }
