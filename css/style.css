@@ -1135,3 +1135,14 @@ footer {
   gap: 2rem;
   margin-top: 3rem;
 }
+
+/* ============================================
+   SERVICE / DESTINATION DETAIL LAYOUT
+   ============================================ */
+.detail-panel { padding: 4rem; }
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}

@@ -111,7 +111,7 @@
 <!-- ============================================
    DESTINATION DETAIL VIEW (Hidden by default)
    ============================================ -->
-<div id="destinationDetail" style="display: none; padding: 4rem; background: var(--dark-2);">
+<div id="destinationDetail" class="detail-panel" style="display: none; background: var(--dark-2);">
   <button onclick="closeDestinationDetail()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.5rem; cursor: pointer; font-family: 'Jost', sans-serif; margin-bottom: 2rem; transition: all 0.3s;">
     ← Back to All Destinations
   </button>
@@ -136,7 +136,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">Bwindi Impenetrable Forest is a UNESCO World Heritage Site and home to over half of the world's remaining mountain gorillas. This ancient rainforest offers one of the most profound wildlife experiences on Earth — coming face to face with these gentle giants in their natural habitat.</p>
@@ -187,7 +187,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">Queen Elizabeth National Park is Uganda's most popular savannah reserve, famous for its tree-climbing lions, abundant wildlife, and the stunning Kazinga Channel. This park offers classic African safari experiences with a unique twist.</p>
@@ -238,7 +238,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">Jinja is the adventure capital of East Africa and the source of the world's longest river — the Nile. White water rafting, bungee jumping, and kayaking draw thrill-seekers from around the globe to this charming town.</p>
@@ -289,7 +289,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1591389703635-e15a07b842d7?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">The Ssese Islands are an archipelago of 84 islands on Lake Victoria, offering pristine beaches, lush forests, and a peaceful escape from the mainland. Paradise found in the heart of Africa.</p>
@@ -340,7 +340,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">Bali, the Island of the Gods, offers a perfect blend of spiritual culture, stunning beaches, lush rice terraces, and world-class luxury. A top destination for honeymoons, wellness retreats, and cultural exploration.</p>
@@ -391,7 +391,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">Dubai is a city of superlatives — home to the world's tallest building, the largest mall, and the most luxurious hotels. A playground for the wealthy and a hub for business and luxury travel.</p>
@@ -442,7 +442,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">Paris, the City of Light, is the world's most romantic city. From the Eiffel Tower to the Louvre, from charming cafes to Michelin-starred restaurants, Paris is a city that captures the heart.</p>
@@ -493,7 +493,7 @@
       <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=80');"></div>
     </div>
     
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
+    <div class="detail-grid">
       <div>
         <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
         <p style="color: var(--text-light); line-height: 1.8;">The Maldives is the ultimate luxury destination — a collection of over 1,000 coral islands in the Indian Ocean. Pristine white sand beaches, crystal-clear turquoise water, and overwater villas make this a slice of paradise.</p>

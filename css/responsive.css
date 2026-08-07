@@ -99,3 +99,15 @@
     gap: 0.5rem;
   }
 }
+
+/* ============================================
+   SERVICE / DESTINATION DETAIL RESPONSIVENESS
+   ============================================ */
+@media (max-width: 900px) {
+  .detail-panel { padding: 2.5rem 2rem; }
+  .detail-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 500px) {
+  .detail-panel { padding: 2rem 1.2rem; }
+}
