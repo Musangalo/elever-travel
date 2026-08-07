@@ -2,20 +2,20 @@
    ROOT VARIABLES & RESET
    ============================================ */
 :root {
-  --gold: #B98B4E;
-  --gold-light: #C7A373;
-  --gold-dark: #866335;
-  --dark: #0F1E19;
-  --dark-2: #19322A;
-  --dark-3: #274E41;
-  --dark-4: #0A1410;
-  --cream: #F4EFE2;
-  --cream-2: #ECE3CC;
-  --text-light: #9B9384;
-  --text-muted: #7A7263;
+  --gold: #C4703F;
+  --gold-light: #D08D66;
+  --gold-dark: #8C4F2B;
+  --dark: #15201B;
+  --dark-2: #21322B;
+  --dark-3: #314B3F;
+  --dark-4: #0F1713;
+  --cream: #F3EBDD;
+  --cream-2: #EBDEC6;
+  --text-light: #A99C89;
+  --text-muted: #8B7B65;
   --white: #FFFFFF;
-  --accent-rgb: 185,139,78;
-  --overlay-rgb: 15,30,25;
+  --accent-rgb: 196,112,63;
+  --overlay-rgb: 21,32,27;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -95,10 +95,12 @@ nav.scrolled {
   text-decoration: none;
   transition: color var(--transition);
   cursor: pointer;
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--gold); }
 .nav-links a.active { color: var(--gold); }
 .nav-cta {
+  display: inline-block;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -106,6 +108,9 @@ nav.scrolled {
   background: var(--gold);
   padding: 0.65rem 1.6rem;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-radius: 2px;
   transition: background var(--transition), transform 0.2s !important;
 }
 .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
