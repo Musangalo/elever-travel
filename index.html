@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Set theme before first paint to avoid a flash of the wrong theme
+  (function () {
+    var t = localStorage.getItem('elever-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elever Travel Management Limited | Luxury Travel Agency — Kampala, Uganda</title>
+<meta name="description" content="Elever Travel Management Limited — Uganda's premier luxury travel agency. Bespoke safaris, honeymoons, business travel, visa guidance & worldwide tours. Based in Kampala.">
+<meta name="keywords" content="luxury travel Uganda, Kampala travel agency, gorilla trekking, Uganda safari, honeymoon packages, business travel Uganda, visa guidance Uganda">
+<meta property="og:title" content="Elever Travel Management Limited | Luxury Travel Agency">
+<meta property="og:description" content="Bespoke luxury travel experiences — from the pearls of Uganda to the world's most coveted destinations. Full-service, fully curated, flawlessly delivered.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elevertravel.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://elevertravel.com">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css?v=29">
+<link rel="stylesheet" href="css/responsive.css?v=29">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo" onclick="showPage('home')" role="button" aria-label="Go to home page">
+    <svg width="340" height="90" viewBox="0 0 360 96" xmlns="http://www.w3.org/2000/svg" aria-label="Elever Travel Management Limited logo">
+      <circle cx="48" cy="48" r="34" fill="none" stroke="var(--gold)" stroke-width="1.2"/>
+      <circle cx="48" cy="48" r="29" fill="none" stroke="var(--gold)" stroke-width="0.4"/>
+      <circle cx="48" cy="48" r="2.5" fill="var(--gold)"/>
+      <line x1="48" y1="14" x2="48" y2="21" stroke="var(--gold)" stroke-width="1.4"/>
+      <line x1="48" y1="75" x2="48" y2="82" stroke="var(--gold)" stroke-width="1.4"/>
+      <line x1="14" y1="48" x2="21" y2="48" stroke="var(--gold)" stroke-width="1.4"/>
+      <line x1="75" y1="48" x2="82" y2="48" stroke="var(--gold)" stroke-width="1.4"/>
+      <ellipse cx="48" cy="47" rx="10" ry="4" fill="var(--gold)" transform="rotate(-12 48 47)"/>
+      <path d="M43 45 C36 38 27 36 24 38 C29 40 36 43 42 46 Z" fill="var(--gold)"/>
+      <path d="M53 45 C60 38 69 36 72 38 C67 40 60 43 54 46 Z" fill="var(--gold)"/>
+      <path d="M36 38 C32 36 28 36 24 38 C27 37 31 37 36 39 Z" fill="var(--gold-light)"/>
+      <path d="M60 38 C64 36 68 36 72 38 C69 37 65 37 60 39 Z" fill="var(--gold-light)"/>
+      <path d="M40 51 C37 55 35 59 37 61 C39 58 42 54 44 51 Z" fill="var(--gold)"/>
+      <ellipse cx="55" cy="43" rx="5" ry="4" fill="var(--gold)" transform="rotate(-8 55 43)"/>
+      <path d="M58 42 L63 40 L59 43 Z" fill="var(--gold-light)"/>
+      <circle cx="56" cy="42" r="1.2" fill="var(--dark)"/>
+      <text x="96" y="56" font-family="Georgia,'Times New Roman',serif" font-size="28" font-style="italic" font-weight="400" fill="var(--gold)" letter-spacing="2">E</text>
+      <text x="114" y="56" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="3">LEVER</text>
+      <line x1="96" y1="62" x2="310" y2="62" stroke="var(--gold)" stroke-width="0.5" class="logo-tagline-line"/>
+      <text x="203" y="74" text-anchor="middle" font-family="Arial,sans-serif" class="logo-tagline" font-weight="400" fill="var(--gold)" letter-spacing="3">TRAVEL MANAGEMENT LIMITED</text>
+    </svg>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" role="button" data-page="home" class="active">Home</a></li>
+    <li><a onclick="showPage('about')" role="button" data-page="about">About</a></li>
+    <li><a onclick="showPage('services')" role="button" data-page="services">Services</a></li>
+    <li><a onclick="showPage('destinations')" role="button" data-page="destinations">Destinations</a></li>
+    <li><a onclick="showPage('packages')" role="button" data-page="packages">Packages</a></li>
+    <li><a class="nav-cta" onclick="showPage('contact')" role="button" data-page="contact">Plan My Trip</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="theme-toggle-wrapper">
+      <span class="theme-toggle-label" id="themeLabel">Dark</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <span class="sun-icon" aria-hidden="true">☀</span>
+        <span class="moon-icon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a onclick="navTo('home')">Home</a>
+  <a onclick="navTo('about')">About</a>
+  <a onclick="navTo('services')">Services</a>
+  <a onclick="navTo('destinations')">Destinations</a>
+  <a onclick="navTo('packages')">Packages</a>
+  <a onclick="navTo('contact')" class="mobile-cta">Plan My Trip</a>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-float" href="https://wa.me/256740748155" target="_blank" rel="noopener" title="WhatsApp Us" aria-label="Contact us on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════ PAGE CONTAINER ═══════════════════ -->
+<div id="pageContainer">
+  <!-- Pages will be loaded here -->
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <svg width="380" height="100" viewBox="0 0 360 96" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1rem;" aria-label="Elever Travel Management Limited">
+        <circle cx="48" cy="48" r="34" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+        <circle cx="48" cy="48" r="29" fill="none" stroke="#C9A84C" stroke-width="0.4"/>
+        <circle cx="48" cy="48" r="2.5" fill="#C9A84C"/>
+        <line x1="48" y1="14" x2="48" y2="21" stroke="#C9A84C" stroke-width="1.4"/>
+        <line x1="48" y1="75" x2="48" y2="82" stroke="#C9A84C" stroke-width="1.4"/>
+        <line x1="14" y1="48" x2="21" y2="48" stroke="#C9A84C" stroke-width="1.4"/>
+        <line x1="75" y1="48" x2="82" y2="48" stroke="#C9A84C" stroke-width="1.4"/>
+        <ellipse cx="48" cy="47" rx="10" ry="4" fill="#C9A84C" transform="rotate(-12 48 47)"/>
+        <path d="M43 45 C36 38 27 36 24 38 C29 40 36 43 42 46 Z" fill="#C9A84C"/>
+        <path d="M53 45 C60 38 69 36 72 38 C67 40 60 43 54 46 Z" fill="#C9A84C"/>
+        <path d="M36 38 C32 36 28 36 24 38 C27 37 31 37 36 39 Z" fill="#E8D49A"/>
+        <path d="M60 38 C64 36 68 36 72 38 C69 37 65 37 60 39 Z" fill="#E8D49A"/>
+        <path d="M40 51 C37 55 35 59 37 61 C39 58 42 54 44 51 Z" fill="#C9A84C"/>
+        <ellipse cx="55" cy="43" rx="5" ry="4" fill="#C9A84C" transform="rotate(-8 55 43)"/>
+        <path d="M58 42 L63 40 L59 43 Z" fill="#E8D49A"/>
+        <circle cx="56" cy="42" r="1.2" fill="#0D0D0D"/>
+        <text x="96" y="56" font-family="Georgia,'Times New Roman',serif" font-size="28" font-style="italic" font-weight="400" fill="#C9A84C" letter-spacing="2">E</text>
+        <text x="114" y="56" font-family="Georgia,'Times New Roman',serif" font-size="28" font-weight="700" fill="#F5F0E8" letter-spacing="3">LEVER</text>
+        <line x1="96" y1="62" x2="310" y2="62" stroke="#C9A84C" stroke-width="0.5"/>
+        <text x="203" y="74" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="400" fill="#C9A84C" letter-spacing="3">TRAVEL MANAGEMENT LIMITED</text>
+      </svg>
+      <p class="footer-tagline">Elever Travel Management Limited — your full-service luxury travel partner, based in Kampala, Uganda. Serving clients from across the globe with passion, precision, and care.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/256740748155" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="#" onclick="return false;" class="social-link social-link-pending" aria-label="Facebook (coming soon)" title="Facebook page coming soon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15 8.5h2.5V5.5h-2.5c-2.21 0-4 1.79-4 4v2H9v3h2v8h3v-8h2.5l.5-3H14v-1.5c0-.55.45-1 1-1z"/></svg></a>
+        <!-- TODO: replace href="#" above and below with the real profile URLs once the accounts exist, and drop the social-link-pending class + onclick="return false;" -->
+        <a href="#" onclick="return false;" class="social-link social-link-pending" aria-label="Instagram (coming soon)" title="Instagram page coming soon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" onclick="return false;" class="social-link social-link-pending" aria-label="X / Twitter (coming soon)" title="X (Twitter) page coming soon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 3H21l-6.4 7.3L22 21h-6.1l-4.8-6.3L5.6 21H3.5l6.8-7.8L3 3h6.2l4.3 5.8L18.9 3zm-1.1 16.1h1.2L7.3 4.8H6l11.8 14.3z"/></svg></a>
+        <a href="mailto:info@elevertravel.com" class="social-link" aria-label="Email us"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li onclick="showPage('home')">Home</li>
+        <li onclick="showPage('about')">About Us</li>
+        <li onclick="showPage('services')">Services</li>
+        <li onclick="showPage('destinations')">Destinations</li>
+        <li onclick="showPage('packages')">Packages</li>
+        <li onclick="showPage('contact')">Contact</li>
+      </ul>
+    </div>
+   <div class="footer-col">
+  <h4>Services</h4>
+  <ul>
+    <li><a href="#" onclick="goToService('visa'); return false;" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Visa Guidance</a></li>
+    <li><a href="#" onclick="goToService('hotel'); return false;" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Hotel Booking</a></li>
+    <li><a href="#" onclick="goToService('flights'); return false;" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Flight Ticketing</a></li>
+    <li><a href="#" onclick="goToService('transfers'); return false;" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Airport Transfers</a></li>
+    <li><a href="#" onclick="goToService('uganda'); return false;" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Uganda Tours</a></li>
+    <li><a href="#" onclick="goToService('international'); return false;" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;">Global Tours</a></li>
+  </ul>
+</div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Plot 7, AHA Towers, Loudel Road</li>
+        <li>Nakasero, Kampala, Uganda</li>
+        <li><a href="mailto:info@elevertravel.com" style="color:inherit;">info@elevertravel.com</a></li>
+        <li><a href="tel:+256200924856" style="color:inherit;">+256 200 924 856</a></li>
+        
+        <li>Mon–Sat:8am–8pm EAT</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Elever Travel Management Limited. All rights reserved.</span>
+    <span style="color: var(--gold);">The Pearl of Africa · The World</span>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/main.js?v=29"></script>
+</body>
+</html>

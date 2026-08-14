@@ -1,0 +1,580 @@
+<!-- ============================================
+   DESTINATIONS PAGE - WITH DETAILED PAGES
+   ============================================ -->
+
+<!-- DESTINATIONS HERO -->
+<div class="dest-hero">
+  <div class="dest-hero-content">
+    <div class="section-eyebrow">Explore the World</div>
+    <h1 class="section-title">Our <em>Destinations</em></h1>
+    <p class="page-hero-subtitle">Click on any destination to explore detailed information, galleries, and travel tips.</p>
+  </div>
+</div>
+
+<!-- ============================================
+   DESTINATION GRID - Clickable Cards
+   ============================================ -->
+<section style="padding-top: 0;">
+  <div style="padding: 0 0 3rem;">
+    <div class="section-eyebrow">Uganda — The Pearl of Africa</div>
+    <h2 class="section-title">Discover <em>Uganda's</em> Wonders</h2>
+    <div class="gold-line"></div>
+    <p class="section-text">Uganda is home to half the world's mountain gorillas, vast savannah, misty rainforests, and the source of the Nile. A destination unlike any other.</p>
+  </div>
+  
+  <div class="dest-grid">
+    <!-- Uganda Destinations -->
+    <div class="dest-card" onclick="showDestinationDetail('bwindi')" role="button" tabindex="0" aria-label="Explore Bwindi Forest gorilla trekking">
+      <div class="dest-card-bg" style="background-image: url('assets/photos/large/gorilla-leaf.jpg');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Bwindi Forest</div>
+        <div class="dest-sub">Gorilla Trekking →</div>
+      </div>
+    </div>
+    
+    <div class="dest-card" onclick="showDestinationDetail('queen')" role="button" tabindex="0" aria-label="Explore Queen Elizabeth National Park">
+      <div class="dest-card-bg" style="background-image: url('assets/photos/large/lion-yawn.jpg');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Queen Elizabeth NP</div>
+        <div class="dest-sub">Wildlife Safari →</div>
+      </div>
+    </div>
+    
+    <div class="dest-card" onclick="showDestinationDetail('jinja')" role="button" tabindex="0" aria-label="Explore Jinja Source of the Nile">
+      <div class="dest-card-bg" style="background-image: url('https://images.unsplash.com/photo-1627894483216-2138af692e32?w=700&q=80');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Jinja — Source of the Nile</div>
+        <div class="dest-sub">Adventure & Rafting →</div>
+      </div>
+    </div>
+    
+    <div class="dest-card" onclick="showDestinationDetail('ssese')" role="button" tabindex="0" aria-label="Explore Ssese Islands on Lake Victoria">
+      <div class="dest-card-bg" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Ssese Islands</div>
+        <div class="dest-sub">Lake Victoria Retreat →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+   PHOTO GALLERY — Real client & guest photography
+   ============================================ -->
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="section-eyebrow">From the Field</div>
+  <h2 id="gallery-heading" class="section-title">Uganda in <em>Pictures</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text">A glimpse of what awaits — gorillas in Bwindi, big game on the savannah, and the Nile at full force. Captured on our own trips, not stock photography.</p>
+  <div class="photo-gallery-grid">
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/gorilla-vines.jpg');" data-full="assets/photos/large/gorilla-vines.jpg" data-caption="Mountain gorilla, Bwindi Impenetrable Forest" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Mountain gorilla, Bwindi Impenetrable Forest"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/gorilla-leaf.jpg');" data-full="assets/photos/large/gorilla-leaf.jpg" data-caption="Mountain gorilla feeding, Bwindi" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Mountain gorilla feeding, Bwindi"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/gorilla-undergrowth.jpg');" data-full="assets/photos/large/gorilla-undergrowth.jpg" data-caption="Mountain gorilla in the undergrowth, Bwindi" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Mountain gorilla in the undergrowth, Bwindi"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/chimpanzee-fruit-1.jpg');" data-full="assets/photos/large/chimpanzee-fruit-1.jpg" data-caption="Chimpanzee tracking, Kibale Forest" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Chimpanzee tracking, Kibale Forest"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/chimpanzee-fruit-2.jpg');" data-full="assets/photos/large/chimpanzee-fruit-2.jpg" data-caption="Chimpanzees sharing a meal, Kibale Forest" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Chimpanzees sharing a meal, Kibale Forest"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/lion-yawn.jpg');" data-full="assets/photos/large/lion-yawn.jpg" data-caption="Lion, Queen Elizabeth National Park" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Lion, Queen Elizabeth National Park"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/buffalo-herd.jpg');" data-full="assets/photos/large/buffalo-herd.jpg" data-caption="African buffalo herd" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: African buffalo herd"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/elephant-family.jpg');" data-full="assets/photos/large/elephant-family.jpg" data-caption="Elephant family" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Elephant family"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/hippos.jpg');" data-full="assets/photos/large/hippos.jpg" data-caption="Hippos, Kazinga Channel" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Hippos, Kazinga Channel"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/giraffes-row.jpg');" data-full="assets/photos/large/giraffes-row.jpg" data-caption="Giraffes on the move" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Giraffes on the move"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/giraffes-acacia.jpg');" data-full="assets/photos/large/giraffes-acacia.jpg" data-caption="Giraffes beneath an acacia tree" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Giraffes beneath an acacia tree"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/zebra.jpg');" data-full="assets/photos/large/zebra.jpg" data-caption="Zebra on the plains" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Zebra on the plains"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/waterbuck.jpg');" data-full="assets/photos/large/waterbuck.jpg" data-caption="Waterbuck" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Waterbuck"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/crested-cranes-pair.jpg');" data-full="assets/photos/large/crested-cranes-pair.jpg" data-caption="Grey crowned cranes — Uganda's national bird" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Grey crowned cranes — Uganda's national bird"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/crested-crane-portrait.jpg');" data-full="assets/photos/large/crested-crane-portrait.jpg" data-caption="Grey crowned crane, close up" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Grey crowned crane, close up"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/goliath-heron-flight.jpg');" data-full="assets/photos/large/goliath-heron-flight.jpg" data-caption="Goliath heron taking flight" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Goliath heron taking flight"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/goliath-heron-catch.jpg');" data-full="assets/photos/large/goliath-heron-catch.jpg" data-caption="Goliath heron with its catch" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Goliath heron with its catch"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/nile-falls-wide.jpg');" data-full="assets/photos/large/nile-falls-wide.jpg" data-caption="Murchison Falls on the Nile" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Murchison Falls on the Nile"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/nile-falls-close.jpg');" data-full="assets/photos/large/nile-falls-close.jpg" data-caption="The Nile forcing through Murchison Falls" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: The Nile forcing through Murchison Falls"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/highland-waterfall.jpg');" data-full="assets/photos/large/highland-waterfall.jpg" data-caption="Cascades in Uganda's highlands" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Cascades in Uganda's highlands"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/savanna-aerial.jpg');" data-full="assets/photos/large/savanna-aerial.jpg" data-caption="Uganda's savannah from above" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Uganda's savannah from above"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/misty-mountains.jpg');" data-full="assets/photos/large/misty-mountains.jpg" data-caption="Misty forest ridgeline" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Misty forest ridgeline"></div>
+      <div class="photo-gallery-item" style="background-image: url('assets/photos/thumb/forest-valley-dusk.jpg');" data-full="assets/photos/large/forest-valley-dusk.jpg" data-caption="Forest valley at dusk" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openLightbox(this)" aria-label="View larger image: Forest valley at dusk"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" style="display:none;" onclick="closeLightboxOnBackdrop(event)" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1); event.stopPropagation();" aria-label="Previous photo">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div id="lightboxCaption" class="lightbox-caption"></div>
+  <button class="lightbox-next" onclick="lightboxNav(1); event.stopPropagation();" aria-label="Next photo">&#8250;</button>
+</div>
+
+<!-- ============================================
+   INTERNATIONAL DESTINATIONS
+   ============================================ -->
+<section style="background: var(--dark-2);">
+  <div class="section-eyebrow">International Destinations</div>
+  <h2 class="section-title">Beyond Uganda — <em>The World</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text">Through our global tour operator network, we offer expertly managed travel to destinations worldwide.</p>
+  
+  <div class="dest-grid" style="margin-top: 2rem;">
+    <!-- International Destinations -->
+    <div class="dest-card" onclick="showDestinationDetail('bali')" role="button" tabindex="0" aria-label="Explore Bali">
+      <div class="dest-card-bg" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Bali, Indonesia</div>
+        <div class="dest-sub">Tropical & Spiritual →</div>
+      </div>
+    </div>
+    
+    <div class="dest-card" onclick="showDestinationDetail('dubai')" role="button" tabindex="0" aria-label="Explore Dubai">
+      <div class="dest-card-bg" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Dubai, UAE</div>
+        <div class="dest-sub">Luxury & Grandeur →</div>
+      </div>
+    </div>
+    
+    <div class="dest-card" onclick="showDestinationDetail('paris')" role="button" tabindex="0" aria-label="Explore Paris">
+      <div class="dest-card-bg" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=80');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Paris, France</div>
+        <div class="dest-sub">Romance & Culture →</div>
+      </div>
+    </div>
+    
+    <div class="dest-card" onclick="showDestinationDetail('maldives')" role="button" tabindex="0" aria-label="Explore Maldives">
+      <div class="dest-card-bg" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=700&q=80');"></div>
+      <div class="dest-overlay">
+        <div class="dest-name">Maldives</div>
+        <div class="dest-sub">Overwater Luxury →</div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="text-align: center; margin-top: 3rem;">
+    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">Don't see your dream destination? We travel everywhere. Enquire with us.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Plan Your Journey</button>
+  </div>
+</section>
+
+<!-- ============================================
+   DESTINATION DETAIL VIEW (Hidden by default)
+   ============================================ -->
+<div id="destinationDetail" class="detail-panel" style="display: none; background: var(--dark-2);">
+  <button onclick="closeDestinationDetail()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.5rem; cursor: pointer; font-family: 'Jost', sans-serif; margin-bottom: 2rem; transition: all 0.3s;">
+    ← Back to All Destinations
+  </button>
+  <div id="destinationDetailContent"></div>
+</div>
+
+<!-- ============================================
+   DESTINATION DETAIL TEMPLATES (Hidden)
+   ============================================ -->
+<div id="destinationTemplates" style="display: none;">
+
+  <!-- 1. Bwindi Forest -->
+  <div id="detail-bwindi">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Bwindi Impenetrable <em>Forest</em></h2>
+    <div class="gold-line"></div>
+    
+    <!-- Gallery -->
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('assets/photos/large/gorilla-vines.jpg');" role="img" aria-label="Mountain gorilla among vines"></div>
+      <div class="dest-gallery-item" style="background-image: url('assets/photos/thumb/gorilla-leaf.jpg');" role="img" aria-label="Mountain gorilla feeding"></div>
+      <div class="dest-gallery-item" style="background-image: url('assets/photos/thumb/gorilla-undergrowth.jpg');" role="img" aria-label="Mountain gorilla in the undergrowth"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Bwindi Impenetrable Forest is a UNESCO World Heritage Site and home to over half of the world's remaining mountain gorillas. This ancient rainforest offers one of the most profound wildlife experiences on Earth — coming face to face with these gentle giants in their natural habitat.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Gorilla Trekking</strong> — Track mountain gorillas with expert guides</li>
+          <li>✓ <strong style="color: var(--cream);">Bird Watching</strong> — Over 350 bird species including 23 Albertine Rift endemics</li>
+          <li>✓ <strong style="color: var(--cream);">Forest Walks</strong> — Explore the ancient rainforest trails</li>
+          <li>✓ <strong style="color: var(--cream);">Community Visits</strong> — Meet the local Batwa community</li>
+          <li>✓ <strong style="color: var(--cream);">Luxury Lodges</strong> — Stay in world-class eco-lodges</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Dry seasons (June-September and December-February) offer the best trekking conditions. However, gorilla trekking is possible year-round with proper preparation.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> Southwestern Uganda</li>
+            <li>🦍 <strong style="color: var(--text-light);">Gorilla Population:</strong> ~500 individuals</li>
+            <li>🌳 <strong style="color: var(--text-light);">Area:</strong> 331 sq km</li>
+            <li>🏔️ <strong style="color: var(--text-light);">Altitude:</strong> 1,160-2,607 meters</li>
+            <li>🌟 <strong style="color: var(--text-light);">UNESCO:</strong> World Heritage Site</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Visit</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">Gorilla trekking permits are limited and sell out months in advance. We handle all permit bookings, lodge reservations, and logistics for a seamless experience.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Book This Experience</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Queen Elizabeth NP -->
+  <div id="detail-queen">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Queen Elizabeth <em>National Park</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('assets/photos/large/lion-yawn.jpg');" role="img" aria-label="Lion resting in Queen Elizabeth National Park"></div>
+      <div class="dest-gallery-item" style="background-image: url('assets/photos/thumb/buffalo-herd.jpg');" role="img" aria-label="African buffalo herd"></div>
+      <div class="dest-gallery-item" style="background-image: url('assets/photos/thumb/elephant-family.jpg');" role="img" aria-label="Elephant family"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Queen Elizabeth National Park is Uganda's most popular savannah reserve, famous for its tree-climbing lions, abundant wildlife, and the stunning Kazinga Channel. This park offers classic African safari experiences with a unique twist.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Tree-Climbing Lions</strong> — Witness lions lounging in fig trees</li>
+          <li>✓ <strong style="color: var(--cream);">Kazinga Channel</strong> — Boat cruise with hippos and elephants</li>
+          <li>✓ <strong style="color: var(--cream);">Big Five Safari</strong> — Lions, elephants, buffalo, leopards (rhinos nearby)</li>
+          <li>✓ <strong style="color: var(--cream);">Crater Lakes</strong> — Explore the volcanic crater lakes</li>
+          <li>✓ <strong style="color: var(--cream);">Bird Watching</strong> — Over 600 bird species</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Dry seasons (June-September and December-February) offer the best wildlife viewing as animals gather around water sources. The wet seasons bring lush landscapes and bird migrations.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> Western Uganda</li>
+            <li>🦁 <strong style="color: var(--text-light);">Wildlife:</strong> Lions, elephants, hippos, buffalo</li>
+            <li>🌿 <strong style="color: var(--text-light);">Area:</strong> 1,978 sq km</li>
+            <li>🐦 <strong style="color: var(--text-light);">Bird Species:</strong> 600+</li>
+            <li>🌟 <strong style="color: var(--text-light);">Known For:</strong> Tree-climbing lions</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Safari</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We offer custom safari packages including game drives, boat cruises, and luxury lodge accommodations. Combine with gorilla trekking for the ultimate Uganda experience.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Plan Your Safari</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Jinja - Source of the Nile -->
+  <div id="detail-jinja">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Jinja — <em>Source of the Nile</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1627894483216-2138af692e32?w=800&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80');"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Jinja is the adventure capital of East Africa and the source of the world's longest river — the Nile. White water rafting, bungee jumping, and kayaking draw thrill-seekers from around the globe to this charming town.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">White Water Rafting</strong> — Grade 5 rapids on the Nile</li>
+          <li>✓ <strong style="color: var(--cream);">Bungee Jumping</strong> — 44-meter jump over the Nile</li>
+          <li>✓ <strong style="color: var(--cream);">Source of the Nile</strong> — Visit the historic source</li>
+          <li>✓ <strong style="color: var(--cream);">Kayaking</strong> — Guided kayak tours and training</li>
+          <li>✓ <strong style="color: var(--cream);">Boat Cruises</strong> — Sunset cruises on the Nile</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Year-round destination. Water levels are highest during the rainy seasons, offering more challenging rapids for experienced rafters.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> Eastern Uganda</li>
+            <li>🌊 <strong style="color: var(--text-light);">River:</strong> The Nile</li>
+            <li>🚣 <strong style="color: var(--text-light);">Rapids:</strong> Grade 3-5</li>
+            <li>🏙️ <strong style="color: var(--text-light);">Distance:</strong> 2 hours from Kampala</li>
+            <li>🌟 <strong style="color: var(--text-light);">Known For:</strong> Adventure sports</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Adventure</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We arrange everything from rafting and bungee jumping to accommodation and transfers. Whether you're a thrill-seeker or just want to watch the action, Jinja has something for everyone.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Book Adventure</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Ssese Islands -->
+  <div id="detail-ssese">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Ssese <em>Islands</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1591389703635-e15a07b842d7?w=400&q=80');"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">The Ssese Islands are an archipelago of 84 islands on Lake Victoria, offering pristine beaches, lush forests, and a peaceful escape from the mainland. Paradise found in the heart of Africa.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Pristine Beaches</strong> — White sand beaches on Lake Victoria</li>
+          <li>✓ <strong style="color: var(--cream);">Island Hopping</strong> — Explore multiple islands by boat</li>
+          <li>✓ <strong style="color: var(--cream);">Forest Walks</strong> — Guided nature walks in the forests</li>
+          <li>✓ <strong style="color: var(--cream);">Bird Watching</strong> — Over 200 bird species</li>
+          <li>✓ <strong style="color: var(--cream);">Lake Victoria</strong> — Fishing, boating, and sunset cruises</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Year-round destination. The dry seasons (June-September and December-February) offer the best beach weather. The islands are beautiful in all seasons.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> Lake Victoria</li>
+            <li>🏝️ <strong style="color: var(--text-light);">Islands:</strong> 84 islands</li>
+            <li>🏖️ <strong style="color: var(--text-light);">Beaches:</strong> White sand beaches</li>
+            <li>🚢 <strong style="color: var(--text-light);">Access:</strong> Boat from Entebbe</li>
+            <li>🌟 <strong style="color: var(--text-light);">Known For:</strong> Relaxation & beaches</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Island Escape</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We arrange boat transfers, island accommodation, and activities. Perfect for honeymooners, families, or anyone seeking a tranquil escape on Lake Victoria.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Book Island Retreat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Bali -->
+  <div id="detail-bali">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Bali, <em>Indonesia</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80');"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Bali, the Island of the Gods, offers a perfect blend of spiritual culture, stunning beaches, lush rice terraces, and world-class luxury. A top destination for honeymoons, wellness retreats, and cultural exploration.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Rice Terraces</strong> — UNESCO-listed Tegalalang Rice Terraces</li>
+          <li>✓ <strong style="color: var(--cream);">Beaches</strong> — Stunning beaches in Seminyak, Uluwatu</li>
+          <li>✓ <strong style="color: var(--cream);">Temples</strong> — Besakih, Tanah Lot, Uluwatu</li>
+          <li>✓ <strong style="color: var(--cream);">Wellness</strong> — World-class yoga and spa retreats</li>
+          <li>✓ <strong style="color: var(--cream);">Luxury Villas</strong> — Private villas with personal butlers</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">April to October offers the dry season with sunny days and low humidity. The wet season (November to March) brings lush landscapes and fewer crowds.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> Indonesia</li>
+            <li>🏝️ <strong style="color: var(--text-light);">Culture:</strong> Balinese Hindu</li>
+            <li>🌴 <strong style="color: var(--text-light);">Known For:</strong> Beaches, temples, rice terraces</li>
+            <li>💆 <strong style="color: var(--text-light);">Best For:</strong> Honeymoons, wellness, luxury</li>
+            <li>✈️ <strong style="color: var(--text-light);">Flight Time:</strong> 14+ hours from Uganda</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Bali Escape</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We create custom Bali itineraries including villa stays, cultural tours, wellness experiences, and private drivers. Perfect for honeymoons and luxury escapes.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Plan Bali Trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Dubai -->
+  <div id="detail-dubai">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Dubai, <em>UAE</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80');"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Dubai is a city of superlatives — home to the world's tallest building, the largest mall, and the most luxurious hotels. A playground for the wealthy and a hub for business and luxury travel.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Burj Khalifa</strong> — World's tallest building</li>
+          <li>✓ <strong style="color: var(--cream);">Luxury Shopping</strong> — Dubai Mall, Mall of the Emirates</li>
+          <li>✓ <strong style="color: var(--cream);">Desert Safaris</strong> — Dune bashing, camel rides, Bedouin camps</li>
+          <li>✓ <strong style="color: var(--cream);">Palm Jumeirah</strong> — Iconic man-made island</li>
+          <li>✓ <strong style="color: var(--cream);">Fine Dining</strong> — Michelin-starred restaurants</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">November to March offers pleasant weather with temperatures around 25°C. Summer months (June-September) can be extremely hot but offer better hotel deals.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> United Arab Emirates</li>
+            <li>🏙️ <strong style="color: var(--text-light);">Population:</strong> 3.5 million</li>
+            <li>🏗️ <strong style="color: var(--text-light);">Known For:</strong> Luxury, shopping, architecture</li>
+            <li>💼 <strong style="color: var(--text-light);">Best For:</strong> Business, luxury shopping, fine dining</li>
+            <li>✈️ <strong style="color: var(--text-light);">Flight Time:</strong> 5 hours from Uganda</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Dubai Trip</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We offer custom Dubai packages including 5-star hotel stays, desert safaris, private tours, and business travel arrangements. Perfect for luxury getaways and business trips.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Plan Dubai Trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Paris -->
+  <div id="detail-paris">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title">Paris, <em>France</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&q=80');"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Paris, the City of Light, is the world's most romantic city. From the Eiffel Tower to the Louvre, from charming cafes to Michelin-starred restaurants, Paris is a city that captures the heart.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Eiffel Tower</strong> — Iconic symbol of Paris</li>
+          <li>✓ <strong style="color: var(--cream);">Louvre Museum</strong> — World's largest art museum</li>
+          <li>✓ <strong style="color: var(--cream);">Notre-Dame</strong> — Gothic cathedral masterpiece</li>
+          <li>✓ <strong style="color: var(--cream);">Seine River</strong> — Romantic river cruises</li>
+          <li>✓ <strong style="color: var(--cream);">Fine Dining</strong> — Michelin-starred restaurants</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">Spring (April-June) and Fall (September-November) offer the best weather and fewer crowds. Summer is warm and busy, while winter brings festive Christmas markets.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> France</li>
+            <li>🏙️ <strong style="color: var(--text-light);">Population:</strong> 2.1 million</li>
+            <li>❤️ <strong style="color: var(--text-light);">Known For:</strong> Romance, art, cuisine</li>
+            <li>💕 <strong style="color: var(--text-light);">Best For:</strong> Honeymoons, romance, culture</li>
+            <li>✈️ <strong style="color: var(--text-light);">Flight Time:</strong> 7+ hours from Uganda</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Paris Trip</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We create romantic Paris itineraries including hotel stays, guided tours, Seine river cruises, and restaurant reservations. Perfect for honeymoons and romantic getaways.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Plan Paris Trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Maldives -->
+  <div id="detail-maldives">
+    <div class="section-eyebrow">Destination Guide</div>
+    <h2 class="section-title"><em>Maldives</em></h2>
+    <div class="gold-line"></div>
+    
+    <div class="dest-gallery">
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&q=80');"></div>
+      <div class="dest-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&q=80');"></div>
+    </div>
+    
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">Overview</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">The Maldives is the ultimate luxury destination — a collection of over 1,000 coral islands in the Indian Ocean. Pristine white sand beaches, crystal-clear turquoise water, and overwater villas make this a slice of paradise.</p>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Highlights</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2.2;">
+          <li>✓ <strong style="color: var(--cream);">Overwater Villas</strong> — Private overwater bungalows</li>
+          <li>✓ <strong style="color: var(--cream);">Snorkeling</strong> — Vibrant coral reefs and marine life</li>
+          <li>✓ <strong style="color: var(--cream);">Private Beaches</strong> — Secluded white sand beaches</li>
+          <li>✓ <strong style="color: var(--cream);">Water Sports</strong> — Diving, kayaking, windsurfing</li>
+          <li>✓ <strong style="color: var(--cream);">Sunset Cruises</strong> — Romantic sunset dolphin cruises</li>
+        </ul>
+        
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Best Time to Visit</h3>
+        <p style="color: var(--text-light); line-height: 1.8;">November to April offers the dry season with sunny skies and calm seas. The wet season (May to October) brings occasional rain but also lower prices and fewer crowds.</p>
+      </div>
+      
+      <div>
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Quick Facts</h4>
+          <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+            <li>📍 <strong style="color: var(--text-light);">Location:</strong> Indian Ocean</li>
+            <li>🏝️ <strong style="color: var(--text-light);">Islands:</strong> 1,000+ coral islands</li>
+            <li>🏖️ <strong style="color: var(--text-light);">Known For:</strong> Overwater villas, luxury</li>
+            <li>💕 <strong style="color: var(--text-light);">Best For:</strong> Honeymoons, luxury escapes</li>
+            <li>✈️ <strong style="color: var(--text-light);">Flight Time:</strong> 12+ hours from Uganda</li>
+          </ul>
+        </div>
+        
+        <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+          <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Plan Your Maldives Escape</h4>
+          <p style="color: var(--text-muted); line-height: 1.8;">We create bespoke Maldives packages including private villa stays, seaplane transfers, and water activities. The ultimate destination for honeymooners and luxury travelers.</p>
+          <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 1.5rem; width: 100%;">Plan Maldives Trip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END destinationTemplates -->
