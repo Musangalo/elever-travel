@@ -30,8 +30,13 @@
   --dark-4: #FBF0EB;
   --cream: #26211A;
   --cream-2: #534839;
-  --text-light: #7A7263;
-  --text-muted: #9A9283;
+  /* Darkened from #7A7263 / #9A9283 -- those two clear AA (4.5:1) only
+     against the very lightest background and drop as low as 2.1:1 against
+     --dark-3, which is exactly the muted khaki-on-khaki look that's hard
+     to read. These hold >=4.5:1 against all three light-theme background
+     tones (--dark/--dark-2/--dark-3), same warm brown hue, no shadows. */
+  --text-light: #564F42;
+  --text-muted: #625A4B;
   --white: #1F1810;
   --accent-rgb: 181,88,58;
   --overlay-rgb: 247,241,230;
@@ -480,10 +485,11 @@ section { padding: 6rem 4rem; }
   margin-top: 3rem;
 }
 .pkg-card {
-  /* Fixed dark background, independent of light/dark theme toggle -- this
-     card carries a photo and white-text CTA, so it needs to stay dark for
-     contrast the same way the hero photo section does. */
-  background: #19322A;
+  /* Follows the theme like .service-card does -- was hardcoded to always-dark
+     (#19322A) before, which matched dark theme exactly (so looked fine there)
+     but stayed dark in light theme too, fighting the var(--white) text below
+     it and reading as a permanent "hover" state that never let go. */
+  background: var(--dark-2);
   border: 1px solid rgba(var(--accent-rgb),0.12);
   overflow: hidden;
   transition: transform var(--transition), border-color var(--transition), background var(--transition);
@@ -541,7 +547,7 @@ section { padding: 6rem 4rem; }
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: var(--white);
   background: transparent;
   border: 1px solid transparent;
   padding: 0.7rem 1.5rem;
