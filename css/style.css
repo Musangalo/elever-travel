@@ -398,6 +398,16 @@ section { padding: 6rem 4rem; }
 [data-theme="light"] .section-eyebrow {
   color: var(--gold-dark);
 }
+/* The Uganda banner on the homepage always sits on its own hardcoded dark
+   green photo scrim (rgba(25,45,38,...)), independent of the site theme --
+   same deal as .pkg-card/.pkg-cta. var(--white) and the light-theme eyebrow
+   override above are both meant for surfaces that flip with the theme, so
+   applying them here made the title render near-black-on-dark-green in
+   light mode (unreadable) and would've muddied the eyebrow too. Pin both to
+   their fixed light-on-dark colors regardless of theme. */
+.uganda-banner-hero .section-eyebrow { color: #F5B942; }
+.uganda-banner-hero .section-title { color: #FFFFFF; }
+.uganda-banner-hero .section-title em { color: var(--gold-light); }
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
