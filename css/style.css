@@ -384,10 +384,19 @@ nav.scrolled {
 section { padding: 6rem 4rem; }
 .section-eyebrow {
   font-size: 0.7rem;
+  font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #F5B942;
   margin-bottom: 1rem;
+}
+/* #F5B942 is a bright gold built for dark backgrounds -- against the light
+   theme's khaki section backgrounds (--dark-3 etc.) it reads as washed-out
+   pale yellow. var(--gold-dark) is the same deep rust-gold already used
+   elsewhere in the light theme for this exact problem. No text-shadow either
+   way, just a bolder weight + a color that actually holds up on cream/khaki. */
+[data-theme="light"] .section-eyebrow {
+  color: var(--gold-dark);
 }
 .section-title {
   font-family: 'Cormorant Garamond', serif;
@@ -871,6 +880,82 @@ section { padding: 6rem 4rem; }
 .pkg-meta-val { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold); }
 .pkg-meta-key { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.1em; }
 
+/* Accordion header -- lets a package collapse so only one is open at a
+   time on the packages page, instead of a long stack the user has to
+   scroll through to reach the ones further down. */
+.pkg-accordion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+.pkg-accordion-index {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  width: 2.5rem;
+}
+.pkg-accordion-heading { flex: 1; }
+.pkg-accordion-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 0.3rem 0.9rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+.pkg-accordion-title {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  transition: color var(--transition);
+}
+.pkg-accordion-title em { font-style: italic; color: var(--gold-light); }
+.pkg-accordion-toggle:hover .pkg-accordion-title { color: var(--gold-light); }
+.pkg-accordion-icon {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border: 1px solid rgba(var(--accent-rgb),0.3);
+  border-radius: 50%;
+  position: relative;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.pkg-accordion-icon::before, .pkg-accordion-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  background: var(--gold);
+  transform: translate(-50%, -50%);
+}
+.pkg-accordion-icon::before { width: 12px; height: 1px; }
+.pkg-accordion-icon::after { width: 1px; height: 12px; transition: transform var(--transition); }
+.pkg-full.pkg-open .pkg-accordion-icon::after { transform: translate(-50%, -50%) scaleY(0); }
+.pkg-full.pkg-open .pkg-accordion-icon { border-color: var(--gold); }
+.pkg-accordion-panel {
+  display: none;
+  padding-top: 3rem;
+  animation: pkgAccordionOpen 0.35s ease;
+}
+.pkg-full.pkg-open .pkg-accordion-panel { display: block; }
+@keyframes pkgAccordionOpen {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ============================================
    FOOTER
    ============================================ */
@@ -1243,6 +1328,23 @@ footer {
   gap: 2rem;
   margin-top: 3rem;
 }
+
+/* Testimonial cards -- restores the hover treatment that matches every
+   other card on the site (.service-card, .pkg-card): same terracotta
+   background, same gold/white text flip on hover. */
+.testimonial-card {
+  background: var(--dark-2);
+  padding: 2rem;
+  border: 1px solid rgba(var(--accent-rgb),0.1);
+  transition: background var(--transition);
+}
+.testimonial-card:hover { background: #C2603D; }
+.testimonial-stars { color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem; }
+.testimonial-quote { color: var(--text-light); font-style: italic; line-height: 1.7; }
+.testimonial-author { margin-top: 1rem; color: var(--gold); font-size: 0.8rem; }
+.testimonial-card:hover .testimonial-stars,
+.testimonial-card:hover .testimonial-author { color: #F5B942; }
+.testimonial-card:hover .testimonial-quote { color: rgba(255,255,255,0.92); }
 
 /* ============================================
    SERVICE / DESTINATION DETAIL LAYOUT

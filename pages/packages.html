@@ -12,7 +12,16 @@
 </div>
 
 <!-- PACKAGE 1: Uganda Safari -->
-<div class="pkg-full">
+<div class="pkg-full pkg-accordion pkg-open">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="true">
+    <span class="pkg-accordion-index">01</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Uganda Safari</span>
+      <span class="pkg-accordion-title">Pearl of <em>Africa</em> Safari</span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
   <div class="pkg-full-inner">
     <div class="pkg-gallery">
       <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('assets/photos/large/gorilla-vines.jpg'); height:260px;" role="img" aria-label="Mountain gorilla — Pearl of Africa Safari"></div>
@@ -20,8 +29,6 @@
       <div class="pkg-gallery-item" style="background-image: url('assets/photos/large/gorilla-undergrowth.jpg'); height:180px;" role="img" aria-label="Bwindi Impenetrable Forest gorillas"></div>
     </div>
     <div>
-      <span class="pkg-full-badge">Uganda Safari</span>
-      <div class="pkg-full-title">Pearl of <em>Africa</em> Safari</div>
       <p class="pkg-full-desc">The definitive Uganda experience. Trek through misty forest to meet mountain gorillas face-to-face, watch lions hunt at dusk across Queen Elizabeth's vast plains, and feel the thunder of the Nile at Murchison Falls.</p>
       
       <div class="pkg-meta">
@@ -99,10 +106,20 @@
       <button class="btn-primary" onclick="showPage('contact')">Enquire About This Package</button>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- PACKAGE 2: Romance Escapes -->
-<div class="pkg-full">
+<div class="pkg-full pkg-accordion">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">02</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Honeymoon</span>
+      <span class="pkg-accordion-title">Romance <em>Escapes</em></span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
   <div class="pkg-full-inner reverse">
     <div class="pkg-gallery">
       <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=80'); height:260px;"></div>
@@ -110,8 +127,6 @@
       <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80'); height:180px;"></div>
     </div>
     <div>
-      <span class="pkg-full-badge">Honeymoon</span>
-      <div class="pkg-full-title">Romance <em>Escapes</em></div>
       <p class="pkg-full-desc">Begin your forever in the world's most breathtaking settings. Whether it's an overwater villa in the Maldives, a cliff-top suite in Santorini, or a private forest lodge in Uganda — we design every detail around your love story.</p>
       
       <div class="pkg-meta">
@@ -169,19 +184,27 @@
       <button class="btn-primary" onclick="showPage('contact')">Plan Our Honeymoon</button>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- PACKAGE 3: Executive Travel -->
-<div class="pkg-full">
+<div class="pkg-full pkg-accordion">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">03</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Business Travel</span>
+      <span class="pkg-accordion-title">Executive <em>Travel</em> Suite</span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
   <div class="pkg-full-inner">
     <div class="pkg-gallery">
-      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1495603889488-42d1d66e5523?w=900&q=80'); height:260px;"></div>
-      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1645736593932-2c877741fd6c?w=500&q=80'); height:180px;"></div>
-      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c4a49f5a?w=500&q=80'); height:180px;"></div>
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1627670381216-6f9d317b63e8?w=900&q=80'); height:260px;" role="img" aria-label="Business class airplane cabin seating"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1690935986319-c11e6cae84f7?w=500&q=80'); height:180px;" role="img" aria-label="Luxury hotel room with city view"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1646974400439-321c4a9240b9?w=500&q=80'); height:180px;" role="img" aria-label="Executive hotel suite living area"></div>
     </div>
     <div>
-      <span class="pkg-full-badge">Business Travel</span>
-      <div class="pkg-full-title">Executive <em>Travel</em> Suite</div>
       <p class="pkg-full-desc">Time is your most valuable asset. Our executive travel service ensures you arrive composed, on schedule, and ready to perform — every single trip. From a single business journey to a full corporate travel programme, we manage everything with precision.</p>
       
       <div class="pkg-meta">
@@ -239,10 +262,20 @@
       <button class="btn-primary" onclick="showPage('contact')">Set Up Business Travel</button>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- PACKAGE 4: Celebrations -->
-<div class="pkg-full">
+<div class="pkg-full pkg-accordion">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">04</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Celebrations</span>
+      <span class="pkg-accordion-title">Celebration <em>Journeys</em></span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
   <div class="pkg-full-inner reverse">
     <div class="pkg-gallery">
       <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80'); height:260px;"></div>
@@ -250,8 +283,6 @@
       <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&q=80'); height:180px;"></div>
     </div>
     <div>
-      <span class="pkg-full-badge">Celebrations</span>
-      <div class="pkg-full-title">Celebration <em>Journeys</em></div>
       <p class="pkg-full-desc">Life's greatest milestones deserve more than a dinner party. Whether it's a landmark birthday, an anniversary, a graduation, or a wedding abroad — we turn your celebration into an unforgettable journey, coordinating every detail with elegance and joy.</p>
       
       <div class="pkg-meta">
@@ -305,19 +336,27 @@
       <button class="btn-primary" onclick="showPage('contact')">Plan Our Celebration</button>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- PACKAGE 5: Family Holidays -->
-<div class="pkg-full">
+<div class="pkg-full pkg-accordion">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">05</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Family Holiday</span>
+      <span class="pkg-accordion-title">Family <em>Holiday</em> Packages</span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
   <div class="pkg-full-inner">
     <div class="pkg-gallery">
-      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=900&q=80'); height:260px;"></div>
-      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=500&q=80'); height:180px;"></div>
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1695425812104-8a9963d58887?w=900&q=80'); height:260px;" role="img" aria-label="Family walking together on the beach"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1771945484043-3a17fbf57a4b?w=500&q=80'); height:180px;" role="img" aria-label="Tropical island beach"></div>
       <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=500&q=80'); height:180px;"></div>
     </div>
     <div>
-      <span class="pkg-full-badge">Family Holiday</span>
-      <div class="pkg-full-title">Family <em>Holiday</em> Packages</div>
       <p class="pkg-full-desc">Create memories that your children will carry for a lifetime. Our family packages balance adventure with comfort — wildlife encounters for the curious, beach relaxation for parents, cultural discovery for all.</p>
       
       <div class="pkg-meta">
@@ -371,6 +410,7 @@
       <button class="btn-primary" onclick="showPage('contact')">Plan Our Family Holiday</button>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- BESPOKE SECTION -->
@@ -384,7 +424,7 @@
   <div class="mini-gallery-4">
     <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=80');" role="img" aria-label="Dubai cityscape"></div>
     <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=500&q=80');" role="img" aria-label="Paris Eiffel Tower"></div>
-    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=500&q=80');" role="img" aria-label="Travel planning"></div>
-    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=500&q=80');" role="img" aria-label="Tropical island"></div>
+    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1753939223042-872934ffda15?w=500&q=80');" role="img" aria-label="Maldives overwater bungalows"></div>
+    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1632570232156-71809ca287cb?w=500&q=80');" role="img" aria-label="Santorini, Greece blue-domed church"></div>
   </div>
 </div>

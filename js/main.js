@@ -428,3 +428,28 @@ window.closeDestinationDetail = function () {
     if (e.key === 'ArrowRight') window.lightboxNav(1);
   });
 })();
+
+// ============================================
+// PACKAGES PAGE ACCORDION
+// ============================================
+// Only one package is expanded at a time -- clicking a header opens that
+// package (scrolling its header into view since the page height changes)
+// and closes whichever one was open before, instead of everyone having to
+// scroll past every package to reach the ones further down the page.
+window.togglePkgAccordion = function (btn) {
+  const panel = btn.closest('.pkg-full');
+  if (!panel) return;
+  const wasOpen = panel.classList.contains('pkg-open');
+
+  document.querySelectorAll('.pkg-full.pkg-accordion.pkg-open').forEach(function (el) {
+    el.classList.remove('pkg-open');
+    const toggle = el.querySelector('.pkg-accordion-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  });
+
+  if (!wasOpen) {
+    panel.classList.add('pkg-open');
+    btn.setAttribute('aria-expanded', 'true');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
