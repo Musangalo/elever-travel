@@ -958,13 +958,8 @@ section { padding: 6rem 4rem; }
 .pkg-accordion-panel {
   display: none;
   padding-top: 3rem;
-  animation: pkgAccordionOpen 0.35s ease;
 }
 .pkg-full.pkg-open .pkg-accordion-panel { display: block; }
-@keyframes pkgAccordionOpen {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
 /* ============================================
    FOOTER

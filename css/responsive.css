@@ -72,6 +72,14 @@
   .pkg-gallery { grid-template-rows: 180px 130px; }
   .pkg-img { height: 170px; }
   .stats-row { grid-template-columns: 1fr 1fr; }
+
+  /* Both fixed corner buttons sat at 2.5rem/44-56px, which is roughly the
+     same as the page's own left/right content padding on narrow screens --
+     so they'd sit right on top of body text (e.g. the "Top Family
+     Destinations" list) instead of in the margin beside it. Pull them into
+     the gutter and shrink them a bit so they clear the text column. */
+  .back-to-top { left: 0.8rem; bottom: 0.8rem; width: 38px; height: 38px; font-size: 0.95rem; }
+  .whatsapp-float { right: 0.8rem; bottom: 0.8rem; width: 48px; height: 48px; }
 }
 
 @media (max-width: 400px) {
