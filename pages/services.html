@@ -1,0 +1,367 @@
+<!-- ============================================
+   SERVICES PAGE - WITH CLICKABLE CARDS & DETAILS
+   ============================================ -->
+
+<!-- HERO -->
+<div class="page-hero" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.92)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1800&q=80') center/cover; padding-top: 8rem;">
+  <div>
+    <div class="section-eyebrow">What We Do</div>
+    <h1 class="section-title">Our <em>Services</em></h1>
+    <p class="page-hero-subtitle">Click on any service below to learn more about how we can help you.</p>
+  </div>
+</div>
+
+<!-- SERVICES LIST -->
+<section>
+  <div class="section-eyebrow">Comprehensive Travel Solutions</div>
+  <h2 class="section-title">Everything Your Journey<br><em>Requires</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text">We offer a complete spectrum of travel services — all under one roof, all delivered with the Elever standard of excellence.</p>
+  
+  <div class="services-grid" style="margin-top: 3rem;">
+    <!-- Service 1 - Visa Planning -->
+    <div class="service-card clickable" onclick="showServiceDetail('visa')" role="button" tabindex="0" aria-label="Learn more about Visa Planning">
+      <div class="service-num">01</div>
+      <div class="service-title">Visa Planning & Consultation</div>
+      <div class="service-desc">We guide you through visa eligibility, requirements, and timing for Uganda and destinations worldwide.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 2 - Visa Documentation -->
+    <div class="service-card clickable" onclick="showServiceDetail('documentation')" role="button" tabindex="0" aria-label="Learn more about Visa Documentation">
+      <div class="service-num">02</div>
+      <div class="service-title">Visa Documentation</div>
+      <div class="service-desc">Full assistance in preparing, compiling, and reviewing all required visa documentation.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 3 - Hotel Booking -->
+    <div class="service-card clickable" onclick="showServiceDetail('hotel')" role="button" tabindex="0" aria-label="Learn more about Hotel Booking">
+      <div class="service-num">03</div>
+      <div class="service-title">Hotel & Resort Booking</div>
+      <div class="service-desc">From boutique safari lodges in Bwindi to 5-star urban properties in Dubai, Paris or New York.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 4 - Airport Transfers -->
+    <div class="service-card clickable" onclick="showServiceDetail('transfers')" role="button" tabindex="0" aria-label="Learn more about Airport Transfers">
+      <div class="service-num">04</div>
+      <div class="service-title">Airport Transfers</div>
+      <div class="service-desc">Private, punctual, premium ground transport. Meet-and-greet service, luxury vehicles, and professional drivers.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 5 - Flight Ticketing -->
+    <div class="service-card clickable" onclick="showServiceDetail('flights')" role="button" tabindex="0" aria-label="Learn more about Flight Ticketing">
+      <div class="service-num">05</div>
+      <div class="service-title">Flight Ticketing</div>
+      <div class="service-desc">Economy, business, and first-class ticketing on all major airlines. We handle multi-leg itineraries and upgrades.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 6 - Uganda Tours -->
+    <div class="service-card clickable" onclick="showServiceDetail('uganda')" role="button" tabindex="0" aria-label="Learn more about Uganda Tours">
+      <div class="service-num">06</div>
+      <div class="service-title">Uganda Local Tours</div>
+      <div class="service-desc">Gorilla trekking in Bwindi, chimpanzee tracking in Kibale, Queen Elizabeth safaris, the Nile at Jinja.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 7 - International Tours -->
+    <div class="service-card clickable" onclick="showServiceDetail('international')" role="button" tabindex="0" aria-label="Learn more about International Tours">
+      <div class="service-num">07</div>
+      <div class="service-title">International Tours</div>
+      <div class="service-desc">Through our global network of accredited tour operators, we curate experiences across Africa, Europe, Asia, and the Americas.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 8 - Event & Group Travel -->
+    <div class="service-card clickable" onclick="showServiceDetail('events')" role="button" tabindex="0" aria-label="Learn more about Event & Group Travel">
+      <div class="service-num">08</div>
+      <div class="service-title">Event & Group Travel</div>
+      <div class="service-desc">Weddings abroad, milestone celebrations, corporate retreats, incentive travel — we coordinate group logistics seamlessly.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 9 - Restaurant Reservations -->
+    <div class="service-card clickable" onclick="showServiceDetail('restaurants')" role="button" tabindex="0" aria-label="Learn more about Restaurant Reservations">
+      <div class="service-num">09</div>
+      <div class="service-title">Restaurant Reservations</div>
+      <div class="service-desc">We secure reservations at acclaimed and Michelin-starred restaurants worldwide — from rooftop fine dining to authentic local experiences.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+   SERVICE DETAIL VIEW (Hidden by default)
+   ============================================ -->
+<div id="serviceDetail" class="detail-panel" style="display: none; background: var(--dark-2);">
+  <button onclick="closeServiceDetail()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.5rem; cursor: pointer; font-family: 'Jost', sans-serif; margin-bottom: 2rem; transition: all 0.3s;">
+    ← Back to All Services
+  </button>
+  <div id="serviceDetailContent"></div>
+</div>
+
+<!-- ============================================
+   SERVICE DETAIL TEMPLATES (Hidden)
+   ============================================ -->
+<div id="serviceTemplates" style="display: none;">
+
+  <!-- 1. Visa Planning & Consultation -->
+  <div id="detail-visa">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Visa Planning & <em>Consultation</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Comprehensive visa eligibility assessment</li>
+          <li>✓ Step-by-step application guidance</li>
+          <li>✓ Document review and preparation</li>
+          <li>✓ Interview preparation (if required)</li>
+          <li>✓ Timeline management and follow-up</li>
+          <li>✓ All nationalities welcome</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Get Started</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Why Choose Us</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">With over 500+ successful visa applications processed, our team has the expertise to navigate complex visa requirements for destinations worldwide. We stay updated on the latest regulations so you don't have to.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">⭐ High approval track record</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Visa Documentation -->
+  <div id="detail-documentation">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Visa <em>Documentation</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Complete document checklist preparation</li>
+          <li>✓ Cover letter drafting and review</li>
+          <li>✓ Financial statement verification</li>
+          <li>✓ Employment and income verification</li>
+          <li>✓ Travel itinerary and accommodation proof</li>
+          <li>✓ Application form assistance</li>
+          <li>✓ Document translation services (where needed)</li>
+          <li>✓ Application submission support</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Get Visa Support</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Why Choose Us</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">We've successfully supported hundreds of visa applications across all visa types — tourist, business, student, and work visas. Our meticulous attention to documentation has helped our clients achieve one of the highest approval rates in the industry.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">📄 500+ successful applications</p>
+          <p style="color: var(--gold); font-size: 0.85rem; margin-top: 0.5rem;">✅ High approval track record</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Hotel & Resort Booking -->
+  <div id="detail-hotel">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Hotel & Resort <em>Booking</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Curated luxury accommodations worldwide</li>
+          <li>✓ Best available rates and exclusive deals</li>
+          <li>✓ Safari lodges, urban hotels, overwater villas</li>
+          <li>✓ Verified reviews and quality assurance</li>
+          <li>✓ Special requests and preferences accommodated</li>
+          <li>✓ 24/7 booking support</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Book Now</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Global Inventory</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Access to properties in over 100+ countries, from boutique safari lodges in Bwindi to 5-star urban properties in Dubai, Paris, New York, and beyond.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🏨 Premium properties worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Airport Transfers -->
+  <div id="detail-transfers">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Airport <em>Transfers</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Private luxury ground transport</li>
+          <li>✓ Meet-and-greet service</li>
+          <li>✓ Professional, vetted drivers</li>
+          <li>✓ Door-to-door service</li>
+          <li>✓ 24/7 availability</li>
+          <li>✓ Flight tracking for timely pickup</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Arrange Transfer</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Premium Service</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Your comfort from touchdown to check-in. Our professional drivers and luxury vehicles ensure you arrive at your destination relaxed and on time.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🚗 Premium vehicles, professional drivers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Flight Ticketing -->
+  <div id="detail-flights">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Flight <em>Ticketing</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Economy, business, and first-class ticketing</li>
+          <li>✓ All major airlines and alliances</li>
+          <li>✓ Multi-leg itinerary management</li>
+          <li>✓ Seat selection and upgrades</li>
+          <li>✓ Best routes and fares</li>
+          <li>✓ 24/7 flight support</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Book Flights</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Worldwide Coverage</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">We work with all major airlines to secure the best routes and fares for your journey. Whether it's a simple round-trip or a complex multi-stop itinerary, we've got you covered.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">✈️ All airlines available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Uganda Local Tours -->
+  <div id="detail-uganda">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Uganda Local <em>Tours</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Gorilla trekking in Bwindi</li>
+          <li>✓ Chimpanzee tracking in Kibale</li>
+          <li>✓ Queen Elizabeth NP safaris</li>
+          <li>✓ The Nile at Jinja</li>
+          <li>✓ Ssese Islands retreats</li>
+          <li>✓ Expert local guides</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Plan Uganda Tour</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Authentic Experiences</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Uganda is home to half the world's mountain gorillas, vast savannah, misty rainforests, and the source of the Nile. Discover the Pearl of Africa with our expert guides.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🌿 Expert guides, authentic experiences</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. International Tours -->
+  <div id="detail-international">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">International <em>Tours</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Africa (safaris, culture, adventure)</li>
+          <li>✓ Europe (romance, history, cuisine)</li>
+          <li>✓ Asia (temples, beaches, spirituality)</li>
+          <li>✓ Americas (cities, nature, exploration)</li>
+          <li>✓ Verified tour operators</li>
+          <li>✓ Premium experiences worldwide</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Explore the World</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Global Network</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Through our global network of accredited tour operators, we curate experiences across Africa, Europe, Asia, the Americas and beyond — verified, premium, unforgettable.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🌍 Vetted operators worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Event & Group Travel -->
+  <div id="detail-events">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Event & Group <em>Travel</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Destination weddings</li>
+          <li>✓ Milestone celebrations</li>
+          <li>✓ Corporate retreats</li>
+          <li>✓ Incentive travel programs</li>
+          <li>✓ Group logistics coordination</li>
+          <li>✓ Custom event theming</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Plan Your Event</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Celebrate in Style</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Life's greatest milestones deserve more than a dinner party. We turn your celebration into an unforgettable journey, coordinating every detail with elegance and joy.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🎉 Group travel specialists</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Restaurant Reservations -->
+  <div id="detail-restaurants">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Restaurant <em>Reservations</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Michelin-starred restaurants</li>
+          <li>✓ Exclusive dining experiences</li>
+          <li>✓ Rooftop fine dining</li>
+          <li>✓ Authentic local cuisine</li>
+          <li>✓ Special occasion bookings</li>
+          <li>✓ Worldwide coverage</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Book a Table</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Global Dining</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">We secure reservations at acclaimed and Michelin-starred restaurants worldwide — from rooftop fine dining in Dubai to authentic lakeside meals on Lake Victoria.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🍽️ Fine dining worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END serviceTemplates -->
