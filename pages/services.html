@@ -59,33 +59,49 @@
       <span class="service-tag">Click to learn more →</span>
     </div>
     
-    <!-- Service 6 - Uganda Tours -->
-    <div class="service-card clickable" onclick="showServiceDetail('uganda')" role="button" tabindex="0" aria-label="Learn more about Uganda Tours">
+    <!-- Service 6 - Travel Insurance -->
+    <div class="service-card clickable" onclick="showServiceDetail('insurance')" role="button" tabindex="0" aria-label="Learn more about Travel Insurance">
       <div class="service-num">06</div>
+      <div class="service-title">Travel Insurance</div>
+      <div class="service-desc">Guidance on comprehensive travel insurance — medical emergencies, trip cancellation, lost luggage, and adventure activity cover.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 7 - Uganda Tours -->
+    <div class="service-card clickable" onclick="showServiceDetail('uganda')" role="button" tabindex="0" aria-label="Learn more about Uganda Tours">
+      <div class="service-num">07</div>
       <div class="service-title">Uganda Local Tours</div>
       <div class="service-desc">Gorilla trekking in Bwindi, chimpanzee tracking in Kibale, Queen Elizabeth safaris, the Nile at Jinja.</div>
       <span class="service-tag">Click to learn more →</span>
     </div>
-    
-    <!-- Service 7 - International Tours -->
+
+    <!-- Service 8 - International Tours -->
     <div class="service-card clickable" onclick="showServiceDetail('international')" role="button" tabindex="0" aria-label="Learn more about International Tours">
-      <div class="service-num">07</div>
+      <div class="service-num">08</div>
       <div class="service-title">International Tours</div>
       <div class="service-desc">Through our global network of accredited tour operators, we curate experiences across Africa, Europe, Asia, and the Americas.</div>
       <span class="service-tag">Click to learn more →</span>
     </div>
-    
-    <!-- Service 8 - Event & Group Travel -->
+
+    <!-- Service 9 - Travel Advisory -->
+    <div class="service-card clickable" onclick="showServiceDetail('advisory')" role="button" tabindex="0" aria-label="Learn more about Travel Advisory">
+      <div class="service-num">09</div>
+      <div class="service-title">Travel Advisory</div>
+      <div class="service-desc">Entry requirements, health & safety notes, and seasonal guidance — so you always travel informed.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 10 - Event & Group Travel -->
     <div class="service-card clickable" onclick="showServiceDetail('events')" role="button" tabindex="0" aria-label="Learn more about Event & Group Travel">
-      <div class="service-num">08</div>
+      <div class="service-num">10</div>
       <div class="service-title">Event & Group Travel</div>
       <div class="service-desc">Weddings abroad, milestone celebrations, corporate retreats, incentive travel — we coordinate group logistics seamlessly.</div>
       <span class="service-tag">Click to learn more →</span>
     </div>
-    
-    <!-- Service 9 - Restaurant Reservations -->
+
+    <!-- Service 11 - Restaurant Reservations -->
     <div class="service-card clickable" onclick="showServiceDetail('restaurants')" role="button" tabindex="0" aria-label="Learn more about Restaurant Reservations">
-      <div class="service-num">09</div>
+      <div class="service-num">11</div>
       <div class="service-title">Restaurant Reservations</div>
       <div class="service-desc">We secure reservations at acclaimed and Michelin-starred restaurants worldwide — from rooftop fine dining to authentic local experiences.</div>
       <span class="service-tag">Click to learn more →</span>
@@ -211,7 +227,7 @@
           <li>✓ 24/7 availability</li>
           <li>✓ Flight tracking for timely pickup</li>
         </ul>
-        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Arrange Transfer</button>
+        <button class="btn-primary" onclick="goToTransferForm()" style="margin-top: 2rem;">Arrange Transfer</button>
       </div>
       <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
         <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Premium Service</h4>
@@ -251,7 +267,35 @@
     </div>
   </div>
 
-  <!-- 6. Uganda Local Tours -->
+  <!-- 6. Travel Insurance -->
+  <div id="detail-insurance">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Travel <em>Insurance</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Guidance on medical emergency & evacuation cover</li>
+          <li>✓ Trip cancellation & interruption cover</li>
+          <li>✓ Lost, delayed or damaged luggage cover</li>
+          <li>✓ Cover for adventure activities (gorilla trekking, safaris)</li>
+          <li>✓ Policy comparison across trusted providers</li>
+          <li>✓ Support with claims documentation</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('contact')" style="margin-top: 2rem;">Get Insurance Guidance</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Travel with Confidence</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">From medical emergencies to trip cancellations, the right policy means one less thing to worry about. We help you compare providers and find cover that actually matches your itinerary.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🛡️ Cover that matches your trip</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Uganda Local Tours -->
   <div id="detail-uganda">
     <div class="section-eyebrow">Service Detail</div>
     <h2 class="section-title">Uganda Local <em>Tours</em></h2>
@@ -279,7 +323,7 @@
     </div>
   </div>
 
-  <!-- 7. International Tours -->
+  <!-- 8. International Tours -->
   <div id="detail-international">
     <div class="section-eyebrow">Service Detail</div>
     <h2 class="section-title">International <em>Tours</em></h2>
@@ -307,7 +351,35 @@
     </div>
   </div>
 
-  <!-- 8. Event & Group Travel -->
+  <!-- 9. Travel Advisory -->
+  <div id="detail-advisory">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Travel <em>Advisory</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Entry requirements & visa-on-arrival updates</li>
+          <li>✓ Health & safety guidance per destination</li>
+          <li>✓ Best-time-to-travel recommendations by season</li>
+          <li>✓ Local customs & etiquette insights</li>
+          <li>✓ Currency & documentation alerts</li>
+          <li>✓ Ongoing updates via our Travel Advisory blog</li>
+        </ul>
+        <button class="btn-primary" onclick="showPage('blog')" style="margin-top: 2rem;">Read Our Travel Advisories</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Travel Informed</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Requirements and conditions change. We keep an eye on entry rules, health guidance and seasonal patterns so your trip is planned around current, accurate information — not guesswork.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">📰 Kept current, always</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Event & Group Travel -->
   <div id="detail-events">
     <div class="section-eyebrow">Service Detail</div>
     <h2 class="section-title">Event & Group <em>Travel</em></h2>
@@ -335,7 +407,7 @@
     </div>
   </div>
 
-  <!-- 9. Restaurant Reservations -->
+  <!-- 11. Restaurant Reservations -->
   <div id="detail-restaurants">
     <div class="section-eyebrow">Service Detail</div>
     <h2 class="section-title">Restaurant <em>Reservations</em></h2>

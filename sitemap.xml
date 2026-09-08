@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Only the root URL is listed here. The site's about/services/destinations/
+  packages/contact "pages" are loaded client-side into index.html via a URL
+  hash (e.g. /#services) rather than served as separate documents, and
+  search engines strip everything after "#" before indexing, so those
+  fragment URLs all resolved to the exact same indexed page as "/" and had
+  no business being in a sitemap. If distinct pages need to rank in search
+  individually, each route needs to be served as its own real document
+  (e.g. /services.html) rather than fetched into a shared shell.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://elevertravel.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://elevertravel.com/#about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://elevertravel.com/#services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elevertravel.com/#destinations</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elevertravel.com/#packages</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://elevertravel.com/#contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 </urlset>

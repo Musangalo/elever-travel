@@ -729,7 +729,42 @@ section { padding: 6rem 4rem; }
   background: var(--dark-2);
   border: 1px solid rgba(var(--accent-rgb),0.12);
   padding: 3rem;
+  /* goToTransferForm() scrolls this into view with block:'start'; without
+     this the fixed nav bar overlaps the top of the card (hiding the tabs
+     row) since the browser has no other way to know to leave room for it. */
+  scroll-margin-top: 130px;
 }
+/* Contact form tabs -- hidden by default (a general enquiry only ever
+   needs the trip form); goToTransferForm() reveals them so someone who
+   lands here specifically for an airport transfer can still switch back
+   to the full trip form if they arrived on the wrong one. */
+.form-tabs {
+  display: none;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.form-tabs.visible { display: flex; }
+.form-tab {
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(var(--accent-rgb),0.3);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.form-tab:hover { border-color: var(--gold); color: var(--gold); }
+.form-tab.active {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: #FFFFFF;
+}
+.form-tab.active:hover { background: var(--gold); border-color: var(--gold); color: #FFFFFF; }
 .form-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
@@ -1381,6 +1416,15 @@ footer {
   background-size: cover;
   background-position: center;
   border-radius: 4px;
+}
+/* Text-only variant: no image partner, so the text column takes the
+   full row instead of leaving an empty second grid cell. Used where a
+   reason has no matching photo (see Local Expertise on the About page). */
+.reason-block-full {
+  grid-template-columns: 1fr;
+}
+.reason-block-full .reason-text {
+  max-width: 700px;
 }
 
 /* ============================================

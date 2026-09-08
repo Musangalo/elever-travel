@@ -5,6 +5,75 @@
 // Cache for loaded pages
 const pageCache = {};
 
+// ============================================
+// PER-PAGE SEO / SOCIAL METADATA
+// Keeps the tab title, meta description, canonical
+// link and Open Graph tags in sync with whichever
+// page is currently shown, instead of every route
+// serving the homepage's title/description. Note:
+// this only helps real browsers and JS-executing
+// crawlers -- bots that unfurl links for chat apps
+// (WhatsApp, iMessage, etc.) read the raw HTML
+// without running JS, so a shared "#services" link
+// will still show the homepage's card. Fixing that
+// fully would need each route served as its own
+// static document rather than a client-side fetch.
+// ============================================
+const PAGE_META = {
+  home: {
+    title: 'Elever Travel Management Limited | Luxury Travel Agency — Kampala, Uganda',
+    description: "Elever Travel Management Limited — Uganda's premier luxury travel agency. Bespoke safaris, honeymoons, business travel, visa guidance & worldwide tours. Based in Kampala."
+  },
+  about: {
+    title: 'About Us | Elever Travel Management Limited',
+    description: "The story behind Elever Travel Management Limited — a Kampala-based luxury travel agency crafting bespoke safaris, honeymoons and worldwide journeys with local expertise and personal care."
+  },
+  services: {
+    title: 'Our Services | Elever Travel Management Limited',
+    description: "Visa guidance, flight ticketing, hotel booking, airport transfers and more — explore the full range of travel services offered by Elever Travel Management Limited."
+  },
+  destinations: {
+    title: 'Destinations | Elever Travel Management Limited',
+    description: "From gorilla trekking in Bwindi to safaris across Uganda's national parks and worldwide getaways — explore the destinations curated by Elever Travel Management Limited."
+  },
+  packages: {
+    title: 'Travel Packages | Elever Travel Management Limited',
+    description: "Browse curated safari, honeymoon and holiday packages from Elever Travel Management Limited — Uganda's premier luxury travel agency."
+  },
+  contact: {
+    title: 'Plan Your Trip | Elever Travel Management Limited',
+    description: "Get in touch with Elever Travel Management Limited to start planning your journey. Our travel specialists respond within 24 hours with a tailored proposal."
+  },
+  blog: {
+    title: 'Travel Advisories | Elever Travel Management Limited',
+    description: "Entry requirements, health & safety notes, and seasonal travel tips from Elever Travel Management Limited."
+  }
+};
+
+// Update the tab title, meta description, canonical link and
+// Open Graph/Twitter tags to match the page being shown.
+function updatePageMeta(page) {
+  const meta = PAGE_META[page] || PAGE_META.home;
+  const pageUrl = `https://elevertravel.com/${page === 'home' ? '' : '#' + page}`;
+
+  document.title = meta.title;
+
+  const descTag = document.getElementById('metaDescription');
+  if (descTag) descTag.setAttribute('content', meta.description);
+
+  const ogTitle = document.getElementById('ogTitle');
+  if (ogTitle) ogTitle.setAttribute('content', meta.title);
+
+  const ogDescription = document.getElementById('ogDescription');
+  if (ogDescription) ogDescription.setAttribute('content', meta.description);
+
+  const ogUrl = document.getElementById('ogUrl');
+  if (ogUrl) ogUrl.setAttribute('content', pageUrl);
+
+  const canonicalLink = document.getElementById('canonicalLink');
+  if (canonicalLink) canonicalLink.setAttribute('href', pageUrl);
+}
+
 // Function to load a page
 async function loadPage(pageName) {
   const container = document.getElementById('pageContainer');
@@ -42,6 +111,7 @@ window.showPage = async function (page) {
   });
 
   await loadPage(page);
+  updatePageMeta(page);
   window.scrollTo({ top: 0, behavior: 'smooth' });
   window.location.hash = page;
 };
@@ -107,7 +177,40 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// Form submission function
+// ============================================
+// CONTACT PAGE TABS
+// Trip enquiries and airport transfer requests are two
+// separate forms (different fields, different Formspree
+// subject) shown one at a time via tabs, rather than one
+// form whose fields change depending on a dropdown value.
+// ============================================
+window.switchContactTab = function (tab) {
+  const isTransfer = tab === 'transfer';
+  document.getElementById('tripFormContent').style.display = isTransfer ? 'none' : '';
+  document.getElementById('transferFormContent').style.display = isTransfer ? '' : 'none';
+  document.getElementById('tabTrip').classList.toggle('active', !isTransfer);
+  document.getElementById('tabTransfer').classList.toggle('active', isTransfer);
+  document.getElementById('tabTrip').setAttribute('aria-selected', String(!isTransfer));
+  document.getElementById('tabTransfer').setAttribute('aria-selected', String(isTransfer));
+  // Submitting one form and going back never leaves the other stuck on
+  // its success screen.
+  document.getElementById('formSuccess').style.display = 'none';
+};
+
+// Navigate to the Contact page with the Airport Transfer tab already
+// selected -- used by "Arrange Transfer" buttons elsewhere on the site,
+// so people don't land on the general trip form and have to hunt for it.
+// The tab switcher itself only appears here: a general enquiry (a Uganda
+// trip, any other service) never needs to see it, since there's nothing
+// to switch between -- it's the trip form only.
+window.goToTransferForm = async function () {
+  await showPage('contact');
+  document.querySelector('.form-tabs')?.classList.add('visible');
+  switchContactTab('transfer');
+  document.querySelector('.form-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+// Trip enquiry form submission
 window.submitForm = function () {
   // Get form values
   const fname = document.getElementById('fname').value.trim();
@@ -119,14 +222,14 @@ window.submitForm = function () {
   // pretend to succeed instead of submitting.
   const honeypot = document.getElementById('company');
   if (honeypot && honeypot.value.trim() !== '') {
-    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('tripFormContent').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
     return;
   }
 
   // Clear previous errors
-  document.querySelectorAll('.field-error').forEach(e => e.classList.remove('show'));
-  document.querySelectorAll('.form-group input, .form-group select').forEach(el => el.classList.remove('error'));
+  document.querySelectorAll('#tripFormContent .field-error').forEach(e => e.classList.remove('show'));
+  document.querySelectorAll('#tripFormContent .form-group input, #tripFormContent .form-group select').forEach(el => el.classList.remove('error'));
 
   let valid = true;
 
@@ -152,7 +255,7 @@ window.submitForm = function () {
   }
 
   if (!valid) {
-    document.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.querySelector('#tripFormContent .error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
@@ -160,7 +263,6 @@ window.submitForm = function () {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Build form data
   const formData = {
     name: `${fname} ${lname}`,
     email: email,
@@ -182,8 +284,9 @@ window.submitForm = function () {
   })
     .then(response => {
       if (response.ok) {
-        document.getElementById('confirmEmail').textContent = email;
-        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('formSuccessTitle').textContent = 'Enquiry Received!';
+        document.getElementById('formSuccessBody').innerHTML = `Thank you for reaching out to Elever Travel Management. Our travel specialists have received your enquiry and will respond to you at <strong id="confirmEmail">${email}</strong> within 24 hours with a personalised proposal.`;
+        document.getElementById('tripFormContent').style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
         document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
@@ -199,11 +302,108 @@ window.submitForm = function () {
     });
 };
 
+// Airport transfer request form submission -- a fully separate form
+// from the trip enquiry above: different fields (pickup/drop-off,
+// flight info) and its own Formspree subject line.
+window.submitTransferForm = function () {
+  const fname = document.getElementById('tfname').value.trim();
+  const lname = document.getElementById('tlname').value.trim();
+  const email = document.getElementById('temail').value.trim();
+  const pickup = document.getElementById('pickupLocation').value.trim();
+  const dropoff = document.getElementById('dropoffLocation').value.trim();
+
+  // Honeypot
+  const honeypot = document.getElementById('companyTransfer');
+  if (honeypot && honeypot.value.trim() !== '') {
+    document.getElementById('transferFormContent').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    return;
+  }
+
+  document.querySelectorAll('#transferFormContent .field-error').forEach(e => e.classList.remove('show'));
+  document.querySelectorAll('#transferFormContent .form-group input, #transferFormContent .form-group select').forEach(el => el.classList.remove('error'));
+
+  let valid = true;
+
+  if (!fname) {
+    document.getElementById('tfname').classList.add('error');
+    document.getElementById('tfname-error').classList.add('show');
+    valid = false;
+  }
+  if (!lname) {
+    document.getElementById('tlname').classList.add('error');
+    document.getElementById('tlname-error').classList.add('show');
+    valid = false;
+  }
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    document.getElementById('temail').classList.add('error');
+    document.getElementById('temail-error').classList.add('show');
+    valid = false;
+  }
+  if (!pickup) {
+    document.getElementById('pickupLocation').classList.add('error');
+    document.getElementById('pickupLocation-error').classList.add('show');
+    valid = false;
+  }
+  if (!dropoff) {
+    document.getElementById('dropoffLocation').classList.add('error');
+    document.getElementById('dropoffLocation-error').classList.add('show');
+    valid = false;
+  }
+
+  if (!valid) {
+    document.querySelector('#transferFormContent .error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  const btn = document.getElementById('submitTransferBtn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const formData = {
+    name: `${fname} ${lname}`,
+    email: email,
+    phone: document.getElementById('tphone').value || 'Not provided',
+    pickup_location: pickup,
+    dropoff_location: dropoff,
+    flight_number: document.getElementById('flightNumber').value || 'Not provided',
+    flight_datetime: document.getElementById('flightDateTime').value || 'Not provided',
+    passengers: document.getElementById('passengers').value || 'Not specified',
+    luggage: document.getElementById('luggage').value || 'Not specified',
+    message: document.getElementById('transferMessage').value || 'None provided',
+    _subject: `New Airport Transfer Request — ${fname} ${lname}`
+  };
+
+  fetch('https://formspree.io/f/mdajrpny', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('formSuccessTitle').textContent = 'Transfer Request Received!';
+        document.getElementById('formSuccessBody').innerHTML = `Thank you for your airport transfer request. Our team has received your details and will confirm your driver at <strong id="confirmEmail">${email}</strong> within 24 hours.`;
+        document.getElementById('transferFormContent').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        btn.textContent = "Request Transfer — We'll Confirm Within 24 Hours";
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or WhatsApp us directly at +256 740 748 155.');
+      }
+    })
+    .catch(() => {
+      btn.textContent = "Request Transfer — We'll Confirm Within 24 Hours";
+      btn.disabled = false;
+      alert('Network error. Please check your connection and try again.');
+    });
+};
+
 // Load home page on startup
 document.addEventListener('DOMContentLoaded', function () {
   // Check if there's a hash in the URL
   const hash = window.location.hash.replace('#', '');
-  const page = hash && ['home', 'about', 'services', 'destinations', 'packages', 'contact'].includes(hash)
+  const page = hash && ['home', 'about', 'services', 'destinations', 'packages', 'contact', 'blog'].includes(hash)
     ? hash
     : 'home';
 
@@ -265,15 +465,17 @@ window.goToService = async function (serviceId) {
 
     // Map service IDs to their card indices
     const serviceMap = {
-      'visa': 0,           // Visa Planning & Consultation
+      'visa': 0,            // Visa Planning & Consultation
       'documentation': 1,   // Visa Documentation
-      'hotel': 2,          // Hotel & Resort Booking
-      'transfers': 3,      // Airport Transfers
-      'flights': 4,        // Flight Ticketing
-      'uganda': 5,         // Uganda Local Tours
-      'international': 6,  // International Tours
-      'events': 7,         // Event & Group Travel
-      'restaurants': 8     // Restaurant Reservations
+      'hotel': 2,           // Hotel & Resort Booking
+      'transfers': 3,       // Airport Transfers
+      'flights': 4,         // Flight Ticketing
+      'insurance': 5,       // Travel Insurance
+      'uganda': 6,          // Uganda Local Tours
+      'international': 7,   // International Tours
+      'advisory': 8,        // Travel Advisory
+      'events': 9,          // Event & Group Travel
+      'restaurants': 10     // Restaurant Reservations
     };
 
     const index = serviceMap[serviceId];
