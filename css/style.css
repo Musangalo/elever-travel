@@ -192,7 +192,7 @@ nav.scrolled {
   border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
   transition: background 0.25s, color 0.25s;
 }
-.mobile-menu a:first-of-type { border-top: 1px solid rgba(var(--accent-rgb), 0.15); }
+.mobile-menu-item:first-child > a { border-top: 1px solid rgba(var(--accent-rgb), 0.15); }
 .mobile-menu a:hover,
 .mobile-menu a:active { background: rgba(var(--accent-rgb), 0.1); color: var(--gold); }
 
@@ -614,7 +614,9 @@ section { padding: 6rem 4rem; }
 .dest-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.1) 80%);
+  /* Shadow raised further up the image (was 45%/80%) per design review --
+     gives the caption text more dark surface to sit on for clarity. */
+  background: linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.68) 58%, rgba(0,0,0,0.18) 88%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1528,7 +1530,9 @@ footer {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   padding: 1.5rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.2) 80%, transparent 100%);
+  /* Shadow raised further up the image (was 45%/80%) per design review --
+     gives the caption text more dark surface to sit on for clarity. */
+  background: linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.25) 88%, transparent 100%);
 }
 .featured-caption-title {
   color: #F5B942;
@@ -1541,4 +1545,187 @@ footer {
   font-size: 0.8rem;
   text-shadow: 0 1px 5px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9);
   margin-top: 0.15rem;
+}
+
+/* ============================================
+   LIGHT THEME COLOR REFINEMENTS (design review)
+   Exact hex values from the light-mode design spec, scoped to
+   [data-theme="light"] only -- dark theme is untouched throughout.
+   ============================================ */
+
+/* Primary CTA buttons (Start Planning, Explore Uganda, Plan My Trip nav
+   button, package "Enquire" buttons, etc.) -- was reusing --gold-dark. */
+[data-theme="light"] .btn-primary,
+[data-theme="light"] .nav-cta { background: #C26A3C; }
+[data-theme="light"] .btn-primary:hover,
+[data-theme="light"] .nav-cta:hover { background: #D4824F; }
+
+/* Airport Transfers "Arrange Transfer" button -- deliberately a darker,
+   distinct brown from the general CTA color above. */
+[data-theme="light"] .btn-primary-dark { background: #663120; }
+[data-theme="light"] .btn-primary-dark:hover { background: #7B3C27; }
+
+/* Card hover treatment (service cards, package cards, testimonials) --
+   was a fixed dark-theme terracotta/gold pair that didn't match the
+   light theme's own palette. */
+[data-theme="light"] .service-card:hover,
+[data-theme="light"] .pkg-card:hover,
+[data-theme="light"] .testi-card:hover,
+[data-theme="light"] .testimonial-card:hover { background: #663120; }
+
+[data-theme="light"] .service-card:hover .service-title,
+[data-theme="light"] .pkg-card:hover .pkg-name,
+[data-theme="light"] .testi-card:hover .testi-stars,
+[data-theme="light"] .testi-card:hover .testi-author,
+[data-theme="light"] .testimonial-stars,
+[data-theme="light"] .testimonial-card:hover .testimonial-stars,
+[data-theme="light"] .testimonial-card:hover .testimonial-author { color: #C47040; }
+
+[data-theme="light"] .service-card:hover .service-desc,
+[data-theme="light"] .pkg-card:hover .pkg-desc,
+[data-theme="light"] .pkg-card:hover .pkg-features li,
+[data-theme="light"] .testimonial-card:hover .testimonial-quote { color: #FFFFFF; }
+
+/* Image-caption accent text (Wildlife Safari card, destination grid
+   subtitles) -- was a fixed bright gold meant only for dark backdrops;
+   the shadow raise above (.featured-caption / .dest-overlay) keeps this
+   legible against the photo. */
+[data-theme="light"] .featured-caption-title,
+[data-theme="light"] .dest-sub { color: #7B3C27; }
+
+/* Footer: background stays fixed black in both themes, but its text
+   colors were pulling from theme variables tuned for a LIGHT background
+   -- in light mode that meant low-contrast brown-on-black links. Pin
+   footer text to fixed light-on-dark values, matching the header/nav
+   which already do the same for the same reason. */
+[data-theme="light"] .footer-col h4 { color: #7B3C27; }
+[data-theme="light"] .footer-tagline,
+[data-theme="light"] .footer-col ul li { color: rgba(255,255,255,0.75); }
+[data-theme="light"] .footer-col ul li:hover { color: #C4703F; }
+[data-theme="light"] .footer-bottom { color: rgba(255,255,255,0.5); }
+[data-theme="light"] .social-link { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); }
+[data-theme="light"] .social-link:hover { color: #C4703F; border-color: #C4703F; }
+[data-theme="light"] .social-link-pending:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+
+/* ============================================
+   NAV DROPDOWNS (hover/focus flyouts for Services, Destinations,
+   Packages) -- lets people jump straight to a specific service,
+   destination or package from the nav instead of opening the full
+   page and scrolling to find it.
+   ============================================ */
+.nav-item-dropdown { position: relative; }
+.nav-item-dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.7;
+  vertical-align: middle;
+}
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 1rem;
+  display: flex;
+  gap: 2.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+.nav-dropdown-panel {
+  background: #0D0D0D;
+  border: 1px solid rgba(var(--accent-rgb),0.2);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  gap: 2.25rem;
+}
+.nav-dropdown-single .nav-dropdown-panel { flex-direction: column; gap: 0.1rem; min-width: 230px; }
+.nav-dropdown-col { display: flex; flex-direction: column; gap: 0.1rem; }
+.nav-dropdown-heading {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+.nav-dropdown a {
+  display: block;
+  padding: 0.45rem 0.25rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgba(255,255,255,0.78) !important;
+  white-space: nowrap;
+}
+.nav-dropdown a:hover { color: #F5B942 !important; }
+.nav-item-dropdown:hover .nav-dropdown,
+.nav-item-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+@media (max-width: 1150px) {
+  .nav-dropdown { left: auto; right: -1rem; transform: none; }
+  .nav-item-dropdown:hover .nav-dropdown,
+  .nav-item-dropdown:focus-within .nav-dropdown { transform: translateY(0); }
+}
+
+/* ============================================
+   MOBILE MENU SUBMENUS (accordion, tap to expand)
+   ============================================ */
+.mobile-menu-item { max-width: 420px; margin: 0 auto; width: 100%; }
+.mobile-menu-row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.15);
+}
+.mobile-menu-row a {
+  flex: 1;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+.mobile-submenu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  width: 3.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.25s, color 0.25s;
+}
+.mobile-submenu-toggle:hover { color: var(--gold); }
+.mobile-submenu-toggle.open { transform: rotate(180deg); color: var(--gold); }
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(var(--accent-rgb), 0.05);
+}
+.mobile-submenu.open { max-height: 800px; }
+.mobile-submenu a {
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem 0.85rem 2rem;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.08) !important;
+  color: var(--text-muted);
+}
+.mobile-submenu-heading {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  padding: 0.75rem 1rem 0.25rem 2rem;
+  text-align: left;
 }

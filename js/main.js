@@ -542,6 +542,57 @@ window.closeDestinationDetail = function () {
   document.querySelector('.dest-hero')?.scrollIntoView({ behavior: 'smooth' });
 };
 
+// Go straight to a specific destination's detail view -- used by the nav
+// dropdown so people don't have to open Destinations and scroll to find it.
+window.goToDestination = async function (destinationId) {
+  await showPage('destinations');
+  setTimeout(() => showDestinationDetail(destinationId), 50);
+};
+
+// Go straight to a specific package, expanding its accordion panel --
+// used by the nav dropdown, mirrors goToService/goToDestination above.
+window.goToPackage = async function (packageId) {
+  await showPage('packages');
+  setTimeout(() => {
+    const panel = document.getElementById(`pkg-${packageId}`);
+    const toggle = panel?.querySelector('.pkg-accordion-toggle');
+    if (panel && toggle && !panel.classList.contains('pkg-open')) {
+      togglePkgAccordion(toggle);
+    } else if (panel) {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 50);
+};
+
+// Expand/collapse a submenu inside the mobile nav (Services, Destinations,
+// Packages) -- tapping the chevron toggles it; tapping the label itself
+// still navigates straight to the page, same as desktop.
+window.toggleMobileSubmenu = function (btn) {
+  const item = btn.closest('.mobile-menu-item');
+  const submenu = item?.querySelector('.mobile-submenu');
+  if (!submenu) return;
+  const isOpen = submenu.classList.contains('open');
+
+  // Close any other open submenu so only one is expanded at a time
+  document.querySelectorAll('.mobile-submenu.open').forEach(el => {
+    if (el !== submenu) {
+      el.classList.remove('open');
+      el.previousElementSibling?.querySelector('.mobile-submenu-toggle')?.classList.remove('open');
+    }
+  });
+
+  submenu.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+};
+
+// Mobile submenu links close the mobile menu, then run the same
+// goTo* navigation the desktop dropdown uses.
+window.mobileGoTo = function (fn, ...args) {
+  closeMobileMenu();
+  setTimeout(() => window[fn](...args), 200);
+};
+
 // ============================================
 // THEME TOGGLE (dark default, light optional)
 // ============================================

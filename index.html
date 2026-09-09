@@ -41,9 +41,61 @@
   <ul class="nav-links">
     <li><a onclick="showPage('home')" role="button" data-page="home" class="active">Home</a></li>
     <li><a onclick="showPage('about')" role="button" data-page="about">About</a></li>
-    <li><a onclick="showPage('services')" role="button" data-page="services">Services</a></li>
-    <li><a onclick="showPage('destinations')" role="button" data-page="destinations">Destinations</a></li>
-    <li><a onclick="showPage('packages')" role="button" data-page="packages">Packages</a></li>
+    <li class="nav-item-dropdown">
+      <a onclick="showPage('services')" role="button" data-page="services" aria-haspopup="true" aria-expanded="false">Services</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <a role="menuitem" onclick="goToService('visa')">Visa Planning</a>
+            <a role="menuitem" onclick="goToService('documentation')">Visa Documentation</a>
+            <a role="menuitem" onclick="goToService('hotel')">Hotel Booking</a>
+            <a role="menuitem" onclick="goToService('transfers')">Airport Transfers</a>
+            <a role="menuitem" onclick="goToService('flights')">Flight Ticketing</a>
+            <a role="menuitem" onclick="goToService('insurance')">Travel Insurance</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <a role="menuitem" onclick="goToService('uganda')">Uganda Tours</a>
+            <a role="menuitem" onclick="goToService('international')">International Tours</a>
+            <a role="menuitem" onclick="goToService('advisory')">Travel Advisory</a>
+            <a role="menuitem" onclick="goToService('events')">Event &amp; Group Travel</a>
+            <a role="menuitem" onclick="goToService('restaurants')">Restaurant Reservations</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown">
+      <a onclick="showPage('destinations')" role="button" data-page="destinations" aria-haspopup="true" aria-expanded="false">Destinations</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">Uganda</div>
+            <a role="menuitem" onclick="goToDestination('bwindi')">Bwindi Forest</a>
+            <a role="menuitem" onclick="goToDestination('queen')">Queen Elizabeth NP</a>
+            <a role="menuitem" onclick="goToDestination('jinja')">Jinja — Source of the Nile</a>
+            <a role="menuitem" onclick="goToDestination('ssese')">Ssese Islands</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">International</div>
+            <a role="menuitem" onclick="goToDestination('bali')">Bali, Indonesia</a>
+            <a role="menuitem" onclick="goToDestination('dubai')">Dubai, UAE</a>
+            <a role="menuitem" onclick="goToDestination('paris')">Paris, France</a>
+            <a role="menuitem" onclick="goToDestination('maldives')">Maldives</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown nav-dropdown-single">
+      <a onclick="showPage('packages')" role="button" data-page="packages" aria-haspopup="true" aria-expanded="false">Packages</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <a role="menuitem" onclick="goToPackage('uganda-safari')">Uganda Safari</a>
+          <a role="menuitem" onclick="goToPackage('honeymoon')">Honeymoon</a>
+          <a role="menuitem" onclick="goToPackage('business')">Business Travel</a>
+          <a role="menuitem" onclick="goToPackage('celebrations')">Celebrations</a>
+          <a role="menuitem" onclick="goToPackage('family')">Family Holiday</a>
+        </div>
+      </div>
+    </li>
     <li><a class="nav-cta" onclick="showPage('contact')" role="button" data-page="contact">Plan My Trip</a></li>
   </ul>
   <div class="nav-actions">
@@ -62,11 +114,62 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-  <a onclick="navTo('home')">Home</a>
-  <a onclick="navTo('about')">About</a>
-  <a onclick="navTo('services')">Services</a>
-  <a onclick="navTo('destinations')">Destinations</a>
-  <a onclick="navTo('packages')">Packages</a>
+  <div class="mobile-menu-item"><a onclick="navTo('home')">Home</a></div>
+  <div class="mobile-menu-item"><a onclick="navTo('about')">About</a></div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a onclick="navTo('services')">Services</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Services submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a onclick="mobileGoTo('goToService','visa')">Visa Planning</a>
+      <a onclick="mobileGoTo('goToService','documentation')">Visa Documentation</a>
+      <a onclick="mobileGoTo('goToService','hotel')">Hotel Booking</a>
+      <a onclick="mobileGoTo('goToService','transfers')">Airport Transfers</a>
+      <a onclick="mobileGoTo('goToService','flights')">Flight Ticketing</a>
+      <a onclick="mobileGoTo('goToService','insurance')">Travel Insurance</a>
+      <a onclick="mobileGoTo('goToService','uganda')">Uganda Tours</a>
+      <a onclick="mobileGoTo('goToService','international')">International Tours</a>
+      <a onclick="mobileGoTo('goToService','advisory')">Travel Advisory</a>
+      <a onclick="mobileGoTo('goToService','events')">Event &amp; Group Travel</a>
+      <a onclick="mobileGoTo('goToService','restaurants')">Restaurant Reservations</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a onclick="navTo('destinations')">Destinations</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Destinations submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-heading">Uganda</div>
+      <a onclick="mobileGoTo('goToDestination','bwindi')">Bwindi Forest</a>
+      <a onclick="mobileGoTo('goToDestination','queen')">Queen Elizabeth NP</a>
+      <a onclick="mobileGoTo('goToDestination','jinja')">Jinja — Source of the Nile</a>
+      <a onclick="mobileGoTo('goToDestination','ssese')">Ssese Islands</a>
+      <div class="mobile-submenu-heading">International</div>
+      <a onclick="mobileGoTo('goToDestination','bali')">Bali, Indonesia</a>
+      <a onclick="mobileGoTo('goToDestination','dubai')">Dubai, UAE</a>
+      <a onclick="mobileGoTo('goToDestination','paris')">Paris, France</a>
+      <a onclick="mobileGoTo('goToDestination','maldives')">Maldives</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a onclick="navTo('packages')">Packages</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Packages submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a onclick="mobileGoTo('goToPackage','uganda-safari')">Uganda Safari</a>
+      <a onclick="mobileGoTo('goToPackage','honeymoon')">Honeymoon</a>
+      <a onclick="mobileGoTo('goToPackage','business')">Business Travel</a>
+      <a onclick="mobileGoTo('goToPackage','celebrations')">Celebrations</a>
+      <a onclick="mobileGoTo('goToPackage','family')">Family Holiday</a>
+    </div>
+  </div>
+
   <a onclick="navTo('contact')" class="mobile-cta">Plan My Trip</a>
 </div>
 
