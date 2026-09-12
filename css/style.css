@@ -119,6 +119,8 @@ nav.scrolled {
 }
 .nav-links a:hover,
 .nav-links a.active { color: #F5B942; }
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active { color: #7B3C27; }
 .nav-cta {
   display: inline-block;
   font-size: 0.75rem;
@@ -267,6 +269,9 @@ nav.scrolled {
   text-shadow: 0 1px 8px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9);
   margin-bottom: 1.5rem;
 }
+/* Light-mode spec calls for the darker gold-dark tan here specifically,
+   not the brighter gold-light this uses in dark theme. */
+[data-theme="light"] .hero-eyebrow { color: #7B3C27; }
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 7vw, 5.5rem);
@@ -277,6 +282,7 @@ nav.scrolled {
   margin-bottom: 1.5rem;
 }
 .hero-title em { font-style: italic; color: #F5B942; text-shadow: 0 1px 4px rgba(0,0,0,0.7); }
+[data-theme="light"] .hero-title em { color: #7B3C27; }
 .hero-subtitle {
   font-size: 1rem;
   font-weight: 300;
@@ -408,6 +414,8 @@ section { padding: 6rem 4rem; }
 .uganda-banner-hero .section-eyebrow { color: #F5B942; }
 .uganda-banner-hero .section-title { color: #FFFFFF; }
 .uganda-banner-hero .section-title em { color: var(--gold-light); }
+[data-theme="light"] .uganda-banner-hero .section-eyebrow { color: #7B3C27; }
+[data-theme="light"] .uganda-banner-hero .section-title em { color: #7B3C27; }
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -417,6 +425,11 @@ section { padding: 6rem 4rem; }
   margin-bottom: 1.2rem;
 }
 .section-title em { font-style: italic; color: var(--gold-light); }
+/* Scoped to each page's top hero heading only (e.g. "Our Services") --
+   nested section titles further down a page (e.g. "Airport Transfers"
+   inside a service detail block) keep the lighter gold-light tone, which
+   already matches the spec's separate, slightly different tan for those. */
+[data-theme="light"] .page-hero .section-title em { color: #7B3C27; }
 .section-text {
   font-size: 0.95rem;
   color: var(--text-light);
@@ -448,14 +461,17 @@ section { padding: 6rem 4rem; }
   cursor: default;
 }
 .service-card:hover { background: #C2603D; }
-.service-card:hover .service-num,
-[data-theme="light"] .service-card:hover .service-num { color: #000000; }
+.service-card:hover .service-num { color: #000000; }
+[data-theme="light"] .service-card:hover .service-num { color: #FFFFFF; }
 .service-card:hover .service-desc { color: rgba(255,255,255,0.92); }
 .service-card:hover .service-title { color: #F5B942; }
-.service-card:hover .service-tag,
-[data-theme="light"] .service-card:hover .service-tag {
+.service-card:hover .service-tag {
   color: #000000;
   border-bottom-color: rgba(0,0,0,0.35);
+}
+[data-theme="light"] .service-card:hover .service-tag {
+  color: #C47040;
+  border-bottom-color: rgba(196,112,64,0.4);
 }
 .service-num {
   font-family: 'Cormorant Garamond', serif;
@@ -631,6 +647,10 @@ section { padding: 6rem 4rem; }
   margin-bottom: 0.2rem;
 }
 .dest-sub { font-size: 0.72rem; color: #F5B942; text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85); letter-spacing: 0.15em; text-transform: uppercase; }
+/* Light-mode spec: destination name goes tan, the category line under it
+   goes white -- the reverse of what these are in dark theme. */
+[data-theme="light"] .dest-name { color: #7B3C27; }
+[data-theme="light"] .dest-sub { color: #FFFFFF; }
 
 /* ============================================
    ABOUT
@@ -1258,6 +1278,12 @@ footer {
   transition: color var(--transition);
   user-select: none;
 }
+/* Nav stays a fixed dark bar in both themes, but --text-light in light
+   theme is a dark brown meant for light backgrounds -- here it lands on
+   the dark nav and goes nearly invisible. Pin to white + tan like the
+   rest of the nav's light-theme accents. */
+[data-theme="light"] .theme-toggle-label { color: #FFFFFF; }
+[data-theme="light"] .theme-toggle { color: #FFFFFF; }
 
 .theme-toggle {
   background: none;
@@ -1540,6 +1566,7 @@ footer {
   font-size: 1.2rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85);
 }
+[data-theme="light"] .featured-caption-title { color: #7B3C27; }
 .featured-caption-location {
   color: #FFFFFF;
   font-size: 0.8rem;
@@ -1596,7 +1623,9 @@ footer {
 [data-theme="light"] .footer-col ul li { color: rgba(255,255,255,0.75); }
 [data-theme="light"] .footer-col ul li:hover { color: #C4703F; }
 [data-theme="light"] .footer-bottom { color: rgba(255,255,255,0.5); }
-[data-theme="light"] .social-link { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); }
+.footer-tagline-mark { color: var(--gold); }
+[data-theme="light"] .footer-tagline-mark { color: #7B3C27; }
+[data-theme="light"] .social-link { color: #7B3C27; border-color: rgba(123,60,39,0.3); }
 [data-theme="light"] .social-link:hover { color: #C4703F; border-color: #C4703F; }
 [data-theme="light"] .social-link-pending:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
 
