@@ -523,7 +523,7 @@ section { padding: 6rem 4rem; }
 .pkg-card:hover .pkg-features li { color: rgba(255,255,255,0.92); border-bottom-color: rgba(255,255,255,0.15); }
 .pkg-card:hover .pkg-features li::before { color: #F5B942; }
 .pkg-card:hover .pkg-badge { background: #FFFFFF; color: #000000; }
-.pkg-card:hover .pkg-cta { background: #FFFFFF; color: #000000; border-color: #FFFFFF; }
+.pkg-card:hover .pkg-cta { background: #FFFFFF; color: #000000; border-color: #000000; }
 .pkg-img {
   height: 220px;
   background-size: cover;
@@ -566,16 +566,16 @@ section { padding: 6rem 4rem; }
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--white);
-  background: transparent;
-  border: 1px solid transparent;
+  color: #FFFFFF;
+  background: #000000;
+  border: 1px solid #FFFFFF;
   padding: 0.7rem 1.5rem;
   cursor: pointer;
   font-family: 'Jost', sans-serif;
   transition: all var(--transition);
   width: 100%;
 }
-.pkg-cta:hover { background: #FFFFFF; color: #000000; border-color: #FFFFFF; }
+.pkg-cta:hover { background: #FFFFFF; color: #000000; border-color: #000000; }
 
 /* ============================================
    DESTINATIONS
@@ -1585,13 +1585,6 @@ footer {
 [data-theme="light"] .pkg-card:hover .pkg-desc,
 [data-theme="light"] .pkg-card:hover .pkg-features li,
 [data-theme="light"] .testimonial-card:hover .testimonial-quote { color: #FFFFFF; }
-
-/* Image-caption accent text (Wildlife Safari card, destination grid
-   subtitles) -- was a fixed bright gold meant only for dark backdrops;
-   the shadow raise above (.featured-caption / .dest-overlay) keeps this
-   legible against the photo. */
-[data-theme="light"] .featured-caption-title,
-[data-theme="light"] .dest-sub { color: #7B3C27; }
 
 /* Footer: background stays fixed black in both themes, but its text
    colors were pulling from theme variables tuned for a LIGHT background
