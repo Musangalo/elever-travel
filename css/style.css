@@ -1613,6 +1613,18 @@ footer {
 [data-theme="light"] .pkg-card:hover .pkg-features li,
 [data-theme="light"] .testimonial-card:hover .testimonial-quote { color: #FFFFFF; }
 
+/* .service-card.clickable:hover .service-tag (line ~1172) hardcodes black
+   at the same specificity as the light-theme override above and sits
+   later in the file, so it was winning and leaving "Click to learn more"
+   unreadable (black-on-brown) on every clickable service card in light
+   theme. Match it to the service-title tan so the label and CTA agree,
+   per spec. */
+[data-theme="light"] .service-card:hover .service-tag,
+[data-theme="light"] .service-card.clickable:hover .service-tag {
+  color: #C47040;
+  border-bottom-color: rgba(196,112,64,0.4);
+}
+
 /* Footer: background stays fixed black in both themes, but its text
    colors were pulling from theme variables tuned for a LIGHT background
    -- in light mode that meant low-contrast brown-on-black links. Pin
