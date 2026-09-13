@@ -246,7 +246,7 @@ nav.scrolled {
   background:
     radial-gradient(ellipse 70% 60% at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.2) 100%),
     linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.9) 100%),
-    url('https://images.unsplash.com/photo-1663498798455-8ce6d44d4505?w=1800&q=80') center/cover no-repeat;
+    url('../assets/photos/large/home-hero-top.jpg') center/cover no-repeat;
 }
 .hero-content {
   position: relative;
@@ -481,14 +481,21 @@ section { padding: 6rem 4rem; }
   transition: background var(--transition);
   cursor: default;
 }
-.service-card:hover { background: #C2603D; }
-.service-card:hover .service-num { color: #000000; }
+/* Dark gold, matching the "Start Planning" button (--gold-dark) -- was a
+   burnt orange that didn't match the button/CTA palette elsewhere on dark
+   mode cards. */
+.service-card:hover { background: #866335; }
+/* White, not black -- the number was nearly unreadable against the tile's
+   hover background. */
+.service-card:hover .service-num { color: #FFFFFF; }
 [data-theme="light"] .service-card:hover .service-num { color: #FFFFFF; }
 .service-card:hover .service-desc { color: rgba(255,255,255,0.92); }
 .service-card:hover .service-title { color: #F5B942; }
+/* Gold, not black -- matches the light-theme tag color below and the rest
+   of the gold hover text on this tile. */
 .service-card:hover .service-tag {
-  color: #000000;
-  border-bottom-color: rgba(0,0,0,0.35);
+  color: #F5B942;
+  border-bottom-color: rgba(245,185,66,0.4);
 }
 [data-theme="light"] .service-card:hover .service-tag {
   color: #F5B942;
@@ -505,10 +512,16 @@ section { padding: 6rem 4rem; }
 .service-title {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--white);
+  /* Gold at rest, matching "Travel Collections" (.page-hero .section-eyebrow)
+     -- dark mode now shows this permanently, not just on hover. */
+  color: #F5B942;
   letter-spacing: 0.05em;
   margin-bottom: 0.8rem;
 }
+/* Light theme keeps its original look here (dark text on the card's light
+   cream background) -- the bright gold above is tuned for dark backgrounds
+   and washes out against light cream, same issue as elsewhere in this file. */
+[data-theme="light"] .service-title { color: var(--white); }
 .service-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
 .service-tag {
   display: inline-block;
@@ -553,7 +566,8 @@ section { padding: 6rem 4rem; }
 .pkg-card:hover {
   transform: translateY(-4px);
   border-color: rgba(var(--accent-rgb),0.35);
-  background: #C2603D;
+  /* Dark gold, matching the "Start Planning" button -- see .service-card:hover. */
+  background: #866335;
 }
 .pkg-card:hover .pkg-name { color: #F5B942; }
 .pkg-card:hover .pkg-desc { color: rgba(255,255,255,0.92); }
@@ -583,9 +597,13 @@ section { padding: 6rem 4rem; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   font-weight: 400;
-  color: var(--gold);
+  /* Gold at rest, matching "Travel Collections" -- see .service-title above. */
+  color: #F5B942;
   margin-bottom: 0.5rem;
 }
+/* Light theme keeps its original rust-gold here -- the bright gold above
+   washes out against the card's light cream background at rest. */
+[data-theme="light"] .pkg-name { color: var(--gold); }
 .pkg-desc { font-size: 0.83rem; color: var(--white); opacity: 0.85; line-height: 1.7; margin-bottom: 1.2rem; }
 .pkg-features { list-style: none; margin-bottom: 1.5rem; }
 .pkg-features li {
@@ -603,9 +621,14 @@ section { padding: 6rem 4rem; }
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #FFFFFF;
-  background: #000000;
-  border: 1px solid #FFFFFF;
+  /* var(--white) instead of a hardcoded #FFFFFF -- that token already flips
+     to a dark color in the light theme (see the [data-theme="light"] root
+     override above), so a transparent button here stays readable against
+     the light theme's light cream card instead of turning into invisible
+     white-on-cream. */
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--white);
   padding: 0.7rem 1.5rem;
   cursor: pointer;
   font-family: 'Jost', sans-serif;
@@ -736,7 +759,8 @@ section { padding: 6rem 4rem; }
   padding: 2rem;
   transition: background var(--transition);
 }
-.testi-card:hover { background: #C2603D; }
+/* Dark gold, matching the "Start Planning" button -- see .service-card:hover. */
+.testi-card:hover { background: #866335; }
 .testi-card:hover .testi-stars { color: #F5B942; }
 .testi-card:hover .testi-text { color: #FFFFFF; }
 .testi-card:hover .testi-author { color: #F5B942; }
@@ -1262,8 +1286,8 @@ footer {
 }
 
 .service-card.clickable:hover .service-tag {
-  color: #000000;
-  border-bottom-color: rgba(0,0,0,0.35);
+  color: #F5B942;
+  border-bottom-color: rgba(245,185,66,0.4);
   transform: translateX(4px);
 }
 
@@ -1489,16 +1513,16 @@ footer {
   margin-top: 3rem;
 }
 
-/* Testimonial cards -- restores the hover treatment that matches every
-   other card on the site (.service-card, .pkg-card): same terracotta
-   background, same gold/white text flip on hover. */
+/* Testimonial cards -- matches every other card on the site (.service-card,
+   .pkg-card): same dark-gold background (matching the "Start Planning"
+   button), same gold/white text flip on hover. */
 .testimonial-card {
   background: var(--dark-2);
   padding: 2rem;
   border: 1px solid rgba(var(--accent-rgb),0.1);
   transition: background var(--transition);
 }
-.testimonial-card:hover { background: #C2603D; }
+.testimonial-card:hover { background: #866335; }
 .testimonial-stars { color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem; }
 .testimonial-quote { color: var(--text-light); font-style: italic; line-height: 1.7; }
 .testimonial-author { margin-top: 1rem; color: var(--gold); font-size: 0.8rem; }
@@ -1726,12 +1750,9 @@ footer {
 [data-theme="light"] .pkg-card:hover .pkg-features li,
 [data-theme="light"] .testimonial-card:hover .testimonial-quote { color: #FFFFFF; }
 
-/* .service-card.clickable:hover .service-tag (line ~1172) hardcodes black
-   at the same specificity as the light-theme override above and sits
-   later in the file, so it was winning and leaving "Click to learn more"
-   unreadable (black-on-brown) on every clickable service card in light
-   theme. Match it to the service-title tan so the label and CTA agree,
-   per spec. */
+/* Explicit light-theme values, redundant with the base (dark-theme) rules
+   now that both themes use the same gold -- kept for documentation, same
+   as the other light-theme overrides in this block. */
 [data-theme="light"] .service-card:hover .service-tag,
 [data-theme="light"] .service-card.clickable:hover .service-tag {
   color: #F5B942;
