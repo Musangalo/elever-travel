@@ -185,3 +185,60 @@
     </div>
   </div>
 </section>
+
+<!-- ============================================
+   SHARE YOUR EXPERIENCE (client review submission)
+   No accounts needed -- this posts straight to the same
+   Formspree inbox the enquiry forms already use, tagged
+   with its own subject line so reviews are easy to spot.
+   Our team reads each one and adds approved reviews to
+   the testimonial sections above and on the home page.
+   ============================================ -->
+<section class="review-form-section" id="leaveReview" aria-labelledby="review-form-heading">
+  <div class="section-eyebrow">Been on a Trip With Us?</div>
+  <h2 id="review-form-heading" class="section-title">Share Your <em>Experience</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text" style="max-width: 640px;">We'd love to hear how your journey went. Tell us below — our team reads every review, and yours may be featured on this page.</p>
+
+  <div class="form-card review-form-card" id="reviewFormCard">
+    <div class="form-group">
+      <label for="revName">Your Name *</label>
+      <input type="text" id="revName" placeholder="e.g. Jane Doe">
+      <span class="field-error" id="revName-error">Please enter your name.</span>
+    </div>
+    <div class="form-group">
+      <label for="revLocation">Your Location *</label>
+      <input type="text" id="revLocation" placeholder="e.g. Nairobi, Kenya">
+      <span class="field-error" id="revLocation-error">Please enter your city and country.</span>
+    </div>
+    <div class="form-group">
+      <label>Your Rating *</label>
+      <div class="star-rating" id="starRating">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">★</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">★</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">★</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">★</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">★</label>
+      </div>
+      <span class="field-error" id="revRating-error">Please choose a star rating.</span>
+    </div>
+    <div class="form-group">
+      <label for="revText">Your Review *</label>
+      <textarea id="revText" rows="4" maxlength="600" placeholder="Tell us about your trip..."></textarea>
+      <span class="field-error" id="revText-error">Please write a short review.</span>
+    </div>
+    <!-- Honeypot: hidden from real visitors, only a bot fills this in -->
+    <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+      <label for="companyReview">Company</label>
+      <input type="text" id="companyReview" name="company" tabindex="-1" autocomplete="off">
+    </div>
+    <button class="submit-btn" id="submitReviewBtn" onclick="submitReview()" type="button">Submit Your Review</button>
+    <p class="review-form-note">Reviews are read by our team before they're published — thank you for your patience.</p>
+  </div>
+
+  <div class="form-success" id="reviewFormSuccess" role="alert" aria-live="polite">
+    <div class="check">✓</div>
+    <h3>Thank You!</h3>
+    <p>We've received your review and really appreciate you taking the time to share it.</p>
+  </div>
+</section>

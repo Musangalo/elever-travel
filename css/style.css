@@ -650,12 +650,13 @@ section { padding: 6rem 4rem; }
 }
 .dest-sub { font-size: 0.72rem; color: #F5B942; text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85); letter-spacing: 0.15em; text-transform: uppercase; }
 /* Light-mode spec: destination name goes tan, the category line under it
-   goes white -- the reverse of what these are in dark theme. Same muddy-
-   shadow issue as .featured-caption-title above: drop the heavy black
-   shadow on the tan name since it reads as a smudge, not an edge, against
-   that near-opaque dark overlay. .dest-sub stays white-on-shadow, which
-   still reads crisp. */
-[data-theme="light"] .dest-name { color: #7B3C27; text-shadow: none; }
+   goes white -- the reverse of what these are in dark theme. This lost
+   its shadow entirely once (same fix as .featured-caption-title above),
+   back when the dark overlay behind it was still near-opaque -- since
+   shortened, so the tan name needs its own tight edge-shadow again to
+   stay legible over bright/busy photo backgrounds. .dest-sub stays
+   white-on-shadow, which was always fine. */
+[data-theme="light"] .dest-name { color: #7B3C27; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
 [data-theme="light"] .dest-sub { color: #FFFFFF; }
 
 /* ============================================
@@ -867,6 +868,55 @@ section { padding: 6rem 4rem; }
   margin-bottom: 0.8rem;
 }
 .form-success p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ============================================
+   CLIENT REVIEW SUBMISSION FORM (about.html)
+   Reuses .form-card / .form-group / .submit-btn / .form-success
+   from the contact page above -- only the section wrapper, the
+   card's width, and the star-rating widget are new here.
+   ============================================ */
+.review-form-section {
+  background: var(--dark);
+  /* goToReviewForm() scrolls this into view with block:'start'; without
+     this the fixed nav bar covers the section heading, same reasoning
+     as .form-card's scroll-margin-top above. */
+  scroll-margin-top: 110px;
+}
+.review-form-card {
+  max-width: 620px;
+  margin-top: 2.5rem;
+}
+.review-form-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  text-align: center;
+}
+/* Star rating: radios laid out in reverse DOM order (5..1) then flipped
+   with row-reverse, so visually it reads 1..5 left to right while the
+   CSS-only ~ sibling trick still lights up "this star and every lower
+   one" on hover/checked -- no JS needed for the visual state, JS only
+   reads whichever radio ended up checked on submit. */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+.star-rating input { position: absolute; opacity: 0; width: 0; height: 0; }
+.star-rating label {
+  color: rgba(var(--accent-rgb), 0.25);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: var(--gold);
+}
+.star-rating input:focus-visible + label { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 /* ============================================
    PAGE HERO
@@ -1576,13 +1626,16 @@ footer {
   font-size: 1.2rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85);
 }
-/* The dark gradient behind these captions is already near-opaque (0.94)
-   right where the text sits, so the shadow tuned for the bright dark-theme
-   gold (#F5B942) is redundant there -- and against the darker light-theme
-   tan (#7B3C27) a near-black shadow reads as a muddy smudge instead of a
-   crisp edge, since the two colors are close in value. Drop it in light
-   theme; the gradient alone keeps it legible. */
-[data-theme="light"] .featured-caption-title { color: #7B3C27; text-shadow: none; }
+/* This shadow was dropped when the gradient behind it was still near-
+   opaque (0.94) right where the text sits -- redundant at the time. But
+   the gradient has since been made much shorter/lighter (client feedback
+   that it covered too much of each photo), so the tan title now sits
+   with almost no contrast aid over whatever the photo happens to be at
+   that spot -- unreadable over green foliage, a lion's coat, a pale sky.
+   Bring back a single TIGHT shadow (small blur, no second soft layer) --
+   that reads as a crisp dark edge around the letters rather than the
+   soft muddy halo the old dual-shadow + heavy-gradient combo produced. */
+[data-theme="light"] .featured-caption-title { color: #7B3C27; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
 .featured-caption-location {
   color: #FFFFFF;
   font-size: 0.8rem;

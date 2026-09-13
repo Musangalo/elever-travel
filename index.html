@@ -27,8 +27,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="css/style.css?v=31">
-<link rel="stylesheet" href="css/responsive.css?v=31">
+<link rel="stylesheet" href="css/style.css?v=33">
+<link rel="stylesheet" href="css/responsive.css?v=33">
 </head>
 <body>
 
@@ -96,6 +96,7 @@
         </div>
       </div>
     </li>
+    <li><a onclick="showPage('blog')" role="button" data-page="blog">Blog</a></li>
     <li><a class="nav-cta" onclick="showPage('contact')" role="button" data-page="contact">Plan My Trip</a></li>
   </ul>
   <div class="nav-actions">
@@ -170,6 +171,8 @@
     </div>
   </div>
 
+  <div class="mobile-menu-item"><a onclick="navTo('blog')">Blog</a></div>
+
   <a onclick="navTo('contact')" class="mobile-cta">Plan My Trip</a>
 </div>
 
@@ -217,6 +220,7 @@
         <li onclick="showPage('services')">Services</li>
         <li onclick="showPage('destinations')">Destinations</li>
         <li onclick="showPage('packages')">Packages</li>
+        <li onclick="showPage('blog')">Blog</li>
         <li onclick="showPage('contact')">Contact</li>
       </ul>
     </div>
@@ -251,6 +255,6 @@
 </footer>
 
 <!-- JavaScript -->
-<script src="js/main.js?v=31"></script>
+<script src="js/main.js?v=33"></script>
 </body>
 </html>

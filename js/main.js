@@ -399,6 +399,101 @@ window.submitTransferForm = function () {
     });
 };
 
+// Client review submission (about.html) -- posts to the same Formspree
+// endpoint as the two forms above, tagged with its own subject line so
+// review emails are easy to tell apart from trip/transfer enquiries.
+// There's no visitor account and no live database: someone on our team
+// reads each submission and manually adds approved ones to the
+// testimonial sections, which is what keeps this simple on a static site.
+window.submitReview = function () {
+  const name = document.getElementById('revName').value.trim();
+  const location = document.getElementById('revLocation').value.trim();
+  const text = document.getElementById('revText').value.trim();
+  const ratingInput = document.querySelector('input[name="rating"]:checked');
+  const rating = ratingInput ? ratingInput.value : '';
+
+  // Honeypot
+  const honeypot = document.getElementById('companyReview');
+  if (honeypot && honeypot.value.trim() !== '') {
+    document.getElementById('reviewFormCard').style.display = 'none';
+    document.getElementById('reviewFormSuccess').style.display = 'block';
+    return;
+  }
+
+  document.querySelectorAll('#reviewFormCard .field-error').forEach(e => e.classList.remove('show'));
+  document.querySelectorAll('#reviewFormCard .form-group input, #reviewFormCard .form-group textarea').forEach(el => el.classList.remove('error'));
+
+  let valid = true;
+
+  if (!name) {
+    document.getElementById('revName').classList.add('error');
+    document.getElementById('revName-error').classList.add('show');
+    valid = false;
+  }
+  if (!location) {
+    document.getElementById('revLocation').classList.add('error');
+    document.getElementById('revLocation-error').classList.add('show');
+    valid = false;
+  }
+  if (!rating) {
+    document.getElementById('revRating-error').classList.add('show');
+    valid = false;
+  }
+  if (!text) {
+    document.getElementById('revText').classList.add('error');
+    document.getElementById('revText-error').classList.add('show');
+    valid = false;
+  }
+
+  if (!valid) {
+    document.querySelector('#reviewFormCard .error, #reviewFormCard .field-error.show')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  const btn = document.getElementById('submitReviewBtn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const formData = {
+    name: name,
+    location: location,
+    rating: `${rating} out of 5 stars`,
+    review: text,
+    _subject: `New Review Submission — ${name} (${rating}★)`
+  };
+
+  fetch('https://formspree.io/f/mdajrpny', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById('reviewFormCard').style.display = 'none';
+        document.getElementById('reviewFormSuccess').style.display = 'block';
+        document.getElementById('reviewFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        btn.textContent = 'Submit Your Review';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or WhatsApp us directly at +256 740 748 155.');
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Submit Your Review';
+      btn.disabled = false;
+      alert('Network error. Please check your connection and try again.');
+    });
+};
+
+// Jump straight to the review form on the About page -- used by the
+// "Leave a Review" link on the home page testimonials section.
+window.goToReviewForm = async function () {
+  await showPage('about');
+  setTimeout(() => {
+    document.getElementById('leaveReview')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+};
+
 // Load home page on startup
 document.addEventListener('DOMContentLoaded', function () {
   // Check if there's a hash in the URL
