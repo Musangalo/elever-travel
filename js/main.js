@@ -594,21 +594,23 @@ window.mobileGoTo = function (fn, ...args) {
 };
 
 // ============================================
-// THEME TOGGLE (dark default, light optional)
+// THEME TOGGLE (light default, dark optional)
 // ============================================
 (function () {
   function applyTheme(theme) {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-    } else {
+    if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
     }
     const label = document.getElementById('themeLabel');
     if (label) label.textContent = theme === 'light' ? 'Light' : 'Dark';
   }
 
-  // Apply saved preference (or default to dark) as early as possible
-  const saved = localStorage.getItem('elever-theme') || 'dark';
+  // Apply saved preference (or default to light) as early as possible --
+  // must match the inline <head> script in index.html that runs before
+  // first paint, or the two can disagree and flash/fight each other.
+  const saved = localStorage.getItem('elever-theme') || 'light';
   applyTheme(saved);
 
   document.addEventListener('DOMContentLoaded', function () {

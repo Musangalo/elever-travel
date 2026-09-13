@@ -630,13 +630,15 @@ section { padding: 6rem 4rem; }
 .dest-overlay {
   position: absolute;
   inset: 0;
-  /* Shadow raised further up the image (was 45%/80%) per design review --
-     gives the caption text more dark surface to sit on for clarity. */
-  background: linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.68) 58%, rgba(0,0,0,0.18) 88%);
+  /* Same easing as .featured-caption above: was darkening close to half of
+     every card, which read as a heavy smudge rather than a legibility aid.
+     Shorter falloff gives the photo back while staying dark enough right
+     behind the text. */
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 32%, transparent 55%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 1.1rem 1.3rem;
 }
 .dest-name {
   font-family: 'Cormorant Garamond', serif;
@@ -648,8 +650,12 @@ section { padding: 6rem 4rem; }
 }
 .dest-sub { font-size: 0.72rem; color: #F5B942; text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85); letter-spacing: 0.15em; text-transform: uppercase; }
 /* Light-mode spec: destination name goes tan, the category line under it
-   goes white -- the reverse of what these are in dark theme. */
-[data-theme="light"] .dest-name { color: #7B3C27; }
+   goes white -- the reverse of what these are in dark theme. Same muddy-
+   shadow issue as .featured-caption-title above: drop the heavy black
+   shadow on the tan name since it reads as a smudge, not an edge, against
+   that near-opaque dark overlay. .dest-sub stays white-on-shadow, which
+   still reads crisp. */
+[data-theme="light"] .dest-name { color: #7B3C27; text-shadow: none; }
 [data-theme="light"] .dest-sub { color: #FFFFFF; }
 
 /* ============================================
@@ -1555,10 +1561,14 @@ footer {
 .featured-caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 1.5rem;
-  /* Shadow raised further up the image (was 45%/80%) per design review --
-     gives the caption text more dark surface to sit on for clarity. */
-  background: linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.72) 58%, rgba(0,0,0,0.25) 88%, transparent 100%);
+  padding: 1rem 1.3rem 1.1rem;
+  /* Was raised further up the image (45%/80% -> 58%/88%) for text legibility,
+     but that darkened close to half of every photo -- client feedback was
+     that the shadow itself looked bad and asked for the text lifted/lighter.
+     Tighter padding shrinks the box; a shorter, steeper falloff (fully
+     transparent by 70% instead of 100%) keeps it plenty dark right behind
+     the text while giving back most of the photo above it. */
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 40%, transparent 70%);
 }
 .featured-caption-title {
   color: #F5B942;
@@ -1566,7 +1576,13 @@ footer {
   font-size: 1.2rem;
   text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85);
 }
-[data-theme="light"] .featured-caption-title { color: #7B3C27; }
+/* The dark gradient behind these captions is already near-opaque (0.94)
+   right where the text sits, so the shadow tuned for the bright dark-theme
+   gold (#F5B942) is redundant there -- and against the darker light-theme
+   tan (#7B3C27) a near-black shadow reads as a muddy smudge instead of a
+   crisp edge, since the two colors are close in value. Drop it in light
+   theme; the gradient alone keeps it legible. */
+[data-theme="light"] .featured-caption-title { color: #7B3C27; text-shadow: none; }
 .featured-caption-location {
   color: #FFFFFF;
   font-size: 0.8rem;
@@ -1763,3 +1779,91 @@ footer {
   padding: 0.75rem 1rem 0.25rem 2rem;
   text-align: left;
 }
+
+/* ============================================
+   BLOG / JOURNAL ARTICLE
+   ============================================ */
+.blog-quick-facts {
+  background: var(--dark-2);
+  border: 1px solid rgba(var(--accent-rgb),0.12);
+  padding: 2rem 2.5rem;
+  margin: 2.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem 2.5rem;
+}
+.blog-quick-facts-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+[data-theme="light"] .blog-quick-facts-label { color: var(--gold-dark); }
+.blog-quick-facts-value { font-size: 0.9rem; color: var(--white); line-height: 1.5; }
+
+.blog-section { padding: 4.5rem 4rem; border-bottom: 1px solid rgba(var(--accent-rgb),0.1); }
+.blog-section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.blog-section-inner.reverse { direction: rtl; }
+.blog-section-inner.reverse > * { direction: ltr; }
+.blog-section-image {
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+}
+.blog-section-placeholder {
+  width: 100%;
+  height: 360px;
+  border: 1.5px dashed rgba(var(--accent-rgb),0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(var(--accent-rgb),0.04);
+}
+.blog-section-placeholder-text { color: var(--text-muted); font-size: 0.78rem; line-height: 1.7; max-width: 260px; }
+.blog-region-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+[data-theme="light"] .blog-region-tag { color: var(--gold-dark); }
+.blog-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.blog-section-title em { font-style: italic; color: var(--gold); }
+[data-theme="light"] .blog-section-title em { color: var(--gold-dark); }
+.blog-section-text { color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.95rem; }
+.blog-pull-quote { font-weight: 600; color: var(--white); }
+
+.blog-dining-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.blog-dining-card { background: var(--dark-2); border: 1px solid rgba(var(--accent-rgb),0.1); padding: 1.8rem; }
+.blog-dining-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.3rem; }
+.blog-dining-loc {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  font-style: italic;
+  display: block;
+}
+[data-theme="light"] .blog-dining-loc { color: var(--gold-dark); }
+.blog-dining-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+.blog-checklist { margin-top: 2.5rem; display: grid; gap: 0; }
+.blog-checklist-item { display: grid; grid-template-columns: 50px 1fr; gap: 1.2rem; align-items: start; padding: 1.5rem 0; border-bottom: 1px solid rgba(var(--accent-rgb),0.1); }
+.blog-checklist-item:first-child { padding-top: 0; }
+.blog-checklist-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); line-height: 1; }
+[data-theme="light"] .blog-checklist-num { color: var(--gold-dark); }
+.blog-checklist-title { font-size: 0.95rem; color: var(--white); font-weight: 500; margin-bottom: 0.4rem; }
+.blog-checklist-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }

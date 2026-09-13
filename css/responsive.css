@@ -30,6 +30,23 @@ footer .logo-img.footer-logo-img { width: 380px; height: 100px; margin-bottom: 1
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
+/* Narrow desktop / laptop / "request desktop site" on mobile (901-1400px):
+   the full-size logo (340px) plus the full desktop nav-links (fixed
+   nowrap width, ~770px incl. gaps) simply don't both fit in this band --
+   .nav-logo has flex-shrink:1 so its BOX shrinks to make room, but the
+   <img> inside kept rendering at its fixed 340x90 regardless and
+   overflowed straight over the "Services"/"Destinations" links. Below
+   1400px, shrink both sides: a smaller (but still fixed, same-aspect)
+   logo box, and a tighter nav-links gap/font/CTA so nothing overlaps
+   down to the 900px hamburger handoff. */
+@media (max-width: 1400px) and (min-width: 901px) {
+  nav, nav.scrolled { padding-left: 2rem; padding-right: 2rem; }
+  .nav-logo .logo-img { width: 190px; height: 50px; }
+  .nav-links { gap: 1.1rem; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.1em; }
+  .nav-cta { padding: 0.55rem 1.1rem; font-size: 0.68rem; }
+}
+
 @media (max-width: 900px) {
   nav { padding: 1.2rem 2rem; }
   nav.scrolled { padding: 1rem 2rem; }
@@ -59,6 +76,14 @@ footer .logo-img.footer-logo-img { width: 380px; height: 100px; margin-bottom: 1
   }
   .pkg-highlights { grid-template-columns: 1fr; }
   .pkg-gallery { grid-template-rows: 220px 150px; }
+  .blog-section { padding: 3.5rem 2rem; }
+  .blog-section-inner,
+  .blog-section-inner.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 1.5rem;
+  }
+  .blog-section-image, .blog-section-placeholder { height: 260px; }
   footer { padding: 3rem 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
