@@ -1624,6 +1624,14 @@ footer {
 [data-theme="light"] .testimonial-card:hover .testimonial-stars,
 [data-theme="light"] .testimonial-card:hover .testimonial-author { color: #C47040; }
 
+/* .testi-author wraps the city/country in its own <span> (e.g. "Brian
+   Micah — <span>Nairobi, Kenya</span>"), which the block above does not
+   reach -- it kept falling through to the base `.testi-author span {
+   color: var(--gold) }` rule (tan, not white) on hover in light theme.
+   Spec wants the name and city/country both white on the brown hover
+   card, matching .testi-text. */
+[data-theme="light"] .testi-card:hover .testi-author span { color: #FFFFFF; }
+
 [data-theme="light"] .service-card:hover .service-desc,
 [data-theme="light"] .pkg-card:hover .pkg-desc,
 [data-theme="light"] .pkg-card:hover .pkg-features li,
