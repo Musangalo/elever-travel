@@ -119,8 +119,12 @@ nav.scrolled {
 }
 .nav-links a:hover,
 .nav-links a.active { color: #F5B942; }
-[data-theme="light"] .nav-links a:hover,
-[data-theme="light"] .nav-links a.active { color: #7B3C27; }
+/* No [data-theme="light"] override here on purpose: the nav is a fixed
+   dark scrim in BOTH themes (see the comment on .nav-links a above), so
+   there's no light background for a dark hover/active color to ever be
+   correct against. An earlier light-theme override forced this to
+   #7B3C27 (dark rust) -- invisible against the dark scrim, which is why
+   the current page's nav link (e.g. "Blog") all but disappeared. */
 .nav-cta {
   display: inline-block;
   font-size: 0.75rem;
@@ -404,6 +408,15 @@ section { padding: 6rem 4rem; }
 [data-theme="light"] .section-eyebrow {
   color: var(--gold-dark);
 }
+/* .page-hero is a dark photo banner in BOTH themes (same deal as
+   .uganda-banner-hero below) -- the light-theme override just above is
+   meant for eyebrows sitting on the light theme's cream/khaki section
+   backgrounds, and forcing that same dark rust onto a dark hero photo is
+   what made "THE ELEVER EDIT" nearly invisible on the blog page. Equal
+   selector specificity to the rule above, so source order alone makes
+   this win inside .page-hero, in either theme. */
+.page-hero .section-eyebrow,
+.dest-hero .section-eyebrow { color: #F5B942; }
 /* The Uganda banner on the homepage always sits on its own hardcoded dark
    green photo scrim (rgba(25,45,38,...)), independent of the site theme --
    same deal as .pkg-card/.pkg-cta. var(--white) and the light-theme eyebrow
@@ -414,8 +427,10 @@ section { padding: 6rem 4rem; }
 .uganda-banner-hero .section-eyebrow { color: #F5B942; }
 .uganda-banner-hero .section-title { color: #FFFFFF; }
 .uganda-banner-hero .section-title em { color: var(--gold-light); }
-[data-theme="light"] .uganda-banner-hero .section-eyebrow { color: #7B3C27; }
-[data-theme="light"] .uganda-banner-hero .section-title em { color: #7B3C27; }
+/* No [data-theme="light"] override here, on purpose -- see the comment
+   above. There used to be one forcing both back to #7B3C27 (dark rust),
+   which is exactly the near-black-on-dark-green problem this whole rule
+   exists to avoid; it just snuck back in for light theme specifically. */
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -656,7 +671,12 @@ section { padding: 6rem 4rem; }
    shortened, so the tan name needs its own tight edge-shadow again to
    stay legible over bright/busy photo backgrounds. .dest-sub stays
    white-on-shadow, which was always fine. */
-[data-theme="light"] .dest-name { color: #7B3C27; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
+/* Same white-halo fix as .featured-caption-title above -- a dark shadow
+   behind dark rust text does nothing over a dark/busy patch of photo. */
+[data-theme="light"] .dest-name {
+  color: #7B3C27;
+  text-shadow: 0 0 4px rgba(255,255,255,0.9), 0 0 9px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.4);
+}
 [data-theme="light"] .dest-sub { color: #FFFFFF; }
 
 /* ============================================
@@ -1109,11 +1129,15 @@ footer {
 .footer-col ul li {
   margin-bottom: 0.6rem;
   font-size: 0.82rem;
-  color: var(--text-muted);
+  /* Was var(--text-muted) (grey) at rest, only turning gold on hover --
+     per feedback, the brighter tan people were seeing on hover is the
+     one wanted at rest too, so it's now the resting color and hover
+     brightens further instead of introducing the color from nothing. */
+  color: var(--gold);
   cursor: pointer;
   transition: color var(--transition);
 }
-.footer-col ul li:hover { color: var(--gold); }
+.footer-col ul li:hover { color: var(--gold-light); }
 .footer-social {
   display: flex;
   gap: 1rem;
@@ -1635,7 +1659,15 @@ footer {
    Bring back a single TIGHT shadow (small blur, no second soft layer) --
    that reads as a crisp dark edge around the letters rather than the
    soft muddy halo the old dual-shadow + heavy-gradient combo produced. */
-[data-theme="light"] .featured-caption-title { color: #7B3C27; text-shadow: 0 1px 3px rgba(0,0,0,0.9); }
+/* A dark rust color needs a LIGHT halo to read on a photo, not a dark
+   drop-shadow -- a dark shadow behind already-dark text just blends into
+   any dark/busy patch of the image (exactly what was happening over the
+   foliage and the lion's coat). A soft white glow gives guaranteed
+   contrast no matter how bright or dark that spot in the photo is. */
+[data-theme="light"] .featured-caption-title {
+  color: #7B3C27;
+  text-shadow: 0 0 4px rgba(255,255,255,0.9), 0 0 9px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.4);
+}
 .featured-caption-location {
   color: #FFFFFF;
   font-size: 0.8rem;
@@ -1709,8 +1741,8 @@ footer {
    which already do the same for the same reason. */
 [data-theme="light"] .footer-col h4 { color: #7B3C27; }
 [data-theme="light"] .footer-tagline,
-[data-theme="light"] .footer-col ul li { color: rgba(255,255,255,0.75); }
-[data-theme="light"] .footer-col ul li:hover { color: #C4703F; }
+[data-theme="light"] .footer-col ul li { color: #C4703F; }
+[data-theme="light"] .footer-col ul li:hover { color: #D9915F; }
 [data-theme="light"] .footer-bottom { color: rgba(255,255,255,0.5); }
 .footer-tagline-mark { color: var(--gold); }
 [data-theme="light"] .footer-tagline-mark { color: #7B3C27; }
