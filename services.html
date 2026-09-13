@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Set theme before first paint to avoid a flash of the wrong theme
+  (function () {
+    var t = localStorage.getItem('elever-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services | Elever Travel Management Limited</title>
+<meta name="description" content="Visa guidance, flight ticketing, hotel booking, airport transfers and more — explore the full range of travel services offered by Elever Travel Management Limited.">
+<meta name="keywords" content="luxury travel Uganda, Kampala travel agency, gorilla trekking, Uganda safari, honeymoon packages, business travel Uganda, visa guidance Uganda">
+<meta property="og:title" content="Our Services | Elever Travel Management Limited">
+<meta property="og:description" content="Visa guidance, flight ticketing, hotel booking, airport transfers and more — explore the full range of travel services offered by Elever Travel Management Limited.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elevertravel.com/services.html">
+<meta property="og:image" content="https://elevertravel.com/assets/photos/large/gorilla-vines.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Mountain gorilla, Bwindi Impenetrable Forest, Uganda">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://elevertravel.com/assets/photos/large/gorilla-vines.jpg">
+<link rel="canonical" href="https://elevertravel.com/services.html">
+<link rel="icon" type="image/svg+xml" href="assets/LogoDark.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css?v=34">
+<link rel="stylesheet" href="css/responsive.css?v=34">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Go to home page">
+    <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited logo" class="logo-img logo-img-dark">
+    <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited logo" class="logo-img logo-img-light">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="about.html" data-page="about">About</a></li>
+    <li class="nav-item-dropdown">
+      <a href="services.html" data-page="services" class="active" aria-current="page" aria-haspopup="true" aria-expanded="false">Services</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <a role="menuitem" href="services.html#visa">Visa Planning</a>
+            <a role="menuitem" href="services.html#documentation">Visa Documentation</a>
+            <a role="menuitem" href="services.html#hotel">Hotel Booking</a>
+            <a role="menuitem" href="services.html#transfers">Airport Transfers</a>
+            <a role="menuitem" href="services.html#flights">Flight Ticketing</a>
+            <a role="menuitem" href="services.html#insurance">Travel Insurance</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <a role="menuitem" href="services.html#uganda">Uganda Tours</a>
+            <a role="menuitem" href="services.html#international">International Tours</a>
+            <a role="menuitem" href="services.html#advisory">Travel Advisory</a>
+            <a role="menuitem" href="services.html#events">Event &amp; Group Travel</a>
+            <a role="menuitem" href="services.html#restaurants">Restaurant Reservations</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown">
+      <a href="destinations.html" data-page="destinations" aria-haspopup="true" aria-expanded="false">Destinations</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">Uganda</div>
+            <a role="menuitem" href="destinations.html#bwindi">Bwindi Forest</a>
+            <a role="menuitem" href="destinations.html#queen">Queen Elizabeth NP</a>
+            <a role="menuitem" href="destinations.html#jinja">Jinja — Source of the Nile</a>
+            <a role="menuitem" href="destinations.html#ssese">Ssese Islands</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">International</div>
+            <a role="menuitem" href="destinations.html#bali">Bali, Indonesia</a>
+            <a role="menuitem" href="destinations.html#dubai">Dubai, UAE</a>
+            <a role="menuitem" href="destinations.html#paris">Paris, France</a>
+            <a role="menuitem" href="destinations.html#maldives">Maldives</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown nav-dropdown-single">
+      <a href="packages.html" data-page="packages" aria-haspopup="true" aria-expanded="false">Packages</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <a role="menuitem" href="packages.html#uganda-safari">Uganda Safari</a>
+          <a role="menuitem" href="packages.html#honeymoon">Honeymoon</a>
+          <a role="menuitem" href="packages.html#business">Business Travel</a>
+          <a role="menuitem" href="packages.html#celebrations">Celebrations</a>
+          <a role="menuitem" href="packages.html#family">Family Holiday</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="blog.html" data-page="blog">Blog</a></li>
+    <li><a href="contact.html" data-page="contact" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="theme-toggle-wrapper">
+      <span class="theme-toggle-label" id="themeLabel">Dark</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <span class="sun-icon" aria-hidden="true">☀</span>
+        <span class="moon-icon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-menu-item"><a href="index.html">Home</a></div>
+  <div class="mobile-menu-item"><a href="about.html">About</a></div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="services.html">Services</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Services submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="services.html#visa">Visa Planning</a>
+      <a href="services.html#documentation">Visa Documentation</a>
+      <a href="services.html#hotel">Hotel Booking</a>
+      <a href="services.html#transfers">Airport Transfers</a>
+      <a href="services.html#flights">Flight Ticketing</a>
+      <a href="services.html#insurance">Travel Insurance</a>
+      <a href="services.html#uganda">Uganda Tours</a>
+      <a href="services.html#international">International Tours</a>
+      <a href="services.html#advisory">Travel Advisory</a>
+      <a href="services.html#events">Event &amp; Group Travel</a>
+      <a href="services.html#restaurants">Restaurant Reservations</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="destinations.html">Destinations</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Destinations submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-heading">Uganda</div>
+      <a href="destinations.html#bwindi">Bwindi Forest</a>
+      <a href="destinations.html#queen">Queen Elizabeth NP</a>
+      <a href="destinations.html#jinja">Jinja — Source of the Nile</a>
+      <a href="destinations.html#ssese">Ssese Islands</a>
+      <div class="mobile-submenu-heading">International</div>
+      <a href="destinations.html#bali">Bali, Indonesia</a>
+      <a href="destinations.html#dubai">Dubai, UAE</a>
+      <a href="destinations.html#paris">Paris, France</a>
+      <a href="destinations.html#maldives">Maldives</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="packages.html">Packages</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Packages submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="packages.html#uganda-safari">Uganda Safari</a>
+      <a href="packages.html#honeymoon">Honeymoon</a>
+      <a href="packages.html#business">Business Travel</a>
+      <a href="packages.html#celebrations">Celebrations</a>
+      <a href="packages.html#family">Family Holiday</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item"><a href="blog.html">Blog</a></div>
+
+  <a href="contact.html" class="mobile-cta">Plan My Trip</a>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-float" href="https://wa.me/256740748155" target="_blank" rel="noopener" title="WhatsApp Us" aria-label="Contact us on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════ PAGE CONTENT ═══════════════════ -->
+<main id="pageContent">
+<!-- ============================================
+   SERVICES PAGE - WITH CLICKABLE CARDS & DETAILS
+   ============================================ -->
+
+<!-- HERO -->
+<div class="page-hero" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.92)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1800&q=80') center/cover; padding-top: 8rem;">
+  <div>
+    <div class="section-eyebrow">What We Do</div>
+    <h1 class="section-title">Our <em>Services</em></h1>
+    <p class="page-hero-subtitle">Click on any service below to learn more about how we can help you.</p>
+  </div>
+</div>
+
+<!-- SERVICES LIST -->
+<section>
+  <div class="section-eyebrow">Comprehensive Travel Solutions</div>
+  <h2 class="section-title">Everything Your Journey<br><em>Requires</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text">We offer a complete spectrum of travel services — all under one roof, all delivered with the Elever standard of excellence.</p>
+  
+  <div class="services-grid" style="margin-top: 3rem;">
+    <!-- Service 1 - Visa Planning -->
+    <div class="service-card clickable" onclick="showServiceDetail('visa')" role="button" tabindex="0" aria-label="Learn more about Visa Planning">
+      <div class="service-num">01</div>
+      <div class="service-title">Visa Planning & Consultation</div>
+      <div class="service-desc">We guide you through visa eligibility, requirements, and timing for Uganda and destinations worldwide.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 2 - Visa Documentation -->
+    <div class="service-card clickable" onclick="showServiceDetail('documentation')" role="button" tabindex="0" aria-label="Learn more about Visa Documentation">
+      <div class="service-num">02</div>
+      <div class="service-title">Visa Documentation</div>
+      <div class="service-desc">Full assistance in preparing, compiling, and reviewing all required visa documentation.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 3 - Hotel Booking -->
+    <div class="service-card clickable" onclick="showServiceDetail('hotel')" role="button" tabindex="0" aria-label="Learn more about Hotel Booking">
+      <div class="service-num">03</div>
+      <div class="service-title">Hotel & Resort Booking</div>
+      <div class="service-desc">From boutique safari lodges in Bwindi to 5-star urban properties in Dubai, Paris or New York.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 4 - Airport Transfers -->
+    <div class="service-card clickable" onclick="showServiceDetail('transfers')" role="button" tabindex="0" aria-label="Learn more about Airport Transfers">
+      <div class="service-num">04</div>
+      <div class="service-title">Airport Transfers</div>
+      <div class="service-desc">Private, punctual, premium ground transport. Meet-and-greet service, luxury vehicles, and professional drivers.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 5 - Flight Ticketing -->
+    <div class="service-card clickable" onclick="showServiceDetail('flights')" role="button" tabindex="0" aria-label="Learn more about Flight Ticketing">
+      <div class="service-num">05</div>
+      <div class="service-title">Flight Ticketing</div>
+      <div class="service-desc">Economy, business, and first-class ticketing on all major airlines. We handle multi-leg itineraries and upgrades.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+    
+    <!-- Service 6 - Travel Insurance -->
+    <div class="service-card clickable" onclick="showServiceDetail('insurance')" role="button" tabindex="0" aria-label="Learn more about Travel Insurance">
+      <div class="service-num">06</div>
+      <div class="service-title">Travel Insurance</div>
+      <div class="service-desc">Guidance on comprehensive travel insurance — medical emergencies, trip cancellation, lost luggage, and adventure activity cover.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 7 - Uganda Tours -->
+    <div class="service-card clickable" onclick="showServiceDetail('uganda')" role="button" tabindex="0" aria-label="Learn more about Uganda Tours">
+      <div class="service-num">07</div>
+      <div class="service-title">Uganda Local Tours</div>
+      <div class="service-desc">Gorilla trekking in Bwindi, chimpanzee tracking in Kibale, Queen Elizabeth safaris, the Nile at Jinja.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 8 - International Tours -->
+    <div class="service-card clickable" onclick="showServiceDetail('international')" role="button" tabindex="0" aria-label="Learn more about International Tours">
+      <div class="service-num">08</div>
+      <div class="service-title">International Tours</div>
+      <div class="service-desc">Through our global network of accredited tour operators, we curate experiences across Africa, Europe, Asia, and the Americas.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 9 - Travel Advisory -->
+    <div class="service-card clickable" onclick="showServiceDetail('advisory')" role="button" tabindex="0" aria-label="Learn more about Travel Advisory">
+      <div class="service-num">09</div>
+      <div class="service-title">Travel Advisory</div>
+      <div class="service-desc">Entry requirements, health & safety notes, and seasonal guidance — so you always travel informed.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 10 - Event & Group Travel -->
+    <div class="service-card clickable" onclick="showServiceDetail('events')" role="button" tabindex="0" aria-label="Learn more about Event & Group Travel">
+      <div class="service-num">10</div>
+      <div class="service-title">Event & Group Travel</div>
+      <div class="service-desc">Weddings abroad, milestone celebrations, corporate retreats, incentive travel — we coordinate group logistics seamlessly.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+
+    <!-- Service 11 - Restaurant Reservations -->
+    <div class="service-card clickable" onclick="showServiceDetail('restaurants')" role="button" tabindex="0" aria-label="Learn more about Restaurant Reservations">
+      <div class="service-num">11</div>
+      <div class="service-title">Restaurant Reservations</div>
+      <div class="service-desc">We secure reservations at acclaimed and Michelin-starred restaurants worldwide — from rooftop fine dining to authentic local experiences.</div>
+      <span class="service-tag">Click to learn more →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+   SERVICE DETAIL VIEW (Hidden by default)
+   ============================================ -->
+<div id="serviceDetail" class="detail-panel" style="display: none; background: var(--dark-2);">
+  <button onclick="closeServiceDetail()" style="background: none; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.5rem; cursor: pointer; font-family: 'Jost', sans-serif; margin-bottom: 2rem; transition: all 0.3s;">
+    ← Back to All Services
+  </button>
+  <div id="serviceDetailContent"></div>
+</div>
+
+<!-- ============================================
+   SERVICE DETAIL TEMPLATES (Hidden)
+   ============================================ -->
+<div id="serviceTemplates" style="display: none;">
+
+  <!-- 1. Visa Planning & Consultation -->
+  <div id="detail-visa">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Visa Planning & <em>Consultation</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Comprehensive visa eligibility assessment</li>
+          <li>✓ Step-by-step application guidance</li>
+          <li>✓ Document review and preparation</li>
+          <li>✓ Interview preparation (if required)</li>
+          <li>✓ Timeline management and follow-up</li>
+          <li>✓ All nationalities welcome</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Get Started</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Why Choose Us</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">With over 500+ successful visa applications processed, our team has the expertise to navigate complex visa requirements for destinations worldwide. We stay updated on the latest regulations so you don't have to.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">⭐ High approval track record</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Visa Documentation -->
+  <div id="detail-documentation">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Visa <em>Documentation</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Complete document checklist preparation</li>
+          <li>✓ Cover letter drafting and review</li>
+          <li>✓ Financial statement verification</li>
+          <li>✓ Employment and income verification</li>
+          <li>✓ Travel itinerary and accommodation proof</li>
+          <li>✓ Application form assistance</li>
+          <li>✓ Document translation services (where needed)</li>
+          <li>✓ Application submission support</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Get Visa Support</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Why Choose Us</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">We've successfully supported hundreds of visa applications across all visa types — tourist, business, student, and work visas. Our meticulous attention to documentation has helped our clients achieve one of the highest approval rates in the industry.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">📄 500+ successful applications</p>
+          <p style="color: var(--gold); font-size: 0.85rem; margin-top: 0.5rem;">✅ High approval track record</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Hotel & Resort Booking -->
+  <div id="detail-hotel">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Hotel & Resort <em>Booking</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Curated luxury accommodations worldwide</li>
+          <li>✓ Best available rates and exclusive deals</li>
+          <li>✓ Safari lodges, urban hotels, overwater villas</li>
+          <li>✓ Verified reviews and quality assurance</li>
+          <li>✓ Special requests and preferences accommodated</li>
+          <li>✓ 24/7 booking support</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Book Now</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Global Inventory</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Access to properties in over 100+ countries, from boutique safari lodges in Bwindi to 5-star urban properties in Dubai, Paris, New York, and beyond.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🏨 Premium properties worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Airport Transfers -->
+  <div id="detail-transfers">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Airport <em>Transfers</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Private luxury ground transport</li>
+          <li>✓ Meet-and-greet service</li>
+          <li>✓ Professional, vetted drivers</li>
+          <li>✓ Door-to-door service</li>
+          <li>✓ 24/7 availability</li>
+          <li>✓ Flight tracking for timely pickup</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="goToTransferForm()" style="margin-top: 2rem;">Arrange Transfer</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Premium Service</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Your comfort from touchdown to check-in. Our professional drivers and luxury vehicles ensure you arrive at your destination relaxed and on time.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🚗 Premium vehicles, professional drivers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Flight Ticketing -->
+  <div id="detail-flights">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Flight <em>Ticketing</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Economy, business, and first-class ticketing</li>
+          <li>✓ All major airlines and alliances</li>
+          <li>✓ Multi-leg itinerary management</li>
+          <li>✓ Seat selection and upgrades</li>
+          <li>✓ Best routes and fares</li>
+          <li>✓ 24/7 flight support</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Book Flights</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Worldwide Coverage</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">We work with all major airlines to secure the best routes and fares for your journey. Whether it's a simple round-trip or a complex multi-stop itinerary, we've got you covered.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">✈️ All airlines available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Travel Insurance -->
+  <div id="detail-insurance">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Travel <em>Insurance</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Guidance on medical emergency & evacuation cover</li>
+          <li>✓ Trip cancellation & interruption cover</li>
+          <li>✓ Lost, delayed or damaged luggage cover</li>
+          <li>✓ Cover for adventure activities (gorilla trekking, safaris)</li>
+          <li>✓ Policy comparison across trusted providers</li>
+          <li>✓ Support with claims documentation</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Get Insurance Guidance</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Travel with Confidence</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">From medical emergencies to trip cancellations, the right policy means one less thing to worry about. We help you compare providers and find cover that actually matches your itinerary.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🛡️ Cover that matches your trip</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Uganda Local Tours -->
+  <div id="detail-uganda">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Uganda Local <em>Tours</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Gorilla trekking in Bwindi</li>
+          <li>✓ Chimpanzee tracking in Kibale</li>
+          <li>✓ Queen Elizabeth NP safaris</li>
+          <li>✓ The Nile at Jinja</li>
+          <li>✓ Ssese Islands retreats</li>
+          <li>✓ Expert local guides</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Plan Uganda Tour</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Authentic Experiences</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Uganda is home to half the world's mountain gorillas, vast savannah, misty rainforests, and the source of the Nile. Discover the Pearl of Africa with our expert guides.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🌿 Expert guides, authentic experiences</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. International Tours -->
+  <div id="detail-international">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">International <em>Tours</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Africa (safaris, culture, adventure)</li>
+          <li>✓ Europe (romance, history, cuisine)</li>
+          <li>✓ Asia (temples, beaches, spirituality)</li>
+          <li>✓ Americas (cities, nature, exploration)</li>
+          <li>✓ Verified tour operators</li>
+          <li>✓ Premium experiences worldwide</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Explore the World</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Global Network</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Through our global network of accredited tour operators, we curate experiences across Africa, Europe, Asia, the Americas and beyond — verified, premium, unforgettable.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🌍 Vetted operators worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Travel Advisory -->
+  <div id="detail-advisory">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Travel <em>Advisory</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Entry requirements & visa-on-arrival updates</li>
+          <li>✓ Health & safety guidance per destination</li>
+          <li>✓ Best-time-to-travel recommendations by season</li>
+          <li>✓ Local customs & etiquette insights</li>
+          <li>✓ Currency & documentation alerts</li>
+          <li>✓ Ongoing updates via our travel blog</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('blog')" style="margin-top: 2rem;">Visit Our Blog</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Travel Informed</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Requirements and conditions change. We keep an eye on entry rules, health guidance and seasonal patterns so your trip is planned around current, accurate information — not guesswork.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">📰 Kept current, always</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Event & Group Travel -->
+  <div id="detail-events">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Event & Group <em>Travel</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Destination weddings</li>
+          <li>✓ Milestone celebrations</li>
+          <li>✓ Corporate retreats</li>
+          <li>✓ Incentive travel programs</li>
+          <li>✓ Group logistics coordination</li>
+          <li>✓ Custom event theming</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Plan Your Event</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Celebrate in Style</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Life's greatest milestones deserve more than a dinner party. We turn your celebration into an unforgettable journey, coordinating every detail with elegance and joy.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🎉 Group travel specialists</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Restaurant Reservations -->
+  <div id="detail-restaurants">
+    <div class="section-eyebrow">Service Detail</div>
+    <h2 class="section-title">Restaurant <em>Reservations</em></h2>
+    <div class="gold-line"></div>
+    <div class="detail-grid">
+      <div>
+        <h3 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem;">What We Offer</h3>
+        <ul style="list-style: none; color: var(--text-light); line-height: 2;">
+          <li>✓ Michelin-starred restaurants</li>
+          <li>✓ Exclusive dining experiences</li>
+          <li>✓ Rooftop fine dining</li>
+          <li>✓ Authentic local cuisine</li>
+          <li>✓ Special occasion bookings</li>
+          <li>✓ Worldwide coverage</li>
+        </ul>
+        <button class="btn-primary btn-primary-dark" onclick="showPage('contact')" style="margin-top: 2rem;">Book a Table</button>
+      </div>
+      <div style="background: var(--dark-3); padding: 2rem; border-radius: 4px;">
+        <h4 style="color: #F5B942; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Global Dining</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">We secure reservations at acclaimed and Michelin-starred restaurants worldwide — from rooftop fine dining in Dubai to authentic lakeside meals on Lake Victoria.</p>
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--accent-rgb),0.1);">
+          <p style="color: var(--gold); font-size: 0.85rem;">🍽️ Fine dining worldwide</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- END serviceTemplates -->
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited" class="footer-logo-img logo-img logo-img-dark">
+      <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited" class="footer-logo-img logo-img logo-img-light">
+      <p class="footer-tagline">Elever Travel Management Limited — your full-service luxury travel partner, based in Kampala, Uganda. Serving clients from across the globe with passion, precision, and care.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/256740748155" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+       <a href="https://www.facebook.com/profile.php?id=61593240674179" class="social-link" aria-label="Facebook" title="Facebook page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M15 8.5h2.5V5.5h-2.5c-2.21 0-4 1.79-4 4v2H9v3h2v8h3v-8h2.5l.5-3H14v-1.5c0-.55.45-1 1-1z"/>
+  </svg>
+</a>
+
+<a href="https://www.instagram.com/elevertravels?igsh=MWR0ZGR5bXBjcnNoNg==" class="social-link" aria-label="Instagram" title="Instagram page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5"/>
+    <circle cx="12" cy="12" r="4.2"/>
+    <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/>
+  </svg>
+</a>
+        <a href="mailto:info@elevertravel.com" class="social-link" aria-label="Email us"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+   <div class="footer-col">
+  <h4>Services</h4>
+  <ul>
+    <li><a href="services.html#visa" style="color: inherit; text-decoration: none;">Visa Guidance</a></li>
+    <li><a href="services.html#hotel" style="color: inherit; text-decoration: none;">Hotel Booking</a></li>
+    <li><a href="services.html#flights" style="color: inherit; text-decoration: none;">Flight Ticketing</a></li>
+    <li><a href="services.html#transfers" style="color: inherit; text-decoration: none;">Airport Transfers</a></li>
+    <li><a href="services.html#uganda" style="color: inherit; text-decoration: none;">Uganda Tours</a></li>
+    <li><a href="services.html#international" style="color: inherit; text-decoration: none;">Global Tours</a></li>
+  </ul>
+</div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Plot 7, AHA Towers, Loudel Road</li>
+        <li>Nakasero, Kampala, Uganda</li>
+        <li><a href="mailto:info@elevertravel.com" style="color:inherit;">info@elevertravel.com</a></li>
+        <li><a href="tel:+256200924856" style="color:inherit;">+256 200 924 856</a></li>
+
+        <li>Mon–Sat:8am–8pm EAT</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Elever Travel Management Limited. All rights reserved.</span>
+    <span class="footer-tagline-mark">The Pearl of Africa · The World</span>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/main.js?v=34"></script>
+</body>
+</html>

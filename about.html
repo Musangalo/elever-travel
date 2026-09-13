@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Set theme before first paint to avoid a flash of the wrong theme
+  (function () {
+    var t = localStorage.getItem('elever-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Elever Travel Management Limited</title>
+<meta name="description" content="The story behind Elever Travel Management Limited — a Kampala-based luxury travel agency crafting bespoke safaris, honeymoons and worldwide journeys with local expertise and personal care.">
+<meta name="keywords" content="luxury travel Uganda, Kampala travel agency, gorilla trekking, Uganda safari, honeymoon packages, business travel Uganda, visa guidance Uganda">
+<meta property="og:title" content="About Us | Elever Travel Management Limited">
+<meta property="og:description" content="The story behind Elever Travel Management Limited — a Kampala-based luxury travel agency crafting bespoke safaris, honeymoons and worldwide journeys with local expertise and personal care.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elevertravel.com/about.html">
+<meta property="og:image" content="https://elevertravel.com/assets/photos/large/gorilla-vines.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Mountain gorilla, Bwindi Impenetrable Forest, Uganda">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://elevertravel.com/assets/photos/large/gorilla-vines.jpg">
+<link rel="canonical" href="https://elevertravel.com/about.html">
+<link rel="icon" type="image/svg+xml" href="assets/LogoDark.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css?v=34">
+<link rel="stylesheet" href="css/responsive.css?v=34">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Go to home page">
+    <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited logo" class="logo-img logo-img-dark">
+    <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited logo" class="logo-img logo-img-light">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="about.html" data-page="about" class="active" aria-current="page">About</a></li>
+    <li class="nav-item-dropdown">
+      <a href="services.html" data-page="services" aria-haspopup="true" aria-expanded="false">Services</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <a role="menuitem" href="services.html#visa">Visa Planning</a>
+            <a role="menuitem" href="services.html#documentation">Visa Documentation</a>
+            <a role="menuitem" href="services.html#hotel">Hotel Booking</a>
+            <a role="menuitem" href="services.html#transfers">Airport Transfers</a>
+            <a role="menuitem" href="services.html#flights">Flight Ticketing</a>
+            <a role="menuitem" href="services.html#insurance">Travel Insurance</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <a role="menuitem" href="services.html#uganda">Uganda Tours</a>
+            <a role="menuitem" href="services.html#international">International Tours</a>
+            <a role="menuitem" href="services.html#advisory">Travel Advisory</a>
+            <a role="menuitem" href="services.html#events">Event &amp; Group Travel</a>
+            <a role="menuitem" href="services.html#restaurants">Restaurant Reservations</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown">
+      <a href="destinations.html" data-page="destinations" aria-haspopup="true" aria-expanded="false">Destinations</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">Uganda</div>
+            <a role="menuitem" href="destinations.html#bwindi">Bwindi Forest</a>
+            <a role="menuitem" href="destinations.html#queen">Queen Elizabeth NP</a>
+            <a role="menuitem" href="destinations.html#jinja">Jinja — Source of the Nile</a>
+            <a role="menuitem" href="destinations.html#ssese">Ssese Islands</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">International</div>
+            <a role="menuitem" href="destinations.html#bali">Bali, Indonesia</a>
+            <a role="menuitem" href="destinations.html#dubai">Dubai, UAE</a>
+            <a role="menuitem" href="destinations.html#paris">Paris, France</a>
+            <a role="menuitem" href="destinations.html#maldives">Maldives</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown nav-dropdown-single">
+      <a href="packages.html" data-page="packages" aria-haspopup="true" aria-expanded="false">Packages</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <a role="menuitem" href="packages.html#uganda-safari">Uganda Safari</a>
+          <a role="menuitem" href="packages.html#honeymoon">Honeymoon</a>
+          <a role="menuitem" href="packages.html#business">Business Travel</a>
+          <a role="menuitem" href="packages.html#celebrations">Celebrations</a>
+          <a role="menuitem" href="packages.html#family">Family Holiday</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="blog.html" data-page="blog">Blog</a></li>
+    <li><a href="contact.html" data-page="contact" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="theme-toggle-wrapper">
+      <span class="theme-toggle-label" id="themeLabel">Dark</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <span class="sun-icon" aria-hidden="true">☀</span>
+        <span class="moon-icon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-menu-item"><a href="index.html">Home</a></div>
+  <div class="mobile-menu-item"><a href="about.html">About</a></div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="services.html">Services</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Services submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="services.html#visa">Visa Planning</a>
+      <a href="services.html#documentation">Visa Documentation</a>
+      <a href="services.html#hotel">Hotel Booking</a>
+      <a href="services.html#transfers">Airport Transfers</a>
+      <a href="services.html#flights">Flight Ticketing</a>
+      <a href="services.html#insurance">Travel Insurance</a>
+      <a href="services.html#uganda">Uganda Tours</a>
+      <a href="services.html#international">International Tours</a>
+      <a href="services.html#advisory">Travel Advisory</a>
+      <a href="services.html#events">Event &amp; Group Travel</a>
+      <a href="services.html#restaurants">Restaurant Reservations</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="destinations.html">Destinations</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Destinations submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-heading">Uganda</div>
+      <a href="destinations.html#bwindi">Bwindi Forest</a>
+      <a href="destinations.html#queen">Queen Elizabeth NP</a>
+      <a href="destinations.html#jinja">Jinja — Source of the Nile</a>
+      <a href="destinations.html#ssese">Ssese Islands</a>
+      <div class="mobile-submenu-heading">International</div>
+      <a href="destinations.html#bali">Bali, Indonesia</a>
+      <a href="destinations.html#dubai">Dubai, UAE</a>
+      <a href="destinations.html#paris">Paris, France</a>
+      <a href="destinations.html#maldives">Maldives</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="packages.html">Packages</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Packages submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="packages.html#uganda-safari">Uganda Safari</a>
+      <a href="packages.html#honeymoon">Honeymoon</a>
+      <a href="packages.html#business">Business Travel</a>
+      <a href="packages.html#celebrations">Celebrations</a>
+      <a href="packages.html#family">Family Holiday</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item"><a href="blog.html">Blog</a></div>
+
+  <a href="contact.html" class="mobile-cta">Plan My Trip</a>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-float" href="https://wa.me/256740748155" target="_blank" rel="noopener" title="WhatsApp Us" aria-label="Contact us on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════ PAGE CONTENT ═══════════════════ -->
+<main id="pageContent">
+<!-- ============================================
+   ABOUT PAGE 
+   ============================================ -->
+
+<!-- HERO -->
+<div class="page-hero" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.92)), url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1800&q=80') center/cover; padding-top: 8rem;" role="img" aria-label="African landscape from above">
+  <div>
+    <div class="section-eyebrow">Our Story</div>
+    <h1 class="section-title">About <em>Elever</em></h1>
+    <p class="page-hero-subtitle">Luxury travel with an African heart — serving clients from across the globe with passion, precision, and care.</p>
+  </div>
+</div>
+
+<!-- ABOUT CONTENT -->
+<section>
+  <div class="about-grid">
+    <div class="about-image" role="img" aria-label="Dubai skyline representing our global reach"></div>
+    <div>
+      <div class="section-eyebrow">Who We Are</div>
+      <h2 class="section-title">Luxury Travel,<br><em>African Heart</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-text">Elever Travel Management Limited was founded with one vision: to deliver world-class travel experiences anchored in the warmth and richness of Uganda. Based in Kampala, we are a licensed full-service travel agency serving clients from across the globe who seek the extraordinary.</p>
+      <p class="section-text" style="margin-top: 1.2rem;">We specialise in luxury, bespoke travel — whether you're planning a once-in-a-lifetime honeymoon, a high-stakes business trip, a family celebration, or an adventure into the wild heart of Africa. We handle every detail so your journey is defined only by wonder.</p>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Destinations Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Happy Travellers</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Concierge Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+   WHY CHOOSE ELEVER - FULL SECTION
+   ============================================ -->
+<section style="background: var(--dark-2);">
+  <div class="section-eyebrow">Why Choose Us</div>
+  <h2 class="section-title">The Elever <em>Difference</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text" style="max-width: 700px;">We don't just book travel — we craft journeys. Here's what sets Elever apart from other travel agencies.</p>
+  
+  <!-- Reason 1: Personalised Service -->
+  <div class="reason-block">
+    <div class="reason-text">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;">✦</div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); margin-bottom: 1rem;">Personalised <em style="color: var(--gold-light);">Service</em></h3>
+      <p style="color: var(--text-light); line-height: 1.8;">No cookie-cutter itineraries. Every journey is crafted around your unique desires, preferences, and budget. We take the time to understand what makes your trip special and design every detail accordingly.</p>
+      <ul style="list-style: none; margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+        <li>✓ Custom itineraries tailored to you</li>
+        <li>✓ Personal travel consultant assigned</li>
+        <li>✓ Attention to every detail</li>
+        <li>✓ Flexible and adaptable planning</li>
+      </ul>
+    </div>
+    <div class="reason-image" style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80');"></div>
+  </div>
+  
+  <!-- Reason 2: Local Expertise -->
+  <div class="reason-block reason-block-full">
+    <div class="reason-text">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;">✦</div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); margin-bottom: 1rem;">Local <em style="color: var(--gold-light);">Expertise</em></h3>
+      <p style="color: var(--text-light); line-height: 1.8;">Based in Kampala, we have deep knowledge of Uganda's hidden gems — from the best gorilla trekking permits to secret viewpoints and local experiences that most travellers miss.</p>
+      <ul style="list-style: none; margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+        <li>✓ Uganda-based team with local knowledge</li>
+        <li>✓ Access to exclusive experiences</li>
+        <li>✓ Relationships with top local partners</li>
+        <li>✓ Insider tips and recommendations</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Reason 3: Global Network -->
+  <div class="reason-block">
+    <div class="reason-text">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;">✦</div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); margin-bottom: 1rem;">Global <em style="color: var(--gold-light);">Network</em></h3>
+      <p style="color: var(--text-light); line-height: 1.8;">Our partnerships span continents — from East African safari lodges to Michelin-starred European hotels, and from Asian beach resorts to American city hotels. We have vetted partners everywhere.</p>
+      <ul style="list-style: none; margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+        <li>✓ Vetted tour operators worldwide</li>
+        <li>✓ Best rates at premium properties</li>
+        <li>✓ Trusted partners across 100+ countries</li>
+        <li>✓ Seamless multi-destination planning</li>
+      </ul>
+    </div>
+    <div class="reason-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80');"></div>
+  </div>
+  
+  <!-- Reason 4: End-to-End Management -->
+  <div class="reason-block reason-block-reverse">
+    <div class="reason-text">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;">✦</div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); margin-bottom: 1rem;">End-to-End <em style="color: var(--gold-light);">Management</em></h3>
+      <p style="color: var(--text-light); line-height: 1.8;">From your first visa query to your last airport transfer — we manage every moving part of your journey with precision and care. You focus on the experience; we handle everything else.</p>
+      <ul style="list-style: none; margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+        <li>✓ Visa planning and documentation</li>
+        <li>✓ Flight ticketing and accommodation</li>
+        <li>✓ Airport transfers and ground transport</li>
+        <li>✓ 24/7 support throughout your journey</li>
+      </ul>
+    </div>
+    <div class="reason-image" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80');"></div>
+  </div>
+  
+  <!-- Reason 5: Transparent Pricing -->
+  <div class="reason-block">
+    <div class="reason-text">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem;">✦</div>
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); margin-bottom: 1rem;">Transparent <em style="color: var(--gold-light);">Pricing</em></h3>
+      <p style="color: var(--text-light); line-height: 1.8;">Clear, honest pricing with no hidden fees. We provide detailed breakdowns of all costs so you know exactly what you're paying for. Just exceptional value for an extraordinary experience.</p>
+      <ul style="list-style: none; margin-top: 1.5rem; color: var(--text-light); line-height: 2;">
+        <li>✓ No hidden fees or surprises</li>
+        <li>✓ Detailed cost breakdowns</li>
+        <li>✓ Competitive rates and best value</li>
+        <li>✓ Flexible payment options</li>
+      </ul>
+    </div>
+    <div class="reason-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80');"></div>
+  </div>
+</section>
+
+<!-- ============================================
+   MISSION & VALUES SECTION
+   ============================================ -->
+<section style="background: var(--dark);">
+  <div class="section-eyebrow">Our Mission</div>
+  <h2 class="section-title">What Drives <em>Us</em></h2>
+  <div class="gold-line"></div>
+  
+  <div class="icon-card-grid">
+    <div style="background: var(--dark-2); padding: 2.5rem; border: 1px solid rgba(var(--accent-rgb),0.1);">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;">🎯</div>
+      <h4 style="color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 0.8rem;">Purpose</h4>
+      <p style="color: var(--text-muted); line-height: 1.7;">To create transformative travel experiences that connect people with the world's most extraordinary places and cultures.</p>
+    </div>
+    
+    <div style="background: var(--dark-2); padding: 2.5rem; border: 1px solid rgba(var(--accent-rgb),0.1);">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;">💎</div>
+      <h4 style="color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 0.8rem;">Values</h4>
+      <p style="color: var(--text-muted); line-height: 1.7;">Integrity, excellence, personalisation, and a deep respect for the destinations and communities we serve.</p>
+    </div>
+    
+    <div style="background: var(--dark-2); padding: 2.5rem; border: 1px solid rgba(var(--accent-rgb),0.1);">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;">🌟</div>
+      <h4 style="color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 0.8rem;">Promise</h4>
+      <p style="color: var(--text-muted); line-height: 1.7;">To deliver flawlessly executed journeys that exceed expectations and create memories that last a lifetime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+   WHAT OUR CLIENTS SAY (Additional Testimonials)
+   ============================================ -->
+<section style="background: var(--dark-3);">
+  <div class="section-eyebrow">Trusted by Travellers Worldwide</div>
+  <h2 class="section-title">What Our Clients Say <em>About Us</em></h2>
+  <div class="gold-line"></div>
+  
+  <div class="icon-card-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Elever made our Uganda safari absolutely seamless. From the moment we landed to our final departure, everything was perfectly arranged. The gorilla trekking was life-changing."</p>
+      <div class="testimonial-author">— Sarah & David, UK</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"The business travel package was flawless. VIP airport service, executive hotel, and seamless meetings coordination. Elever is now our company's preferred travel partner."</p>
+      <div class="testimonial-author">— Michael, Kenya</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">"Our honeymoon in Bali was everything we dreamed of and more. The villa was stunning, the experiences were perfectly curated, and every detail was taken care of."</p>
+      <div class="testimonial-author">— Amara & James, Nigeria</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+   SHARE YOUR EXPERIENCE (client review submission)
+   No accounts needed -- this posts straight to the same
+   Formspree inbox the enquiry forms already use, tagged
+   with its own subject line so reviews are easy to spot.
+   Our team reads each one and adds approved reviews to
+   the testimonial sections above and on the home page.
+   ============================================ -->
+<section class="review-form-section" id="leaveReview" aria-labelledby="review-form-heading">
+  <div class="section-eyebrow">Been on a Trip With Us?</div>
+  <h2 id="review-form-heading" class="section-title">Share Your <em>Experience</em></h2>
+  <div class="gold-line"></div>
+  <p class="section-text" style="max-width: 640px;">We'd love to hear how your journey went. Tell us below — our team reads every review, and yours may be featured on this page.</p>
+
+  <div class="form-card review-form-card" id="reviewFormCard">
+    <div class="form-group">
+      <label for="revName">Your Name *</label>
+      <input type="text" id="revName" placeholder="e.g. Jane Doe">
+      <span class="field-error" id="revName-error">Please enter your name.</span>
+    </div>
+    <div class="form-group">
+      <label for="revLocation">Your Location *</label>
+      <input type="text" id="revLocation" placeholder="e.g. Nairobi, Kenya">
+      <span class="field-error" id="revLocation-error">Please enter your city and country.</span>
+    </div>
+    <div class="form-group">
+      <label>Your Rating *</label>
+      <div class="star-rating" id="starRating">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">★</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">★</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">★</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">★</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">★</label>
+      </div>
+      <span class="field-error" id="revRating-error">Please choose a star rating.</span>
+    </div>
+    <div class="form-group">
+      <label for="revText">Your Review *</label>
+      <textarea id="revText" rows="4" maxlength="600" placeholder="Tell us about your trip..."></textarea>
+      <span class="field-error" id="revText-error">Please write a short review.</span>
+    </div>
+    <!-- Honeypot: hidden from real visitors, only a bot fills this in -->
+    <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+      <label for="companyReview">Company</label>
+      <input type="text" id="companyReview" name="company" tabindex="-1" autocomplete="off">
+    </div>
+    <button class="submit-btn" id="submitReviewBtn" onclick="submitReview()" type="button">Submit Your Review</button>
+    <p class="review-form-note">Reviews are read by our team before they're published — thank you for your patience.</p>
+  </div>
+
+  <div class="form-success" id="reviewFormSuccess" role="alert" aria-live="polite">
+    <div class="check">✓</div>
+    <h3>Thank You!</h3>
+    <p>We've received your review and really appreciate you taking the time to share it.</p>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited" class="footer-logo-img logo-img logo-img-dark">
+      <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited" class="footer-logo-img logo-img logo-img-light">
+      <p class="footer-tagline">Elever Travel Management Limited — your full-service luxury travel partner, based in Kampala, Uganda. Serving clients from across the globe with passion, precision, and care.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/256740748155" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+       <a href="https://www.facebook.com/profile.php?id=61593240674179" class="social-link" aria-label="Facebook" title="Facebook page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M15 8.5h2.5V5.5h-2.5c-2.21 0-4 1.79-4 4v2H9v3h2v8h3v-8h2.5l.5-3H14v-1.5c0-.55.45-1 1-1z"/>
+  </svg>
+</a>
+
+<a href="https://www.instagram.com/elevertravels?igsh=MWR0ZGR5bXBjcnNoNg==" class="social-link" aria-label="Instagram" title="Instagram page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5"/>
+    <circle cx="12" cy="12" r="4.2"/>
+    <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/>
+  </svg>
+</a>
+        <a href="mailto:info@elevertravel.com" class="social-link" aria-label="Email us"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+   <div class="footer-col">
+  <h4>Services</h4>
+  <ul>
+    <li><a href="services.html#visa" style="color: inherit; text-decoration: none;">Visa Guidance</a></li>
+    <li><a href="services.html#hotel" style="color: inherit; text-decoration: none;">Hotel Booking</a></li>
+    <li><a href="services.html#flights" style="color: inherit; text-decoration: none;">Flight Ticketing</a></li>
+    <li><a href="services.html#transfers" style="color: inherit; text-decoration: none;">Airport Transfers</a></li>
+    <li><a href="services.html#uganda" style="color: inherit; text-decoration: none;">Uganda Tours</a></li>
+    <li><a href="services.html#international" style="color: inherit; text-decoration: none;">Global Tours</a></li>
+  </ul>
+</div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Plot 7, AHA Towers, Loudel Road</li>
+        <li>Nakasero, Kampala, Uganda</li>
+        <li><a href="mailto:info@elevertravel.com" style="color:inherit;">info@elevertravel.com</a></li>
+        <li><a href="tel:+256200924856" style="color:inherit;">+256 200 924 856</a></li>
+
+        <li>Mon–Sat:8am–8pm EAT</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Elever Travel Management Limited. All rights reserved.</span>
+    <span class="footer-tagline-mark">The Pearl of Africa · The World</span>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/main.js?v=34"></script>
+</body>
+</html>

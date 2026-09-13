@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Set theme before first paint to avoid a flash of the wrong theme
+  (function () {
+    var t = localStorage.getItem('elever-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Packages | Elever Travel Management Limited</title>
+<meta name="description" content="Browse curated safari, honeymoon and holiday packages from Elever Travel Management Limited — Uganda's premier luxury travel agency.">
+<meta name="keywords" content="luxury travel Uganda, Kampala travel agency, gorilla trekking, Uganda safari, honeymoon packages, business travel Uganda, visa guidance Uganda">
+<meta property="og:title" content="Travel Packages | Elever Travel Management Limited">
+<meta property="og:description" content="Browse curated safari, honeymoon and holiday packages from Elever Travel Management Limited — Uganda's premier luxury travel agency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elevertravel.com/packages.html">
+<meta property="og:image" content="https://elevertravel.com/assets/photos/large/gorilla-vines.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Mountain gorilla, Bwindi Impenetrable Forest, Uganda">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://elevertravel.com/assets/photos/large/gorilla-vines.jpg">
+<link rel="canonical" href="https://elevertravel.com/packages.html">
+<link rel="icon" type="image/svg+xml" href="assets/LogoDark.svg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css?v=34">
+<link rel="stylesheet" href="css/responsive.css?v=34">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Go to home page">
+    <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited logo" class="logo-img logo-img-dark">
+    <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited logo" class="logo-img logo-img-light">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="about.html" data-page="about">About</a></li>
+    <li class="nav-item-dropdown">
+      <a href="services.html" data-page="services" aria-haspopup="true" aria-expanded="false">Services</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <a role="menuitem" href="services.html#visa">Visa Planning</a>
+            <a role="menuitem" href="services.html#documentation">Visa Documentation</a>
+            <a role="menuitem" href="services.html#hotel">Hotel Booking</a>
+            <a role="menuitem" href="services.html#transfers">Airport Transfers</a>
+            <a role="menuitem" href="services.html#flights">Flight Ticketing</a>
+            <a role="menuitem" href="services.html#insurance">Travel Insurance</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <a role="menuitem" href="services.html#uganda">Uganda Tours</a>
+            <a role="menuitem" href="services.html#international">International Tours</a>
+            <a role="menuitem" href="services.html#advisory">Travel Advisory</a>
+            <a role="menuitem" href="services.html#events">Event &amp; Group Travel</a>
+            <a role="menuitem" href="services.html#restaurants">Restaurant Reservations</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown">
+      <a href="destinations.html" data-page="destinations" aria-haspopup="true" aria-expanded="false">Destinations</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">Uganda</div>
+            <a role="menuitem" href="destinations.html#bwindi">Bwindi Forest</a>
+            <a role="menuitem" href="destinations.html#queen">Queen Elizabeth NP</a>
+            <a role="menuitem" href="destinations.html#jinja">Jinja — Source of the Nile</a>
+            <a role="menuitem" href="destinations.html#ssese">Ssese Islands</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-heading">International</div>
+            <a role="menuitem" href="destinations.html#bali">Bali, Indonesia</a>
+            <a role="menuitem" href="destinations.html#dubai">Dubai, UAE</a>
+            <a role="menuitem" href="destinations.html#paris">Paris, France</a>
+            <a role="menuitem" href="destinations.html#maldives">Maldives</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item-dropdown nav-dropdown-single">
+      <a href="packages.html" data-page="packages" class="active" aria-current="page" aria-haspopup="true" aria-expanded="false">Packages</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-panel">
+          <a role="menuitem" href="packages.html#uganda-safari">Uganda Safari</a>
+          <a role="menuitem" href="packages.html#honeymoon">Honeymoon</a>
+          <a role="menuitem" href="packages.html#business">Business Travel</a>
+          <a role="menuitem" href="packages.html#celebrations">Celebrations</a>
+          <a role="menuitem" href="packages.html#family">Family Holiday</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="blog.html" data-page="blog">Blog</a></li>
+    <li><a href="contact.html" data-page="contact" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="theme-toggle-wrapper">
+      <span class="theme-toggle-label" id="themeLabel">Dark</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <span class="sun-icon" aria-hidden="true">☀</span>
+        <span class="moon-icon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-menu-item"><a href="index.html">Home</a></div>
+  <div class="mobile-menu-item"><a href="about.html">About</a></div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="services.html">Services</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Services submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="services.html#visa">Visa Planning</a>
+      <a href="services.html#documentation">Visa Documentation</a>
+      <a href="services.html#hotel">Hotel Booking</a>
+      <a href="services.html#transfers">Airport Transfers</a>
+      <a href="services.html#flights">Flight Ticketing</a>
+      <a href="services.html#insurance">Travel Insurance</a>
+      <a href="services.html#uganda">Uganda Tours</a>
+      <a href="services.html#international">International Tours</a>
+      <a href="services.html#advisory">Travel Advisory</a>
+      <a href="services.html#events">Event &amp; Group Travel</a>
+      <a href="services.html#restaurants">Restaurant Reservations</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="destinations.html">Destinations</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Destinations submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-heading">Uganda</div>
+      <a href="destinations.html#bwindi">Bwindi Forest</a>
+      <a href="destinations.html#queen">Queen Elizabeth NP</a>
+      <a href="destinations.html#jinja">Jinja — Source of the Nile</a>
+      <a href="destinations.html#ssese">Ssese Islands</a>
+      <div class="mobile-submenu-heading">International</div>
+      <a href="destinations.html#bali">Bali, Indonesia</a>
+      <a href="destinations.html#dubai">Dubai, UAE</a>
+      <a href="destinations.html#paris">Paris, France</a>
+      <a href="destinations.html#maldives">Maldives</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item">
+    <div class="mobile-menu-row">
+      <a href="packages.html">Packages</a>
+      <button type="button" class="mobile-submenu-toggle" aria-label="Show Packages submenu" aria-expanded="false" onclick="toggleMobileSubmenu(this)">▾</button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="packages.html#uganda-safari">Uganda Safari</a>
+      <a href="packages.html#honeymoon">Honeymoon</a>
+      <a href="packages.html#business">Business Travel</a>
+      <a href="packages.html#celebrations">Celebrations</a>
+      <a href="packages.html#family">Family Holiday</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-item"><a href="blog.html">Blog</a></div>
+
+  <a href="contact.html" class="mobile-cta">Plan My Trip</a>
+</div>
+
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-float" href="https://wa.me/256740748155" target="_blank" rel="noopener" title="WhatsApp Us" aria-label="Contact us on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════ PAGE CONTENT ═══════════════════ -->
+<main id="pageContent">
+<!-- ============================================
+   PACKAGES PAGE
+   ============================================ -->
+
+<!-- HERO -->
+<div class="page-hero" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.92)), url('https://images.unsplash.com/photo-1663498798455-8ce6d44d4505?w=1800&q=80') center/cover; padding-top: 8rem;">
+  <div>
+    <div class="section-eyebrow">Travel Collections</div>
+    <h1 class="section-title">Our <em>Packages</em></h1>
+    <p class="page-hero-subtitle">Every package is fully customisable. Browse for inspiration, then tell us your dream — we'll craft it perfectly around you.</p>
+  </div>
+</div>
+
+<!-- PACKAGE 1: Uganda Safari -->
+<div class="pkg-full pkg-accordion pkg-open" id="pkg-uganda-safari">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="true">
+    <span class="pkg-accordion-index">01</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Uganda Safari</span>
+      <span class="pkg-accordion-title">Pearl of <em>Africa</em> Safari</span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
+  <div class="pkg-full-inner">
+    <div class="pkg-gallery">
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('assets/photos/large/gorilla-vines.jpg');" role="img" aria-label="Mountain gorilla — Pearl of Africa Safari"></div>
+      <div class="pkg-gallery-item" style="background-image: url('assets/photos/large/gorilla-leaf.jpg');" role="img" aria-label="Bwindi Impenetrable Forest"></div>
+      <div class="pkg-gallery-item" style="background-image: url('assets/photos/large/gorilla-undergrowth.jpg');" role="img" aria-label="Bwindi Impenetrable Forest gorillas"></div>
+    </div>
+    <div>
+      <p class="pkg-full-desc">The definitive Uganda experience. Trek through misty forest to meet mountain gorillas face-to-face, watch lions hunt at dusk across Queen Elizabeth's vast plains, and feel the thunder of the Nile at Murchison Falls.</p>
+      
+      <div class="pkg-meta">
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">7–10</div>
+          <div class="pkg-meta-key">Days</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">2–8</div>
+          <div class="pkg-meta-key">People</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">All</div>
+          <div class="pkg-meta-key">Inclusive</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Luxury</div>
+          <div class="pkg-meta-key">Lodges</div>
+        </div>
+      </div>
+      
+      <div class="itinerary">
+        <div class="itinerary-title">Sample Itinerary</div>
+        <div class="itinerary-day">
+          <span class="day-label">Day 1–2</span>
+          <span class="day-text"><strong>Kampala Arrival & City Tour</strong> — Airport pickup, luxury hotel check-in, Kampala city orientation & welcome dinner</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Day 3–4</span>
+          <span class="day-text"><strong>Bwindi Impenetrable Forest</strong> — Gorilla trekking permit, guided trek into the forest, close encounter with mountain gorillas</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Day 5–6</span>
+          <span class="day-text"><strong>Queen Elizabeth NP</strong> — Big Five game drives, Kazinga Channel boat cruise, tree-climbing lions of Ishasha</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Day 7–8</span>
+          <span class="day-text"><strong>Murchison Falls</strong> — Nile boat safari, dramatic falls viewpoint hike, savannah game drive</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Day 9–10</span>
+          <span class="day-text"><strong>Kibale Forest & Departure</strong> — Chimpanzee tracking, cultural village visit, farewell dinner & airport transfer</span>
+        </div>
+      </div>
+      
+      <div class="pkg-highlights">
+        <div class="pkg-highlight-item">Gorilla & chimpanzee trekking permits</div>
+        <div class="pkg-highlight-item">Luxury lodge accommodation throughout</div>
+        <div class="pkg-highlight-item">All meals & park entrance fees</div>
+        <div class="pkg-highlight-item">Private expert naturalist guide</div>
+        <div class="pkg-highlight-item">All internal transfers & flights</div>
+        <div class="pkg-highlight-item">Murchison Falls boat safari</div>
+      </div>
+      
+      <!-- Gallery -->
+      <div style="margin-bottom: 2rem;">
+        <div class="itinerary-title" style="margin-bottom: 0.8rem;">Gallery</div>
+        <div class="mini-gallery-4">
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/gorilla-undergrowth.jpg');" role="img" aria-label="Mountain gorilla, Bwindi"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/lion-yawn.jpg');" role="img" aria-label="Lion, Queen Elizabeth NP"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/nile-falls-wide.jpg');" role="img" aria-label="Murchison Falls on the Nile"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/chimpanzee-fruit-1.jpg');" role="img" aria-label="Chimpanzee tracking, Kibale Forest"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/buffalo-herd.jpg');" role="img" aria-label="African buffalo herd"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/elephant-family.jpg');" role="img" aria-label="Elephant family"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/giraffes-row.jpg');" role="img" aria-label="Giraffes"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/hippos.jpg');" role="img" aria-label="Hippos, Kazinga Channel"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/crested-cranes-pair.jpg');" role="img" aria-label="Grey crowned cranes, Uganda's national bird"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/waterbuck.jpg');" role="img" aria-label="Waterbuck"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/savanna-aerial.jpg');" role="img" aria-label="Uganda savannah, aerial view"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/zebra.jpg');" role="img" aria-label="Zebra"></div>
+          <div class="mini-gallery-item" style="background-image: url('assets/photos/thumb/nile-falls-close.jpg');" role="img" aria-label="Murchison Falls, close view"></div>
+        </div>
+      </div>
+      
+      <button class="btn-primary" onclick="showPage('contact')">Enquire About This Package</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- PACKAGE 2: Romance Escapes -->
+<div class="pkg-full pkg-accordion" id="pkg-honeymoon">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">02</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Honeymoon</span>
+      <span class="pkg-accordion-title">Romance <em>Escapes</em></span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
+  <div class="pkg-full-inner reverse">
+    <div class="pkg-gallery">
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=80');"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=500&q=80');"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80');"></div>
+    </div>
+    <div>
+      <p class="pkg-full-desc">Begin your forever in the world's most breathtaking settings. Whether it's an overwater villa in the Maldives, a cliff-top suite in Santorini, or a private forest lodge in Uganda — we design every detail around your love story.</p>
+      
+      <div class="pkg-meta">
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">5–14</div>
+          <div class="pkg-meta-key">Days</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Couple</div>
+          <div class="pkg-meta-key">Only</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Private</div>
+          <div class="pkg-meta-key">Villa</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Global</div>
+          <div class="pkg-meta-key">Destinations</div>
+        </div>
+      </div>
+      
+      <div class="itinerary">
+        <div class="itinerary-title">Popular Honeymoon Destinations</div>
+        <div class="itinerary-day">
+          <span class="day-label">Option A</span>
+          <span class="day-text"><strong>Maldives</strong> — Overwater bungalow, private beach dinners, snorkelling, sunset dolphin cruise</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Option B</span>
+          <span class="day-text"><strong>Bali, Indonesia</strong> — Rice terrace villa, couples spa retreat, temple tours, clifftop dining</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Option C</span>
+          <span class="day-text"><strong>Santorini, Greece</strong> — Caldera-view suite, private catamaran sailing, wine tasting, volcanic beaches</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Option D</span>
+          <span class="day-text"><strong>Uganda Safari Honeymoon</strong> — Gorilla trekking for two, luxury tented camps, Nile sundowners</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Option E</span>
+          <span class="day-text"><strong>Dubai & Maldives Combo</strong> — City luxury + island paradise in one seamless two-destination journey</span>
+        </div>
+      </div>
+      
+      <div class="pkg-highlights">
+        <div class="pkg-highlight-item">Private villa or overwater suite</div>
+        <div class="pkg-highlight-item">Romantic surprise setups on arrival</div>
+        <div class="pkg-highlight-item">Couples spa & wellness experiences</div>
+        <div class="pkg-highlight-item">Private sunset dinners & wine</div>
+        <div class="pkg-highlight-item">Full visa & flight management</div>
+        <div class="pkg-highlight-item">24/7 concierge throughout</div>
+      </div>
+      
+      <button class="btn-primary" onclick="showPage('contact')">Plan Our Honeymoon</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- PACKAGE 3: Executive Travel -->
+<div class="pkg-full pkg-accordion" id="pkg-business">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">03</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Business Travel</span>
+      <span class="pkg-accordion-title">Executive <em>Travel</em> Suite</span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
+  <div class="pkg-full-inner">
+    <div class="pkg-gallery">
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1627670381216-6f9d317b63e8?w=900&q=80');" role="img" aria-label="Business class airplane cabin seating"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1690935986319-c11e6cae84f7?w=500&q=80');" role="img" aria-label="Luxury hotel room with city view"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1646974400439-321c4a9240b9?w=500&q=80');" role="img" aria-label="Executive hotel suite living area"></div>
+    </div>
+    <div>
+      <p class="pkg-full-desc">Time is your most valuable asset. Our executive travel service ensures you arrive composed, on schedule, and ready to perform — every single trip. From a single business journey to a full corporate travel programme, we manage everything with precision.</p>
+      
+      <div class="pkg-meta">
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Any</div>
+          <div class="pkg-meta-key">Duration</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Solo</div>
+          <div class="pkg-meta-key">or Group</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Global</div>
+          <div class="pkg-meta-key">Coverage</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">24/7</div>
+          <div class="pkg-meta-key">Support</div>
+        </div>
+      </div>
+      
+      <div class="itinerary">
+        <div class="itinerary-title">What We Handle For You</div>
+        <div class="itinerary-day">
+          <span class="day-label">Step 1</span>
+          <span class="day-text"><strong>Visa & Documentation</strong> — Business visa applications, invitation letter coordination, fast-track options</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Step 2</span>
+          <span class="day-text"><strong>Flights</strong> — Business/first class ticketing, preferred airline seats, lounge access arrangements</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Step 3</span>
+          <span class="day-text"><strong>Ground Transport</strong> — Private chauffeur from home to airport, VIP meet & greet on arrival</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Step 4</span>
+          <span class="day-text"><strong>Accommodation</strong> — Executive hotel suites with workspace, reliable Wi-Fi, proximity to meetings</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Step 5</span>
+          <span class="day-text"><strong>In-Destination Support</strong> — Restaurant reservations, local transfers, emergency rebooking if plans change</span>
+        </div>
+      </div>
+      
+      <div class="pkg-highlights">
+        <div class="pkg-highlight-item">Business & first class ticketing</div>
+        <div class="pkg-highlight-item">Executive hotel suites worldwide</div>
+        <div class="pkg-highlight-item">VIP airport lounge & meet-and-greet</div>
+        <div class="pkg-highlight-item">Private chauffeur transfers</div>
+        <div class="pkg-highlight-item">Visa fast-track support</div>
+        <div class="pkg-highlight-item">On-call travel manager 24/7</div>
+      </div>
+      
+      <button class="btn-primary" onclick="showPage('contact')">Set Up Business Travel</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- PACKAGE 4: Celebrations -->
+<div class="pkg-full pkg-accordion" id="pkg-celebrations">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">04</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Celebrations</span>
+      <span class="pkg-accordion-title">Celebration <em>Journeys</em></span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
+  <div class="pkg-full-inner reverse">
+    <div class="pkg-gallery">
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80');"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=500&q=80');"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&q=80');"></div>
+    </div>
+    <div>
+      <p class="pkg-full-desc">Life's greatest milestones deserve more than a dinner party. Whether it's a landmark birthday, an anniversary, a graduation, or a wedding abroad — we turn your celebration into an unforgettable journey, coordinating every detail with elegance and joy.</p>
+      
+      <div class="pkg-meta">
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">3–10</div>
+          <div class="pkg-meta-key">Days</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Groups</div>
+          <div class="pkg-meta-key">Welcome</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Global</div>
+          <div class="pkg-meta-key">Venues</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Custom</div>
+          <div class="pkg-meta-key">Themes</div>
+        </div>
+      </div>
+      
+      <div class="itinerary">
+        <div class="itinerary-title">Popular Celebration Styles</div>
+        <div class="itinerary-day">
+          <span class="day-label">Birthday</span>
+          <span class="day-text"><strong>Luxury Group Getaway</strong> — Private villa, surprise dinner setup, group excursions, chartered sunset cruise</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Anniversary</span>
+          <span class="day-text"><strong>Romantic Renewal</strong> — Return to a dream destination, fine dining, private experiences, renewal ceremony options</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Wedding</span>
+          <span class="day-text"><strong>Destination Wedding</strong> — Venue sourcing, guest coordination, décor, catering, accommodation blocks for all guests</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Corporate</span>
+          <span class="day-text"><strong>Incentive Travel</strong> — Reward your team with an extraordinary group experience — Uganda, Dubai, Europe & beyond</span>
+        </div>
+      </div>
+      
+      <div class="pkg-highlights">
+        <div class="pkg-highlight-item">Group travel coordination</div>
+        <div class="pkg-highlight-item">Event planning, décor & theming</div>
+        <div class="pkg-highlight-item">Private dining & entertainment</div>
+        <div class="pkg-highlight-item">Chartered boats & excursions</div>
+        <div class="pkg-highlight-item">Customised celebration itinerary</div>
+        <div class="pkg-highlight-item">All logistics from start to finish</div>
+      </div>
+      
+      <button class="btn-primary" onclick="showPage('contact')">Plan Our Celebration</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- PACKAGE 5: Family Holidays -->
+<div class="pkg-full pkg-accordion" id="pkg-family">
+  <button type="button" class="pkg-accordion-toggle" onclick="togglePkgAccordion(this)" aria-expanded="false">
+    <span class="pkg-accordion-index">05</span>
+    <span class="pkg-accordion-heading">
+      <span class="pkg-accordion-badge">Family Holiday</span>
+      <span class="pkg-accordion-title">Family <em>Holiday</em> Packages</span>
+    </span>
+    <span class="pkg-accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="pkg-accordion-panel">
+  <div class="pkg-full-inner">
+    <div class="pkg-gallery">
+      <div class="pkg-gallery-main pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1695425812104-8a9963d58887?w=900&q=80');" role="img" aria-label="Family walking together on the beach"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1771945484043-3a17fbf57a4b?w=500&q=80');" role="img" aria-label="Tropical island beach"></div>
+      <div class="pkg-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1597552816368-19555394e9b9?w=500&q=80');" role="img" aria-label="Kids playing in a pool on holiday"></div>
+    </div>
+    <div>
+      <p class="pkg-full-desc">Create memories that your children will carry for a lifetime. Our family packages balance adventure with comfort — wildlife encounters for the curious, beach relaxation for parents, cultural discovery for all.</p>
+      
+      <div class="pkg-meta">
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">7–14</div>
+          <div class="pkg-meta-key">Days</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">All</div>
+          <div class="pkg-meta-key">Ages</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Villas</div>
+          <div class="pkg-meta-key">& Suites</div>
+        </div>
+        <div class="pkg-meta-item">
+          <div class="pkg-meta-val">Global</div>
+          <div class="pkg-meta-key">Options</div>
+        </div>
+      </div>
+      
+      <div class="itinerary">
+        <div class="itinerary-title">Top Family Destinations</div>
+        <div class="itinerary-day">
+          <span class="day-label">Uganda</span>
+          <span class="day-text"><strong>Wildlife & Culture</strong> — Child-friendly game drives, boat safaris, cultural encounters, Ssese Islands beach days</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Dubai</span>
+          <span class="day-text"><strong>Desert & Theme Parks</strong> — Burj Khalifa, Dubai Parks, desert safari, indoor skiing, world-class dining</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Maldives</span>
+          <span class="day-text"><strong>Island Paradise</strong> — Family villa, snorkelling, glass-bottom kayaks, kids club, dolphin watching</span>
+        </div>
+        <div class="itinerary-day">
+          <span class="day-label">Europe</span>
+          <span class="day-text"><strong>Cultural Discovery</strong> — Rome, Paris, or Barcelona — art, history, food, and family-friendly adventures</span>
+        </div>
+      </div>
+      
+      <div class="pkg-highlights">
+        <div class="pkg-highlight-item">Family villas & connecting suites</div>
+        <div class="pkg-highlight-item">Child-friendly activities & kids clubs</div>
+        <div class="pkg-highlight-item">Guided cultural & wildlife experiences</div>
+        <div class="pkg-highlight-item">All airport transfers managed</div>
+        <div class="pkg-highlight-item">Complete visa management for all</div>
+        <div class="pkg-highlight-item">Flexible itineraries at your pace</div>
+      </div>
+      
+      <button class="btn-primary" onclick="showPage('contact')">Plan Our Family Holiday</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- BESPOKE SECTION -->
+<div class="pkg-full" style="background: var(--dark-3);">
+  <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+    <span class="pkg-full-badge">Fully Bespoke</span>
+    <div class="pkg-full-title" style="font-size: 3rem;">Your Dream, <em>Our Craft</em></div>
+    <p class="pkg-full-desc" style="max-width: 100%; margin: 0 auto 2rem;">None of the above quite fits? Perfect — this is where we truly shine. Tell us your destination, your dates, your style, your budget, and your wildest travel dream. We will design a journey so perfectly tailored that it feels like it was made for you — because it was.</p>
+    <button class="btn-primary" onclick="showPage('contact')" style="font-size: 0.85rem; padding: 1.1rem 3rem;">Start Designing My Journey</button>
+  </div>
+  <div class="mini-gallery-4">
+    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=80');" role="img" aria-label="Dubai cityscape"></div>
+    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=500&q=80');" role="img" aria-label="Paris Eiffel Tower"></div>
+    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1753939223042-872934ffda15?w=500&q=80');" role="img" aria-label="Maldives overwater bungalows"></div>
+    <div class="mini-gallery-item" style="background-image: url('https://images.unsplash.com/photo-1632570232156-71809ca287cb?w=500&q=80');" role="img" aria-label="Santorini, Greece blue-domed church"></div>
+  </div>
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited" class="footer-logo-img logo-img logo-img-dark">
+      <img src="assets/LogoLight.svg" alt="Elever Travel Management Limited" class="footer-logo-img logo-img logo-img-light">
+      <p class="footer-tagline">Elever Travel Management Limited — your full-service luxury travel partner, based in Kampala, Uganda. Serving clients from across the globe with passion, precision, and care.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/256740748155" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+       <a href="https://www.facebook.com/profile.php?id=61593240674179" class="social-link" aria-label="Facebook" title="Facebook page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M15 8.5h2.5V5.5h-2.5c-2.21 0-4 1.79-4 4v2H9v3h2v8h3v-8h2.5l.5-3H14v-1.5c0-.55.45-1 1-1z"/>
+  </svg>
+</a>
+
+<a href="https://www.instagram.com/elevertravels?igsh=MWR0ZGR5bXBjcnNoNg==" class="social-link" aria-label="Instagram" title="Instagram page">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5"/>
+    <circle cx="12" cy="12" r="4.2"/>
+    <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/>
+  </svg>
+</a>
+        <a href="mailto:info@elevertravel.com" class="social-link" aria-label="Email us"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+   <div class="footer-col">
+  <h4>Services</h4>
+  <ul>
+    <li><a href="services.html#visa" style="color: inherit; text-decoration: none;">Visa Guidance</a></li>
+    <li><a href="services.html#hotel" style="color: inherit; text-decoration: none;">Hotel Booking</a></li>
+    <li><a href="services.html#flights" style="color: inherit; text-decoration: none;">Flight Ticketing</a></li>
+    <li><a href="services.html#transfers" style="color: inherit; text-decoration: none;">Airport Transfers</a></li>
+    <li><a href="services.html#uganda" style="color: inherit; text-decoration: none;">Uganda Tours</a></li>
+    <li><a href="services.html#international" style="color: inherit; text-decoration: none;">Global Tours</a></li>
+  </ul>
+</div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Plot 7, AHA Towers, Loudel Road</li>
+        <li>Nakasero, Kampala, Uganda</li>
+        <li><a href="mailto:info@elevertravel.com" style="color:inherit;">info@elevertravel.com</a></li>
+        <li><a href="tel:+256200924856" style="color:inherit;">+256 200 924 856</a></li>
+
+        <li>Mon–Sat:8am–8pm EAT</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Elever Travel Management Limited. All rights reserved.</span>
+    <span class="footer-tagline-mark">The Pearl of Africa · The World</span>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/main.js?v=34"></script>
+</body>
+</html>

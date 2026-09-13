@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Previously this sitemap only listed the root URL: the site's about/
+  services/destinations/packages/contact "pages" were loaded client-side
+  into index.html via a URL hash (e.g. /#services) rather than served as
+  separate documents, and search engines strip everything after "#"
+  before indexing -- so every fragment URL resolved to the same indexed
+  page as "/" and had no business being in a sitemap.
+
+  Fixed: each route is now served as its own real document (about.html,
+  services.html, destinations.html, packages.html, contact.html,
+  blog.html), so each can be indexed and rank individually. Listed below.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://elevertravel.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/destinations.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/packages.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
