@@ -272,10 +272,10 @@ nav.scrolled {
   color: var(--gold-light);
   margin-bottom: 1.5rem;
 }
-/* Light mode: same tan as the footer titles/social icons (#C4703F), no
-   text-shadow -- consistent solid-color treatment across the site instead
-   of the darker, shadowed rust this used to carry. */
-[data-theme="light"] .hero-eyebrow { color: #C4703F; }
+/* Bright gold, no text-shadow -- the hero photo behind this is a fixed dark
+   background regardless of theme, same reasoning as .featured-caption-title,
+   so this matches that gold rather than dimming to the light-theme tan. */
+[data-theme="light"] .hero-eyebrow { color: #F5B942; }
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 7vw, 5.5rem);
@@ -286,7 +286,7 @@ nav.scrolled {
   margin-bottom: 1.5rem;
 }
 .hero-title em { font-style: italic; color: #F5B942; }
-[data-theme="light"] .hero-title em { color: #C4703F; }
+[data-theme="light"] .hero-title em { color: #F5B942; }
 .hero-subtitle {
   font-size: 1rem;
   font-weight: 300;
@@ -417,12 +417,12 @@ section { padding: 6rem 4rem; }
    this win inside .page-hero, in either theme. */
 .page-hero .section-eyebrow,
 .dest-hero .section-eyebrow { color: #F5B942; }
-/* Light mode: same tan as the footer titles/social icons (#C4703F) instead
-   of the bright gold above. Higher specificity than the shared rule just
-   above (extra [data-theme] attribute), so this wins in light mode
-   regardless of source order; dark mode is untouched. */
+/* Same bright gold as the shared rule above -- .page-hero/.dest-hero are
+   fixed dark photo banners in both themes, so there's no reason for this to
+   dim to the light-theme tan. Higher specificity than the shared rule just
+   above (extra [data-theme] attribute) keeps this redundant-but-explicit. */
 [data-theme="light"] .page-hero .section-eyebrow,
-[data-theme="light"] .dest-hero .section-eyebrow { color: #C4703F; }
+[data-theme="light"] .dest-hero .section-eyebrow { color: #F5B942; }
 /* The Uganda banner on the homepage always sits on its own hardcoded dark
    green photo scrim (rgba(25,45,38,...)), independent of the site theme --
    same deal as .pkg-card/.pkg-cta. var(--white) and the light-theme eyebrow
@@ -450,7 +450,7 @@ section { padding: 6rem 4rem; }
    nested section titles further down a page (e.g. "Airport Transfers"
    inside a service detail block) keep the lighter gold-light tone, which
    already matches the spec's separate, slightly different tan for those. */
-[data-theme="light"] .page-hero .section-title em { color: #C4703F; }
+[data-theme="light"] .page-hero .section-title em { color: #F5B942; }
 .section-text {
   font-size: 0.95rem;
   color: var(--text-light);
@@ -491,8 +491,8 @@ section { padding: 6rem 4rem; }
   border-bottom-color: rgba(0,0,0,0.35);
 }
 [data-theme="light"] .service-card:hover .service-tag {
-  color: #C47040;
-  border-bottom-color: rgba(196,112,64,0.4);
+  color: #F5B942;
+  border-bottom-color: rgba(245,185,66,0.4);
 }
 .service-num {
   font-family: 'Cormorant Garamond', serif;
@@ -670,18 +670,11 @@ section { padding: 6rem 4rem; }
   margin-bottom: 0.2rem;
 }
 .dest-sub { font-size: 0.72rem; color: #F5B942; text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.85); letter-spacing: 0.15em; text-transform: uppercase; }
-/* Light-mode spec: destination name goes tan, the category line under it
-   goes white -- the reverse of what these are in dark theme. This lost
-   its shadow entirely once (same fix as .featured-caption-title above),
-   back when the dark overlay behind it was still near-opaque -- since
-   shortened, so the tan name needs its own tight edge-shadow again to
-   stay legible over bright/busy photo backgrounds. .dest-sub stays
-   white-on-shadow, which was always fine. */
-/* Same white-halo fix as .featured-caption-title above -- a dark shadow
-   behind dark rust text does nothing over a dark/busy patch of photo. */
+/* Bright gold, no shadow -- same fix as .featured-caption-title: the
+   dark rust + light-halo combo was low-contrast against busy photos,
+   and this card's dark gradient is fixed regardless of theme anyway. */
 [data-theme="light"] .dest-name {
-  color: #7B3C27;
-  text-shadow: 0 0 4px rgba(255,255,255,0.9), 0 0 9px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.4);
+  color: #F5B942;
 }
 [data-theme="light"] .dest-sub { color: #FFFFFF; }
 
@@ -1667,10 +1660,10 @@ footer {
   background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.72) 45%, rgba(0,0,0,0.25) 80%, transparent 100%);
 }
 .featured-caption-title {
-  /* Tan, no text-shadow -- legibility over the photo comes from the
-     darker gradient behind it (above), not from glow/outline effects
+  /* Bright gold, no text-shadow -- legibility over the photo comes from
+     the darker gradient behind it (above), not from glow/outline effects
      on the letters themselves. */
-  color: #C47040;
+  color: #F5B942;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   font-weight: 600;
@@ -1712,9 +1705,13 @@ footer {
 [data-theme="light"] .pkg-card:hover .pkg-name,
 [data-theme="light"] .testi-card:hover .testi-stars,
 [data-theme="light"] .testi-card:hover .testi-author,
-[data-theme="light"] .testimonial-stars,
 [data-theme="light"] .testimonial-card:hover .testimonial-stars,
-[data-theme="light"] .testimonial-card:hover .testimonial-author { color: #C47040; }
+[data-theme="light"] .testimonial-card:hover .testimonial-author { color: #F5B942; }
+/* .testimonial-stars on its own (no :hover) sits on the card's resting
+   background, which is light cream in light theme -- unlike the hover
+   states above, this one stays the tan since gold-on-cream is the
+   washed-out combination that started this whole cleanup. */
+[data-theme="light"] .testimonial-stars { color: #C47040; }
 
 /* .testi-author wraps the city/country in its own <span> (e.g. "Brian
    Micah — <span>Nairobi, Kenya</span>"), which the block above does not
@@ -1737,8 +1734,8 @@ footer {
    per spec. */
 [data-theme="light"] .service-card:hover .service-tag,
 [data-theme="light"] .service-card.clickable:hover .service-tag {
-  color: #C47040;
-  border-bottom-color: rgba(196,112,64,0.4);
+  color: #F5B942;
+  border-bottom-color: rgba(245,185,66,0.4);
 }
 
 /* Footer: background stays fixed black in both themes, but its text
@@ -1747,18 +1744,19 @@ footer {
    footer text to fixed light-on-dark values, matching the header/nav
    which already do the same for the same reason. */
 /* Column titles, the tagline mark, and the social icons are pinned to
-   the brighter hover tan as their RESTING color (not just on hover) --
-   direct feedback: those should already look like "the brown you see on
-   hover", while the plain link text below stays white/grey at rest and
-   only turns tan on hover, same as dark theme. */
-[data-theme="light"] .footer-col h4 { color: #C4703F; }
+   the bright gold as their RESTING color (not just on hover) -- the
+   footer is a fixed black bar in both themes, matching every other
+   light-brown-on-dark element sitewide, while the plain link text below
+   stays white/grey at rest and only turns gold on hover, same as dark
+   theme. */
+[data-theme="light"] .footer-col h4 { color: #F5B942; }
 [data-theme="light"] .footer-tagline { color: rgba(255,255,255,0.75); }
 [data-theme="light"] .footer-col ul li { color: rgba(255,255,255,0.75); }
-[data-theme="light"] .footer-col ul li:hover { color: #C4703F; }
+[data-theme="light"] .footer-col ul li:hover { color: #F5B942; }
 [data-theme="light"] .footer-bottom { color: rgba(255,255,255,0.5); }
 .footer-tagline-mark { color: var(--gold); }
-[data-theme="light"] .footer-tagline-mark { color: #C4703F; }
-[data-theme="light"] .social-link { color: #C4703F; border-color: rgba(196,112,63,0.4); }
+[data-theme="light"] .footer-tagline-mark { color: #F5B942; }
+[data-theme="light"] .social-link { color: #F5B942; border-color: rgba(245,185,66,0.4); }
 [data-theme="light"] .social-link:hover { color: #D9915F; border-color: #D9915F; }
 [data-theme="light"] .social-link-pending:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
 
@@ -1807,11 +1805,15 @@ footer {
 .nav-dropdown-col { display: flex; flex-direction: column; gap: 0.1rem; }
 .nav-dropdown-heading {
   font-size: 0.62rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  /* Hardcoded, not var(--gold-light) -- the dropdown panel is a fixed
+     dark bar in both themes, same as .nav-dropdown a:hover just below,
+     so this should match that same bright gold rather than dimming to
+     the light-theme tan in light mode. */
+  color: #F5B942;
   margin-bottom: 0.6rem;
-  opacity: 0.85;
   white-space: nowrap;
 }
 .nav-dropdown a {
