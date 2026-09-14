@@ -432,7 +432,9 @@ section { padding: 6rem 4rem; }
    their fixed light-on-dark colors regardless of theme. */
 .uganda-banner-hero .section-eyebrow { color: #F5B942; }
 .uganda-banner-hero .section-title { color: #FFFFFF; }
-.uganda-banner-hero .section-title em { color: var(--gold-light); }
+/* Bright gold, matching the eyebrow above -- var(--gold-light) was too
+   muted (a dim orange/rust) against this dark green scrim to read as gold. */
+.uganda-banner-hero .section-title em { color: #F5B942; }
 /* No [data-theme="light"] override here, on purpose -- see the comment
    above. There used to be one forcing both back to #7B3C27 (dark rust),
    which is exactly the near-black-on-dark-green problem this whole rule
@@ -648,7 +650,7 @@ section { padding: 6rem 4rem; }
   /* Fixed dark scrim, not theme-reactive -- same reasoning as the homepage
      hero: this always sits on a photo, so it must stay dark in light mode too. */
   background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.88)),
-    url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1800&q=80') center/cover;
+    url('../assets/photos/large/destinations-cover.jpg') center/cover;
   margin-bottom: 4rem;
 }
 .dest-hero-content { padding: 3rem 4rem; }
@@ -1562,8 +1564,9 @@ footer {
   border-radius: 4px;
 }
 /* Text-only variant: no image partner, so the text column takes the
-   full row instead of leaving an empty second grid cell. Used where a
-   reason has no matching photo (see Local Expertise on the About page). */
+   full row instead of leaving an empty second grid cell. Not currently
+   used (Local Expertise on the About page used this until it got a
+   matching photo) -- kept in case a future reason has no photo either. */
 .reason-block-full {
   grid-template-columns: 1fr;
 }
@@ -1777,9 +1780,22 @@ footer {
 [data-theme="light"] .footer-bottom { color: rgba(255,255,255,0.5); }
 .footer-tagline-mark { color: var(--gold); }
 [data-theme="light"] .footer-tagline-mark { color: #F5B942; }
-[data-theme="light"] .social-link { color: #F5B942; border-color: rgba(245,185,66,0.4); }
-[data-theme="light"] .social-link:hover { color: #D9915F; border-color: #D9915F; }
-[data-theme="light"] .social-link-pending:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+/* Scoped to the footer specifically -- footer always sits on its own fixed
+   dark background (see footer{background:#080808}), so its icons need this
+   fixed bright gold in light mode too. The Contact page reuses .social-link
+   inside .contact-info, which is a normal light-reactive section (cream
+   background in light mode), so it gets its own rule below instead --
+   without this split, these icons went bright-gold-on-cream and nearly
+   disappeared, same family of bug as the other fixed-vs-reactive fixes. */
+[data-theme="light"] footer .social-link { color: #F5B942; border-color: rgba(245,185,66,0.4); }
+[data-theme="light"] footer .social-link:hover { color: #D9915F; border-color: #D9915F; }
+[data-theme="light"] footer .social-link-pending:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+/* Contact page's "Follow Us" icons sit on the light theme's cream content
+   background (not the footer's fixed dark one), so they need the same
+   darker gold-brown as the rest of .contact-info's links/text for contrast,
+   instead of the footer's bright gold which washes out here. */
+[data-theme="light"] .contact-info .social-link { color: var(--gold-dark); border-color: rgba(123,60,39,0.4); }
+[data-theme="light"] .contact-info .social-link:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ============================================
    NAV DROPDOWNS (hover/focus flyouts for Services, Destinations,
@@ -1969,7 +1985,10 @@ footer {
   margin-bottom: 1.2rem;
 }
 .blog-section-title em { font-style: italic; color: var(--gold); }
-[data-theme="light"] .blog-section-title em { color: var(--gold-dark); }
+/* var(--gold-light), matching "A World of Wonders" (.section-title em) --
+   var(--gold-dark) here read too dark/near-black against the light cream
+   background, same family of fix as elsewhere in this file. */
+[data-theme="light"] .blog-section-title em { color: var(--gold-light); }
 .blog-section-text { color: var(--text-light); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.95rem; }
 .blog-pull-quote { font-weight: 600; color: var(--white); }
 
