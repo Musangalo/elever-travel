@@ -2014,3 +2014,93 @@ footer {
 [data-theme="light"] .blog-checklist-num { color: var(--gold-dark); }
 .blog-checklist-title { font-size: 0.95rem; color: var(--white); font-weight: 500; margin-bottom: 0.4rem; }
 .blog-checklist-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+/* Byline under a post's hero subtitle (date · author) */
+.blog-byline {
+  margin-top: 1.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+.blog-inline-link { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+[data-theme="light"] .blog-inline-link { color: var(--gold-dark); }
+
+/* "At a Glance" comparison table (post 2) */
+.blog-glance {
+  background: var(--dark-2);
+  border: 1px solid rgba(var(--accent-rgb),0.12);
+  padding: 2rem 2.5rem;
+  margin: 2.5rem 0 0;
+}
+.blog-glance-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; }
+.blog-glance-table th,
+.blog-glance-table td {
+  text-align: left;
+  padding: 0.9rem 1rem 0.9rem 0;
+  border-bottom: 1px solid rgba(var(--accent-rgb),0.1);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  vertical-align: top;
+  color: var(--text-light);
+}
+.blog-glance-table thead th {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.blog-glance-table tbody th {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--white);
+}
+.blog-glance-table tbody tr:last-child > * { border-bottom: none; }
+.blog-glance-note { margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+
+/* "Things to Do" list under each destination (post 2) */
+.blog-todo {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(var(--accent-rgb),0.1);
+}
+.blog-todo-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 3rem;
+  margin: 0.8rem 0 1.8rem;
+}
+.blog-todo-list li {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 1.4rem;
+  border-bottom: 1px solid rgba(var(--accent-rgb),0.08);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+.blog-todo-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.75rem; top: 0.72rem; }
+.blog-todo .blog-pull-quote { margin-bottom: 0; }
+
+/* Blog index cards -- reuse .pkg-card, but the whole card is a link */
+.blog-index-card { display: block; text-decoration: none; color: inherit; }
+.blog-index-card .pkg-cta { display: block; text-align: center; }
+.blog-index-date {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.blog-index-card:hover .blog-index-date { color: rgba(255,255,255,0.8); }
+.blog-index-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 420px)); }
+.blog-more-link { margin-top: 1.8rem; font-size: 0.8rem; letter-spacing: 0.1em; }
+.blog-more-link a { color: var(--text-muted); text-decoration: none; }
+.blog-more-link a:hover { color: var(--gold); }
+
+/* Things to Do with a portrait clip beside the list (post 2, Ssese) */
+.blog-todo-with-video { display: grid; grid-template-columns: 1fr 260px; gap: 3rem; align-items: start; }
+.blog-todo-with-video .blog-todo-list { grid-template-columns: 1fr; }
+.blog-todo-video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #000; display: block; }

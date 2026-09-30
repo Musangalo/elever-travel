@@ -84,6 +84,24 @@ footer .logo-img.footer-logo-img { width: 380px; height: 100px; margin-bottom: 1
     gap: 1.5rem;
   }
   .blog-section-image, .blog-section-placeholder { height: 260px; }
+  .blog-glance { padding: 1.5rem; }
+  .blog-glance-table thead { display: none; }
+  .blog-glance-table, .blog-glance-table tbody, .blog-glance-table tr,
+  .blog-glance-table th, .blog-glance-table td { display: block; width: 100%; }
+  .blog-glance-table tr { padding: 1rem 0; border-bottom: 1px solid rgba(var(--accent-rgb),0.1); }
+  .blog-glance-table tbody tr:last-child { border-bottom: none; }
+  .blog-glance-table th, .blog-glance-table td { border-bottom: none; padding: 0.15rem 0; }
+  .blog-glance-table td::before {
+    content: attr(data-label) ": ";
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .blog-todo-list { grid-template-columns: 1fr; }
+  .blog-index-grid { grid-template-columns: 1fr; }
+  .blog-todo-with-video { grid-template-columns: 1fr; gap: 1.5rem; }
+  .blog-todo-video { max-width: 260px; margin: 0 auto; }
   footer { padding: 3rem 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
