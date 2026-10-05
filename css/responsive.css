@@ -47,6 +47,18 @@ footer .logo-img.footer-logo-img { width: 380px; height: 100px; margin-bottom: 1
   .nav-cta { padding: 0.55rem 1.1rem; font-size: 0.68rem; }
 }
 
+/* Adding the "Shop" link pushed the 8-item nav past the 901-1400px band's
+   previous budget (it overlapped the theme toggle/CTA right down near the
+   900px handoff). Tighten further just in that narrowest sub-range, and
+   drop the "Light"/"Dark" text label (the sun/moon icon alone is enough)
+   to buy back the room the extra link needs. */
+@media (max-width: 1080px) and (min-width: 901px) {
+  .nav-links { gap: 0.75rem; }
+  .nav-links a { font-size: 0.62rem; letter-spacing: 0.06em; }
+  .nav-cta { padding: 0.5rem 0.9rem; }
+  .theme-toggle-label { display: none; }
+}
+
 @media (max-width: 900px) {
   nav { padding: 1.2rem 2rem; }
   nav.scrolled { padding: 1rem 2rem; }

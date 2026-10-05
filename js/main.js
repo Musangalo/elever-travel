@@ -690,3 +690,172 @@ window.togglePkgAccordion = function (btn) {
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
+
+// ============================================
+// SHOP: CART & CHECKOUT
+// ============================================
+// The cart is kept in sessionStorage (not a JS variable) so it survives
+// a reload or a trip to another page within the same visit --
+// each cart line stores its own price/name/image snapshot at add-time
+// so the cart never has to re-read the shop page's DOM to render itself.
+
+// TODO: swap this for Elever's real Flutterwave public key once their
+// merchant account (mobile money + Visa/Mastercard) is approved. A TEST
+// key will open the widget but cannot take a real payment.
+const FLW_PUBLIC_KEY = 'FLWPUBK_TEST-REPLACE-WITH-LIVE-PUBLIC-KEY-X';
+
+function getCart() {
+  try { return JSON.parse(sessionStorage.getItem('elever_cart') || '[]'); }
+  catch (e) { return []; }
+}
+function saveCart(cart) {
+  sessionStorage.setItem('elever_cart', JSON.stringify(cart));
+}
+
+// +/- buttons on each product card, before it's in the cart
+window.stepQty = function (btn, delta) {
+  const input = btn.parentElement.querySelector('.qty-input');
+  const next = Math.max(1, (parseInt(input.value, 10) || 1) + delta);
+  input.value = next;
+};
+
+window.addToCart = function (btn) {
+  const card = btn.closest('.shop-card');
+  const id = card.dataset.id;
+  const name = card.dataset.name;
+  const price = parseInt(card.dataset.price, 10);
+  const image = card.dataset.image;
+  const variantEl = card.querySelector('.shop-variant');
+  const variant = variantEl ? variantEl.value : null;
+  const qtyInput = card.querySelector('.qty-input');
+  const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+
+  const cart = getCart();
+  const lineKey = id + '|' + (variant || '');
+  const existing = cart.find(i => (i.id + '|' + (i.variant || '')) === lineKey);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({ id, name, price, image, variant, qty });
+  }
+  saveCart(cart);
+  renderCart();
+
+  qtyInput.value = 1;
+  const originalLabel = btn.textContent;
+  btn.textContent = 'Added ✓';
+  btn.disabled = true;
+  setTimeout(() => { btn.textContent = originalLabel; btn.disabled = false; }, 1200);
+};
+
+window.updateCartQty = function (index, delta) {
+  const cart = getCart();
+  if (!cart[index]) return;
+  cart[index].qty = Math.max(1, cart[index].qty + delta);
+  saveCart(cart);
+  renderCart();
+};
+
+window.removeCartItem = function (index) {
+  const cart = getCart();
+  cart.splice(index, 1);
+  saveCart(cart);
+  renderCart();
+};
+
+window.renderCart = function () {
+  const list = document.getElementById('cartItemsList');
+  if (!list) return; // Not currently on the Shop page
+  const emptyMsg = document.getElementById('cartEmptyMsg');
+  const summary = document.getElementById('cartSummary');
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    list.innerHTML = '';
+    if (emptyMsg) emptyMsg.style.display = '';
+    if (summary) summary.style.display = 'none';
+    return;
+  }
+
+  if (emptyMsg) emptyMsg.style.display = 'none';
+  if (summary) summary.style.display = '';
+
+  let total = 0;
+  list.innerHTML = cart.map(function (item, i) {
+    total += item.price * item.qty;
+    return (
+      '<div class="cart-item">' +
+        '<img src="' + item.image + '" alt="' + item.name + '" class="cart-item-img">' +
+        '<div class="cart-item-info">' +
+          '<div class="cart-item-name">' + item.name + (item.variant ? ' — ' + item.variant : '') + '</div>' +
+          '<div class="cart-item-price">UGX ' + item.price.toLocaleString() + ' each</div>' +
+        '</div>' +
+        '<div class="qty-stepper">' +
+          '<button type="button" onclick="updateCartQty(' + i + ',-1)" aria-label="Decrease quantity">−</button>' +
+          '<span>' + item.qty + '</span>' +
+          '<button type="button" onclick="updateCartQty(' + i + ',1)" aria-label="Increase quantity">+</button>' +
+        '</div>' +
+        '<button type="button" class="cart-item-remove" onclick="removeCartItem(' + i + ')" aria-label="Remove item">✕</button>' +
+      '</div>'
+    );
+  }).join('');
+
+  const totalEl = document.getElementById('cartTotal');
+  if (totalEl) totalEl.textContent = 'UGX ' + total.toLocaleString();
+};
+
+window.checkoutCart = function () {
+  const cart = getCart();
+  if (cart.length === 0) { alert('Your cart is empty.'); return; }
+
+  const name = document.getElementById('cartName').value.trim();
+  const email = document.getElementById('cartEmail').value.trim();
+  const phone = document.getElementById('cartPhone').value.trim();
+  if (!name || !email || !phone) {
+    alert('Please fill in your name, email, and phone number before checkout.');
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const txRef = 'ELV-' + Date.now();
+  const orderSummary = cart.map(i => i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' x' + i.qty).join(', ');
+
+  if (typeof FlutterwaveCheckout !== 'function' || FLW_PUBLIC_KEY.indexOf('REPLACE') !== -1) {
+    // The payment script didn't load, or the shop isn't connected to a
+    // live payment account yet -- fail gracefully instead of leaving the
+    // Checkout button silently doing nothing.
+    alert('Online checkout isn\'t enabled yet. Please reach us on WhatsApp to complete this order: ' + orderSummary + ' — Total UGX ' + total.toLocaleString());
+    return;
+  }
+
+  FlutterwaveCheckout({
+    public_key: FLW_PUBLIC_KEY,
+    tx_ref: txRef,
+    amount: total,
+    currency: 'UGX',
+    payment_options: 'card, mobilemoneyuganda',
+    customer: { email: email, phone_number: phone, name: name },
+    customizations: {
+      title: 'Elever Travel Shop',
+      description: orderSummary,
+      logo: 'https://elevertravel.com/assets/LogoLight.svg'
+    },
+    callback: function () {
+      // This only confirms the customer *reached* a successful screen in
+      // the payment widget. The order is only truly marked "paid" once
+      // the payment provider's server-side webhook confirms it -- this
+      // callback just shows a friendly thank-you and clears the cart.
+      const summary = document.getElementById('cartSummary');
+      const itemsList = document.getElementById('cartItemsList');
+      const success = document.getElementById('checkoutSuccess');
+      if (summary) summary.style.display = 'none';
+      if (itemsList) itemsList.innerHTML = '';
+      if (success) success.style.display = '';
+      saveCart([]);
+    },
+    onclose: function () {}
+  });
+};
+
+// Draw any cart saved earlier in this visit when the Shop page loads
+document.addEventListener('DOMContentLoaded', function () { renderCart(); });
