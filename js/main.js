@@ -743,7 +743,7 @@ window.addToCart = function (btn) {
 
   qtyInput.value = 1;
   const originalLabel = btn.textContent;
-  btn.textContent = 'Added ✓';
+  btn.textContent = 'Added ✓︎'; // ︎ keeps the tick as plain text, not a coloured emoji
   btn.disabled = true;
   setTimeout(() => { btn.textContent = originalLabel; btn.disabled = false; }, 1200);
 };

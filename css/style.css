@@ -2238,3 +2238,45 @@ footer {
   .qty-stepper { grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem; }
   .cart-item-remove { position: absolute; top: 0.8rem; right: 1rem; }
 }
+
+/* Shop cards follow the package-card concept (.pkg-card / .pkg-cta):
+   rust-brown hover card with gold title and white text, and an outline
+   button that turns white with black text on hover, tap and "Added". */
+.shop-card:hover { background: #866335; border-color: rgba(var(--accent-rgb),0.35); transform: translateY(-4px); }
+[data-theme="light"] .shop-card:hover { background: #663120; }
+.shop-card:hover .shop-card-name,
+.shop-card:hover .shop-price,
+[data-theme="light"] .shop-card:hover .shop-price,
+.shop-card:hover .shop-card-note,
+[data-theme="light"] .shop-card:hover .shop-card-note { color: #F5B942; }
+.shop-card:hover .shop-card-desc,
+.shop-card:hover .shop-card-qtytag,
+.shop-card:hover .form-group label { color: #FFFFFF; }
+.shop-card:hover .qty-stepper { border-color: rgba(255,255,255,0.4); }
+.shop-card:hover .qty-stepper button,
+.shop-card:hover .qty-stepper .qty-input { color: #FFFFFF; border-color: rgba(255,255,255,0.4); }
+
+.shop-add-btn {
+  color: var(--white);
+  border: 1px solid var(--white);
+  -webkit-tap-highlight-color: transparent;
+}
+.shop-add-btn:hover,
+.shop-add-btn:active,
+.shop-add-btn:disabled,
+.shop-card:hover .shop-add-btn {
+  background: #FFFFFF;
+  color: #000000;
+  -webkit-text-fill-color: #000000;
+  border-color: #000000;
+  opacity: 1;
+}
+.shop-add-btn:disabled { cursor: default; }
+
+/* No browser-default blue on tap or focus anywhere in the shop */
+.shop-section button, .shop-section select, .shop-section input,
+.shop-cart-section button, .shop-cart-section input { -webkit-tap-highlight-color: transparent; }
+.shop-add-btn:focus, .qty-stepper button:focus, .cart-item-remove:focus, .submit-btn:focus { outline: none; }
+.shop-add-btn:focus-visible, .qty-stepper button:focus-visible,
+.cart-item-remove:focus-visible, .submit-btn:focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
+.qty-stepper .qty-input:focus { outline: none; }
