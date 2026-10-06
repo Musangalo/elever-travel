@@ -663,5 +663,28 @@
       "mobile-dustbins-04.jpg"
     ],
     "alt": "Yellow, red and white decorative dustbins on wheels"
+  },
+  {
+    "id": "epilator",
+    "slug": "nano-glass-epilator",
+    "name": "Rechargeable Nano Glass 2-in-1 Epilator",
+    "price": 45000,
+    "summary": "A painless 2-in-1 hair and skin remover that charges over USB.",
+    "details": [
+      "2-in-1: painless hair removal and skin smoothing",
+      "Nano glass surface",
+      "Rechargeable, USB-powered (power bank, adapter or computer)",
+      "Charging time about 2 hours, working time about 90 minutes",
+      "Size: 12.5 cm × 6.5 cm"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "epilator-main.jpg",
+      "epilator-02.jpg",
+      "epilator-03.jpg",
+      "epilator-04.jpg",
+      "epilator-05.jpg"
+    ],
+    "alt": "Cream 2-in-1 nano glass epilator"
   }
 ]
