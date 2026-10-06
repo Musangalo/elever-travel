@@ -702,6 +702,8 @@ window.togglePkgAccordion = function (btn) {
 // TODO: swap this for Elever's real Flutterwave public key once their
 // merchant account (mobile money + Visa/Mastercard) is approved. A TEST
 // key will open the widget but cannot take a real payment.
+// Orders go to this WhatsApp number until online payment is set up
+const SHOP_WHATSAPP = '256740748155';
 const FLW_PUBLIC_KEY = 'FLWPUBK_TEST-REPLACE-WITH-LIVE-PUBLIC-KEY-X';
 
 function getCart() {
@@ -723,10 +725,13 @@ window.addToCart = function (btn) {
   const card = btn.closest('[data-id]'); // a shop grid card or a product page
   const id = card.dataset.id;
   const name = card.dataset.name;
-  const price = parseInt(card.dataset.price, 10);
   const image = card.dataset.image;
-  const variantEl = card.querySelector('.shop-variant');
-  const variant = variantEl ? variantEl.value : null;
+  // One or more choices (e.g. Size and Colour), joined into one line label;
+  // an option can carry its own price (e.g. suitcase cover sizes)
+  const selects = Array.from(card.querySelectorAll('.shop-variant'));
+  const variant = selects.length ? selects.map(s => s.value).join(' / ') : null;
+  const pricedOption = selects.map(s => s.selectedOptions[0]).find(o => o && o.dataset.price);
+  const price = parseInt(pricedOption ? pricedOption.dataset.price : card.dataset.price, 10);
   const qtyInput = card.querySelector('.qty-input');
   const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
 
@@ -826,7 +831,14 @@ window.checkoutCart = function () {
     // The payment script didn't load, or the shop isn't connected to a
     // live payment account yet -- fail gracefully instead of leaving the
     // Checkout button silently doing nothing.
-    alert('Online checkout isn\'t enabled yet. Please reach us on WhatsApp to complete this order: ' + orderSummary + ' — Total UGX ' + total.toLocaleString());
+    // No online payment provider yet: send the order to Elever's WhatsApp
+    // with everything pre-filled, so the team can confirm and share payment details.
+    const lines = cart.map(i => '- ' + i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' x' + i.qty +
+      ' = UGX ' + (i.price * i.qty).toLocaleString());
+    const message = 'Hello Elever Travel, I would like to order:\n' + lines.join('\n') +
+      '\n\nTotal: UGX ' + total.toLocaleString() +
+      '\n\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone;
+    window.open('https://wa.me/' + SHOP_WHATSAPP + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
     return;
   }
 
@@ -867,4 +879,14 @@ window.showProductPhoto = function (thumb) {
   const main = document.getElementById('productMainImage');
   if (main) main.style.backgroundImage = "url('" + thumb.dataset.src + "')";
   thumb.parentElement.querySelectorAll('.product-thumb').forEach(t => t.classList.toggle('active', t === thumb));
+};
+
+// Options with their own price: show the chosen option's price on the card/page
+window.updateVariantPrice = function (select) {
+  const opt = select.selectedOptions[0];
+  const card = select.closest('[data-id]');
+  const priceEl = card && card.querySelector('.shop-price');
+  if (opt && opt.dataset.price && priceEl) {
+    priceEl.textContent = 'UGX ' + parseInt(opt.dataset.price, 10).toLocaleString();
+  }
 };

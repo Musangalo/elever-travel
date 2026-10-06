@@ -1,0 +1,667 @@
+[
+  {
+    "id": "slippers",
+    "slug": "travel-slippers",
+    "name": "Foldable Travel Slippers",
+    "price": 18500,
+    "summary": "Compact, detachable flip-flops that fold flat into your suitcase — perfect for flights, hotel rooms, and poolside.",
+    "note": "Few pieces available per size",
+    "variants": [
+      {
+        "label": "Size",
+        "options": [
+          {
+            "value": "36-37",
+            "label": "36–37"
+          },
+          {
+            "value": "38-39",
+            "label": "38–39"
+          },
+          {
+            "value": "40-41",
+            "label": "40–41"
+          },
+          {
+            "value": "42-43",
+            "label": "42–43"
+          }
+        ]
+      }
+    ],
+    "photos": [
+      "slippers-main.jpg",
+      "slippers-2.jpg",
+      "slippers-3.jpg",
+      "slippers-4.jpg"
+    ],
+    "alt": "Foldable detachable travel slippers"
+  },
+  {
+    "id": "sweatpads",
+    "slug": "sweat-pads",
+    "name": "Underarm Sweat Pads",
+    "qtytag": "10pcs",
+    "price": 15000,
+    "summary": "Ultra-absorbent, leak-proof pads worn discreetly inside your clothing — keeps you dry and stain-free on hot travel days.",
+    "note": "Currently on preorder",
+    "photos": [
+      "sweatpads-main.jpg",
+      "sweatpads-2.jpg",
+      "sweatpads-3.jpg"
+    ],
+    "alt": "Underarm sweat pads, pack of 10"
+  },
+  {
+    "id": "earmuffs",
+    "slug": "earmuffs",
+    "name": "Foldable Cold Protection Earmuffs",
+    "price": 65000,
+    "summary": "Soft, plush faux-fur earmuffs that fold flat for easy packing — ideal for chilly flights and cold-weather excursions.",
+    "variants": [
+      {
+        "label": "Colour",
+        "options": [
+          "Black",
+          "Brown",
+          "Pink",
+          "Beige",
+          "White",
+          "Grey"
+        ]
+      }
+    ],
+    "photos": [
+      "earmuffs-main.jpg"
+    ],
+    "alt": "Foldable cold protection earmuffs"
+  },
+  {
+    "id": "insoles",
+    "slug": "forefoot-insoles",
+    "name": "Forefoot Insoles Shoe Protector",
+    "qtytag": "pair",
+    "price": 15000,
+    "summary": "Soft, anti-slip forefoot cushions that slip into heels or flats to ease pressure and prevent blisters on long days of sightseeing.",
+    "note": "Readily available",
+    "photos": [
+      "insoles-main.jpg",
+      "insoles-2.jpg"
+    ],
+    "alt": "Forefoot insoles shoe protector"
+  },
+  {
+    "id": "packing-organizers",
+    "slug": "packing-organizers",
+    "name": "Luggage Travel Organisers with Toiletry Case",
+    "qtytag": "8pcs",
+    "price": 85000,
+    "summary": "Speed up packing and keep your suitcase sorted with this practical, beautiful 8-piece organiser set.",
+    "details": [
+      "8-piece set: 1 large and 2 medium cubes, 2 small cubes, 2 accessory bags and 1 laundry/shoe bag",
+      "Speeds up packing and keeps your things sorted",
+      "Made of Oxford material with breathable mesh",
+      "Heavy-duty design with double zips that open and close easily"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "packing-organizers-main.jpg",
+      "packing-organizers-02.jpg",
+      "packing-organizers-03.jpg"
+    ],
+    "alt": "8-piece luggage organiser set packed in a suitcase"
+  },
+  {
+    "id": "toiletry-bag",
+    "slug": "hanging-toiletry-bag",
+    "name": "Hanging Large-Capacity Toiletry Bag",
+    "price": 65000,
+    "summary": "A large-capacity toiletry bag that hangs up in any hotel bathroom, keeping everything organised and within reach.",
+    "note": "Readily available",
+    "photos": [
+      "toiletry-bag-main.jpg",
+      "toiletry-bag-02.jpg",
+      "toiletry-bag-03.jpg",
+      "toiletry-bag-04.jpg"
+    ],
+    "alt": "Hanging toiletry bag unfolded on a bathroom rail"
+  },
+  {
+    "id": "neck-pillow",
+    "slug": "inflatable-neck-pillow",
+    "name": "Inflatable Travel Neck Pillow",
+    "price": 65000,
+    "summary": "An inflatable neck pillow that packs small and supports your neck on long flights and road trips.",
+    "note": "Readily available",
+    "photos": [
+      "neck-pillow-main.jpg",
+      "neck-pillow-02.jpg",
+      "neck-pillow-03.jpg"
+    ],
+    "videos": [
+      "neck-pillow-1.mp4"
+    ],
+    "alt": "Inflatable travel neck pillow"
+  },
+  {
+    "id": "suitcase-cover",
+    "slug": "suitcase-cover",
+    "name": "Suitcase Cover",
+    "price": 25000,
+    "summary": "A protective cover that keeps your suitcase clean and scuff-free in transit. Choose the size that matches your case.",
+    "variants": [
+      {
+        "label": "Size",
+        "options": [
+          {
+            "value": "24",
+            "label": "Size 24 — UGX 25,000",
+            "price": 25000
+          },
+          {
+            "value": "26",
+            "label": "Size 26 — UGX 35,000",
+            "price": 35000
+          },
+          {
+            "value": "28",
+            "label": "Size 28 — UGX 45,000",
+            "price": 45000
+          },
+          {
+            "value": "30",
+            "label": "Size 30 — UGX 55,000",
+            "price": 55000
+          }
+        ]
+      }
+    ],
+    "note": "Running on preorder",
+    "alt": "Suitcase cover"
+  },
+  {
+    "id": "shoe-covers",
+    "slug": "silicone-shoe-covers",
+    "name": "Thickened Unisex Silicone Shoe Covers",
+    "price": 45000,
+    "summary": "No more worrying about dirty shoes in the rainy season — thick silicone covers that keep your shoes clean and dry.",
+    "details": [
+      "Waterproof, sand-proof and anti-skid",
+      "Available in small and large in white and black",
+      "Medium readily available in grey and blue"
+    ],
+    "variants": [
+      {
+        "label": "Size",
+        "options": [
+          "Small",
+          "Medium",
+          "Large"
+        ]
+      },
+      {
+        "label": "Colour",
+        "options": [
+          "White",
+          "Black",
+          "Grey",
+          "Blue"
+        ]
+      }
+    ],
+    "note": "Medium readily available",
+    "photos": [
+      "shoe-covers-main.jpg",
+      "shoe-covers-02.jpg",
+      "shoe-covers-03.jpg"
+    ],
+    "alt": "Grey, white and black silicone shoe covers"
+  },
+  {
+    "id": "beach-tote",
+    "slug": "beach-tote-bag",
+    "name": "Large-Capacity Beach & Swim Tote with Zip",
+    "price": 65000,
+    "summary": "A roomy zip-top tote for the beach, the pool or a day out.",
+    "details": [
+      "Size: 35 cm × 28 cm × 15 cm",
+      "Zip closure"
+    ],
+    "variants": [
+      {
+        "label": "Colour",
+        "options": [
+          "Blue",
+          "Green"
+        ]
+      }
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "beach-tote-main.jpg"
+    ],
+    "alt": "Clear beach tote bag with zip"
+  },
+  {
+    "id": "short-stay-bags",
+    "slug": "short-stay-fashion-bags",
+    "name": "Short-Stay Fashion Bags",
+    "qtytag": "set",
+    "price": 185000,
+    "summary": "A stylish set of travel bags sized for weekend getaways and short stays.",
+    "note": "One set remaining",
+    "photos": [
+      "short-stay-bags-main.jpg",
+      "short-stay-bags-02.jpg"
+    ],
+    "alt": "Set of cream and black short-stay travel bags"
+  },
+  {
+    "id": "soap-dish-case",
+    "slug": "travel-soap-dish-case",
+    "name": "Travel Soap Dish Case",
+    "price": 25000,
+    "summary": "A portable soap case for business trips and travel — sealed with a lid and drainable.",
+    "details": [
+      "Portable soap holder for travelling",
+      "Lid seals shut and the case drains",
+      "Strong seal, no water leakage"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "soap-dish-case-main.jpg",
+      "soap-dish-case-02.jpg",
+      "soap-dish-case-03.jpg",
+      "soap-dish-case-04.jpg",
+      "soap-dish-case-05.jpg"
+    ],
+    "alt": "White capsule-shaped travel soap case"
+  },
+  {
+    "id": "acrylic-soap-holder",
+    "slug": "acrylic-soap-holder",
+    "name": "Acrylic Travel Soap Holder",
+    "price": 35000,
+    "summary": "A clear acrylic soap holder that keeps your bar of soap neat and contained on the go.",
+    "note": "Running on preorder",
+    "photos": [
+      "acrylic-soap-holder-main.jpg",
+      "acrylic-soap-holder-02.jpg",
+      "acrylic-soap-holder-03.jpg",
+      "acrylic-soap-holder-04.jpg",
+      "acrylic-soap-holder-05.jpg"
+    ],
+    "alt": "Clear acrylic travel soap holder with a bar of soap"
+  },
+  {
+    "id": "vanity-mirror",
+    "slug": "led-travel-vanity-mirror",
+    "name": "Rechargeable LED Travel Tablet Vanity Mirror",
+    "price": 85000,
+    "summary": "A slim, rechargeable LED vanity mirror that packs like a tablet.",
+    "details": [
+      "Rechargeable",
+      "Available in white"
+    ],
+    "note": "Available in white",
+    "photos": [
+      "vanity-mirror-main.jpg",
+      "vanity-mirror-02.jpg",
+      "vanity-mirror-03.jpg",
+      "vanity-mirror-04.jpg",
+      "vanity-mirror-05.jpg",
+      "vanity-mirror-06.jpg"
+    ],
+    "alt": "Rechargeable LED travel vanity mirror"
+  },
+  {
+    "id": "hair-bonnet",
+    "slug": "large-hair-bonnet",
+    "name": "Large Hair Bonnet",
+    "price": 25000,
+    "summary": "A large hair bonnet to protect your hair overnight, at home or on the road.",
+    "note": "Readily available",
+    "photos": [
+      "hair-bonnet-main.jpg",
+      "hair-bonnet-02.jpg"
+    ],
+    "alt": "Woman wearing a large black satin hair bonnet"
+  },
+  {
+    "id": "back-scrubber",
+    "slug": "back-scrubber",
+    "name": "Back Scrubber with Handle",
+    "price": 35000,
+    "summary": "An easy way to scrub your back. Can be used by both adults and kids.",
+    "badge": "Restocked",
+    "note": "Running on preorder",
+    "photos": [
+      "back-scrubber-main.jpg",
+      "back-scrubber-02.jpg",
+      "back-scrubber-03.jpg",
+      "back-scrubber-04.jpg",
+      "back-scrubber-05.jpg",
+      "back-scrubber-06.jpg"
+    ],
+    "alt": "Long-handled back scrubber with a sponge and bristle head"
+  },
+  {
+    "id": "oral-irrigator",
+    "slug": "portable-oral-irrigator",
+    "name": "Rechargeable Portable Oral Irrigator",
+    "qtytag": "4 nozzles",
+    "price": 75000,
+    "summary": "A rechargeable, portable water flosser with 4 nozzles.",
+    "details": [
+      "Rechargeable",
+      "Comes with 4 nozzles"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "oral-irrigator-main.jpg",
+      "oral-irrigator-02.jpg",
+      "oral-irrigator-03.jpg",
+      "oral-irrigator-04.jpg",
+      "oral-irrigator-05.jpg",
+      "oral-irrigator-06.jpg",
+      "oral-irrigator-07.jpg"
+    ],
+    "videos": [
+      "oral-irrigator-1.mp4",
+      "oral-irrigator-2.mp4"
+    ],
+    "alt": "Portable oral irrigator with four nozzles"
+  },
+  {
+    "id": "face-lifter",
+    "slug": "face-shaping-mask",
+    "name": "Face Shaping Mask / Face Lifter",
+    "price": 45000,
+    "summary": "An elastic, adjustable face-shaping mask.",
+    "details": [
+      "Tightens the double chin",
+      "Reduces wrinkles",
+      "Elastic and adjustable"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "face-lifter-main.jpg",
+      "face-lifter-02.jpg",
+      "face-lifter-03.jpg",
+      "face-lifter-04.jpg",
+      "face-lifter-05.jpg",
+      "face-lifter-06.jpg",
+      "face-lifter-07.jpg",
+      "face-lifter-08.jpg",
+      "face-lifter-09.jpg",
+      "face-lifter-10.jpg"
+    ],
+    "alt": "Woman wearing a grey face-shaping mask"
+  },
+  {
+    "id": "anti-snoring-clip",
+    "slug": "anti-snoring-clip",
+    "name": "Anti-Snoring Aid Clip",
+    "price": 65000,
+    "summary": "Enjoy peaceful, uninterrupted sleep — a small silicone clip that improves airflow and reduces snoring.",
+    "details": [
+      "Material: silicone",
+      "Reduces snoring effectively",
+      "Improves airflow for better breathing",
+      "Comfortable and lightweight",
+      "Easy to use, no pain",
+      "Reusable and easy to clean",
+      "Suitable for home or travel"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "anti-snoring-clip-main.jpg",
+      "anti-snoring-clip-02.jpg",
+      "anti-snoring-clip-03.jpg",
+      "anti-snoring-clip-04.jpg",
+      "anti-snoring-clip-05.jpg",
+      "anti-snoring-clip-06.jpg",
+      "anti-snoring-clip-07.jpg",
+      "anti-snoring-clip-08.jpg"
+    ],
+    "videos": [
+      "anti-snoring-clip-1.mp4"
+    ],
+    "alt": "Clear silicone anti-snoring clip in its case"
+  },
+  {
+    "id": "neck-massager",
+    "slug": "electric-neck-massager",
+    "name": "Electric Neck Massager",
+    "price": 88000,
+    "summary": "A smart, portable neck massager with heat-pulse technology.",
+    "details": [
+      "Heat-pulse technology",
+      "5 massage modes and levels",
+      "Constant temperature",
+      "Material: silicone and metal"
+    ],
+    "note": "One piece readily available",
+    "photos": [
+      "neck-massager-main.jpg",
+      "neck-massager-02.jpg",
+      "neck-massager-03.jpg",
+      "neck-massager-04.jpg",
+      "neck-massager-05.jpg"
+    ],
+    "videos": [
+      "neck-massager-1.mp4"
+    ],
+    "alt": "Electric neck massager"
+  },
+  {
+    "id": "hot-water-bottle",
+    "slug": "hot-water-bottle",
+    "name": "2L Hot Water Bottle",
+    "price": 65000,
+    "summary": "A 2-litre hot water bottle for warmth on cold nights and chilly trips.",
+    "note": "Readily available",
+    "photos": [
+      "hot-water-bottle-main.jpg"
+    ],
+    "alt": "Hot water bottle in a soft pink cover"
+  },
+  {
+    "id": "camp-chair",
+    "slug": "foldable-camp-chair",
+    "name": "Foldable Camp Chair",
+    "price": 185000,
+    "summary": "A foldable camp chair for safaris, picnics and the great outdoors.",
+    "note": "Readily available",
+    "photos": [
+      "camp-chair-main.jpg",
+      "camp-chair-02.jpg"
+    ],
+    "videos": [
+      "camp-chair-1.mp4"
+    ],
+    "alt": "Blue and black foldable camp chair with carry bag"
+  },
+  {
+    "id": "outdoor-chair",
+    "slug": "foldable-outdoor-chair",
+    "name": "Foldable Outdoor Chair with Wooden Armrests",
+    "price": 150000,
+    "summary": "A strong steel-frame folding chair with wooden armrests, now available in 2 colours.",
+    "details": [
+      "Strong steel frame",
+      "Wooden armrests",
+      "Folds flat"
+    ],
+    "variants": [
+      {
+        "label": "Colour",
+        "options": [
+          "Khaki",
+          "Black"
+        ]
+      }
+    ],
+    "note": "Readily available",
+    "photos": [
+      "outdoor-chair-main.jpg",
+      "outdoor-chair-02.jpg",
+      "outdoor-chair-03.jpg",
+      "outdoor-chair-04.jpg",
+      "outdoor-chair-05.jpg",
+      "outdoor-chair-06.jpg",
+      "outdoor-chair-07.jpg",
+      "outdoor-chair-08.jpg",
+      "outdoor-chair-09.jpg",
+      "outdoor-chair-10.jpg",
+      "outdoor-chair-11.jpg"
+    ],
+    "alt": "Khaki folding outdoor chair with wooden armrests"
+  },
+  {
+    "id": "whisky-bottle",
+    "slug": "double-wall-whisky-bottle",
+    "name": "Women's Stainless Double-Wall Whisky Bottle",
+    "price": 45000,
+    "summary": "A stainless steel, double-wall whisky bottle.",
+    "note": "Only one piece remaining, in green",
+    "photos": [
+      "whisky-bottle-main.jpg",
+      "whisky-bottle-02.jpg",
+      "whisky-bottle-03.jpg"
+    ],
+    "alt": "Round pastel green stainless whisky bottle with a jewelled cap"
+  },
+  {
+    "id": "wine-set",
+    "slug": "electric-wine-set",
+    "name": "Electric Wine Set",
+    "price": 85000,
+    "summary": "A complete electric wine set built around a rechargeable opener.",
+    "details": [
+      "Included: pourer, stopper, foil cutter, storage base and rechargeable opener"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "wine-set-main.jpg"
+    ],
+    "alt": "Electric wine opener set on its storage base"
+  },
+  {
+    "id": "mesh-bags",
+    "slug": "washing-machine-mesh-bags",
+    "name": "Washing Machine Mesh Net Bags",
+    "qtytag": "7pcs",
+    "price": 65000,
+    "summary": "A set of seven mesh laundry bags that protect your clothes in the washing machine and keep laundry sorted. Watch the video to see how to use them.",
+    "details": [
+      "Set of 7 mesh net bags in different sizes"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "mesh-bags-main.jpg",
+      "mesh-bags-02.jpg",
+      "mesh-bags-03.jpg",
+      "mesh-bags-04.jpg",
+      "mesh-bags-05.jpg",
+      "mesh-bags-06.jpg",
+      "mesh-bags-07.jpg",
+      "mesh-bags-08.jpg"
+    ],
+    "videos": [
+      "mesh-bags-1.mp4",
+      "mesh-bags-2.mp4"
+    ],
+    "alt": "Seven white mesh laundry bags in front of a washing machine"
+  },
+  {
+    "id": "ironing-mat",
+    "slug": "foldable-ironing-mat",
+    "name": "Foldable Ironing Mat",
+    "price": 65000,
+    "summary": "A foldable ironing mat that turns any table into an ironing surface.",
+    "photos": [
+      "ironing-mat-main.jpg",
+      "ironing-mat-02.jpg",
+      "ironing-mat-03.jpg"
+    ],
+    "alt": "Foldable ironing mat with an iron on it"
+  },
+  {
+    "id": "lint-remover",
+    "slug": "rechargeable-lint-remover",
+    "name": "Rechargeable Lint Remover",
+    "price": 65000,
+    "summary": "A new-design rechargeable lint remover that keeps clothes looking fresh.",
+    "details": [
+      "Rechargeable",
+      "Powerful motor",
+      "Speed display",
+      "Portable"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "lint-remover-main.jpg",
+      "lint-remover-02.jpg",
+      "lint-remover-03.jpg"
+    ],
+    "alt": "White rechargeable lint remover with a digital display"
+  },
+  {
+    "id": "sewing-machine",
+    "slug": "handheld-sewing-machine",
+    "name": "Portable Handheld Sewing Machine",
+    "price": 55000,
+    "summary": "A compact handheld sewing machine for quick fixes and hems, at home or away.",
+    "details": [
+      "Colour: white"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "sewing-machine-main.jpg",
+      "sewing-machine-02.jpg",
+      "sewing-machine-03.jpg"
+    ],
+    "alt": "White portable handheld sewing machine"
+  },
+  {
+    "id": "budget-planner",
+    "slug": "binder-budget-planner",
+    "name": "Binder Budget Planner",
+    "price": 55000,
+    "was": 75000,
+    "summary": "A binder-style budget planner to keep your savings and spending on track.",
+    "badge": "Clearance sale",
+    "variants": [
+      {
+        "label": "Colour",
+        "options": [
+          "Black",
+          "Brown"
+        ]
+      }
+    ],
+    "note": "Only 3 pieces remaining",
+    "photos": [
+      "budget-planner-main.jpg",
+      "budget-planner-02.jpg",
+      "budget-planner-03.jpg"
+    ],
+    "alt": "Black binder budget planner with cash envelopes and sheets"
+  },
+  {
+    "id": "mobile-dustbins",
+    "slug": "aesthetic-mobile-dustbins",
+    "name": "Aesthetic Mobile Dustbins",
+    "price": 185000,
+    "summary": "Stylish dustbins on wheels that look good in any room.",
+    "note": "Readily available",
+    "photos": [
+      "mobile-dustbins-main.jpg",
+      "mobile-dustbins-02.jpg",
+      "mobile-dustbins-03.jpg",
+      "mobile-dustbins-04.jpg"
+    ],
+    "alt": "Yellow, red and white decorative dustbins on wheels"
+  }
+]

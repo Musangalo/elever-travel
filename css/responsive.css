@@ -114,6 +114,11 @@ footer .logo-img.footer-logo-img { width: 380px; height: 100px; margin-bottom: 1
   .blog-index-grid { grid-template-columns: 1fr; }
   .product-page { padding: 7rem 1rem 3.5rem; }
   .product-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .shop-section { padding: 3rem 1rem; }
+  .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  a.shop-card .shop-card-body { padding: 0.8rem; }
+  a.shop-card .shop-card-name { font-size: 0.85rem; }
+  a.shop-card .shop-price { font-size: 1rem; }
   .blog-todo-with-video { grid-template-columns: 1fr; gap: 1.5rem; }
   .blog-todo-video { max-width: 260px; margin: 0 auto; }
   footer { padding: 3rem 2rem; }
