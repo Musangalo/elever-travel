@@ -720,7 +720,7 @@ window.stepQty = function (btn, delta) {
 };
 
 window.addToCart = function (btn) {
-  const card = btn.closest('.shop-card');
+  const card = btn.closest('[data-id]'); // a shop grid card or a product page
   const id = card.dataset.id;
   const name = card.dataset.name;
   const price = parseInt(card.dataset.price, 10);
@@ -764,6 +764,8 @@ window.removeCartItem = function (index) {
 };
 
 window.renderCart = function () {
+  const count = getCart().reduce((n, i) => n + i.qty, 0);
+  document.querySelectorAll('.cart-count').forEach(el => { el.textContent = count; });
   const list = document.getElementById('cartItemsList');
   if (!list) return; // Not currently on the Shop page
   const emptyMsg = document.getElementById('cartEmptyMsg');
@@ -859,3 +861,10 @@ window.checkoutCart = function () {
 
 // Draw any cart saved earlier in this visit when the Shop page loads
 document.addEventListener('DOMContentLoaded', function () { renderCart(); });
+
+// Product pages: clicking a thumbnail swaps it into the main photo
+window.showProductPhoto = function (thumb) {
+  const main = document.getElementById('productMainImage');
+  if (main) main.style.backgroundImage = "url('" + thumb.dataset.src + "')";
+  thumb.parentElement.querySelectorAll('.product-thumb').forEach(t => t.classList.toggle('active', t === thumb));
+};
