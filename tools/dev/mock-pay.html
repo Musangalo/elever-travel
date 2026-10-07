@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Pretend Pesapal payment page (local test)</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #f2f4f7; margin: 0; display: grid; place-items: center; min-height: 100vh; }
+  .card { background: #fff; width: min(440px, 92vw); padding: 28px; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  .tag { background: #fff3cd; color: #7a5b00; padding: 6px 10px; font-size: 12px; border-radius: 6px; margin-bottom: 16px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .amount { font-size: 28px; font-weight: 700; margin: 8px 0 4px; }
+  .desc { color: #555; font-size: 14px; margin-bottom: 20px; word-break: break-word; }
+  button { display: block; width: 100%; padding: 12px; margin-top: 10px; font-size: 15px; border-radius: 6px; border: 1px solid #1b5e9b; cursor: pointer; }
+  .pay { background: #1b5e9b; color: #fff; }
+  .no { background: #fff; color: #1b5e9b; }
+  a { display: block; text-align: center; margin-top: 16px; color: #666; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="tag">This is a PRETEND payment page for local testing. No real money moves.</div>
+  <h1>Pay Elever Travel</h1>
+  <div class="amount" id="amount">…</div>
+  <div class="desc" id="desc"></div>
+  <button class="pay" id="approve">Approve payment (pretend MTN Mobile Money)</button>
+  <button class="no" id="decline">Decline payment</button>
+  <a href="#" id="leave">Cancel and go back to the shop</a>
+</div>
+<script>
+(function () {
+  var id = new URLSearchParams(location.search).get('id');
+  var tx = window.__devPesapal.read(id);
+  if (!tx) { document.querySelector('.card').textContent = 'Unknown test payment.'; return; }
+
+  document.getElementById('amount').textContent = tx.order.currency + ' ' + Number(tx.order.amount).toLocaleString();
+  document.getElementById('desc').textContent = tx.order.description;
+
+  // Pesapal tells the shop (the IPN), then sends the customer back to the shop's callback page.
+  function finish(status, code) {
+    tx.status = status; tx.code = code;
+    window.__devPesapal.write(id, tx);
+    var q = 'OrderTrackingId=' + encodeURIComponent(id) + '&OrderMerchantReference=' + encodeURIComponent(tx.order.id) + '&OrderNotificationType=IPNCHANGE';
+    fetch('/api/ipn?' + q).then(function () {
+      location.href = tx.order.callback_url + '?' + q;
+    });
+  }
+  document.getElementById('approve').onclick = function () { finish('COMPLETED', 1); };
+  document.getElementById('decline').onclick = function () { finish('FAILED', 2); };
+  document.getElementById('leave').onclick = function (e) { e.preventDefault(); location.href = tx.order.cancellation_url; };
+})();
+</script>
+</body>
+</html>

@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="css/style.css?v=55">
+<link rel="stylesheet" href="css/style.css?v=56">
 <link rel="stylesheet" href="css/responsive.css?v=39">
 </head>
 <body>
@@ -535,8 +535,9 @@
         </div>
       </div>
 
+      <button class="submit-btn" id="payBtn" onclick="payOnline()" type="button" style="display:none;">Pay with MTN, Airtel or Card</button>
       <button class="submit-btn" id="checkoutBtn" onclick="checkoutCart()" type="button">Send Order on WhatsApp</button>
-      <p class="review-form-note">Your order opens in WhatsApp, ready to send. We'll confirm availability and share Mobile Money payment details.</p>
+      <p class="review-form-note" id="checkoutNote">Your order opens in WhatsApp, ready to send. We'll confirm availability and share Mobile Money payment details.</p>
     </div>
 
     <div class="form-success" id="checkoutSuccess">
@@ -618,6 +619,6 @@
 </footer>
 
 <!-- JavaScript -->
-<script src="js/main.js?v=39"></script>
+<script src="js/main.js?v=41"></script>
 </body>
 </html>

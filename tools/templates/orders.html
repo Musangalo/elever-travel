@@ -1,0 +1,112 @@
+
+<!-- ============================================
+   ORDERS LIST for Elever staff. Hidden from search engines.
+   Needs the ADMIN_KEY set in Cloudflare; the key is typed here and kept only for this visit.
+   Generated from tools/templates/orders.html by tools/build_shop.py.
+   ============================================ -->
+<section class="admin-wrap">
+  <div class="section-eyebrow">Staff only</div>
+  <h1>Shop Orders</h1>
+  <div class="admin-key">
+    <input type="password" id="adminKey" placeholder="Staff key" autocomplete="off" aria-label="Staff key">
+    <button class="btn-primary" type="button" id="loadOrders">Load orders</button>
+  </div>
+  <p id="adminMsg" class="section-text"></p>
+  <table class="admin-table" id="adminTable" hidden>
+    <thead><tr><th>Date</th><th>Reference</th><th>Status</th><th>Customer</th><th class="hide-sm">Phone</th><th>Items</th><th>Total</th></tr></thead>
+    <tbody id="adminBody"></tbody>
+  </table>
+</section>
+
+<script>
+(function () {
+  var keyInput = document.getElementById('adminKey');
+  var msg = document.getElementById('adminMsg');
+  var table = document.getElementById('adminTable');
+  var body = document.getElementById('adminBody');
+  try { keyInput.value = sessionStorage.getItem('elever_admin_key') || ''; } catch (e) {}
+
+  function cell(row, text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.textContent = text;
+    row.appendChild(td);
+    return td;
+  }
+
+  function api(query) {
+    return fetch('/api/admin/orders' + (query || ''), { headers: { Authorization: 'Bearer ' + keyInput.value.trim() }, cache: 'no-store' });
+  }
+
+  function detailText(o) {
+    var lines = ['Order ' + o.ref + ' — ' + o.status, ''];
+    o.items.forEach(function (i) {
+      lines.push(i.qty + ' × ' + i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' — UGX ' + (i.unitPrice * i.qty).toLocaleString());
+    });
+    lines.push('', 'Total: UGX ' + o.total.toLocaleString(), '',
+      'Customer: ' + o.customer.name, 'Email: ' + o.customer.email, 'Phone: ' + o.customer.phone, '',
+      'Placed: ' + new Date(o.createdAt).toLocaleString());
+    if (o.paymentMethod) lines.push('Paid by: ' + o.paymentMethod);
+    if (o.confirmationCode) lines.push('Confirmation code: ' + o.confirmationCode);
+    return lines.join('\n');
+  }
+
+  function toggleDetail(row, ref) {
+    var next = row.nextSibling;
+    if (next && next.className === 'admin-detail') { next.remove(); return; }
+    var tr = document.createElement('tr');
+    tr.className = 'admin-detail';
+    var td = document.createElement('td');
+    td.colSpan = 7;
+    td.textContent = 'Loading…';
+    tr.appendChild(td);
+    row.after(tr);
+    api('?ref=' + encodeURIComponent(ref))
+      .then(function (r) { return r.json(); })
+      .then(function (o) {
+        td.textContent = '';
+        var pre = document.createElement('pre');
+        pre.textContent = o.error ? o.error : detailText(o);
+        td.appendChild(pre);
+      })
+      .catch(function () { td.textContent = 'Could not load this order.'; });
+  }
+
+  function load() {
+    msg.textContent = 'Loading…';
+    table.hidden = true;
+    api()
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, d: d }; }); })
+      .then(function (res) {
+        if (res.status === 401) { msg.textContent = 'That key is not right.'; return; }
+        if (!res.ok) { msg.textContent = 'Orders are not set up yet.'; return; }
+        try { sessionStorage.setItem('elever_admin_key', keyInput.value.trim()); } catch (e) {}
+        body.textContent = '';
+        res.d.orders.forEach(function (o) {
+          var tr = document.createElement('tr');
+          tr.className = 'admin-row';
+          cell(tr, new Date(o.createdAt).toLocaleString());
+          cell(tr, o.ref);
+          var st = cell(tr, '');
+          var pill = document.createElement('span');
+          pill.className = 'status-pill status-' + o.status;
+          pill.textContent = o.status;
+          st.appendChild(pill);
+          cell(tr, o.name);
+          cell(tr, o.phone, 'hide-sm');
+          cell(tr, o.count + ' item' + (o.count === 1 ? '' : 's'));
+          cell(tr, 'UGX ' + Number(o.total).toLocaleString());
+          tr.addEventListener('click', function () { toggleDetail(tr, o.ref); });
+          body.appendChild(tr);
+        });
+        msg.textContent = res.d.orders.length ? 'Click an order to see what was bought and who to contact.' : 'No orders yet.';
+        table.hidden = res.d.orders.length === 0;
+      })
+      .catch(function () { msg.textContent = 'Could not reach the server.'; });
+  }
+
+  document.getElementById('loadOrders').addEventListener('click', load);
+  keyInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') load(); });
+  if (keyInput.value) load(); else msg.textContent = 'Enter the staff key to see orders.';
+})();
+</script>

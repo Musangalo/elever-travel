@@ -10,19 +10,20 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Elever Travel Edit | Elever Travel Management Limited</title>
-<meta name="description" content="Travel stories and ideas from Elever Travel Management: the places worth the detour across Uganda and beyond.">
+<title>Shop Orders | Elever Travel</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Staff order list.">
 <meta name="keywords" content="luxury travel Uganda, Kampala travel agency, gorilla trekking, Uganda safari, honeymoon packages, business travel Uganda, visa guidance Uganda">
-<meta property="og:title" content="The Elever Travel Edit | Elever Travel Management Limited">
-<meta property="og:description" content="Travel stories and ideas from Elever Travel Management: the places worth the detour across Uganda and beyond.">
+<meta property="og:title" content="Shop Orders | Elever Travel">
+<meta property="og:description" content="Staff order list.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elevertravel.com/blog.html">
-<meta property="og:image" content="https://elevertravel.com/assets/photos/large/blog-cover.jpg">
+<meta property="og:url" content="https://elevertravel.com/orders.html">
+<meta property="og:image" content="https://elevertravel.com/assets/photos/shop/slippers-main.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:alt" content="Uganda travel blog cover photo">
+<meta property="og:image:alt" content="Foldable travel slippers">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://elevertravel.com/assets/photos/large/blog-cover.jpg">
-<link rel="canonical" href="https://elevertravel.com/blog.html">
+<meta name="twitter:image" content="https://elevertravel.com/assets/photos/shop/slippers-main.jpg">
+<link rel="canonical" href="https://elevertravel.com/orders.html">
 <link rel="icon" type="image/svg+xml" href="assets/LogoDark.svg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -96,8 +97,8 @@
         </div>
       </div>
     </li>
-    <li><a href="blog.html" data-page="blog" class="active" aria-current="page">Blog</a></li>
-    <li><a href="shop.html" data-page="shop">Shop</a></li>
+    <li><a href="blog.html" data-page="blog">Blog</a></li>
+    <li><a href="shop.html" data-page="shop" class="active" aria-current="page">Shop</a></li>
     <li><a href="contact.html" data-page="contact" class="nav-cta">Plan My Trip</a></li>
   </ul>
   <div class="nav-actions">
@@ -188,51 +189,116 @@
 <!-- ═══════════════════ PAGE CONTENT ═══════════════════ -->
 <main id="pageContent">
 <!-- ============================================
-   BLOG INDEX -- "The Elever Travel Edit"
-   Lists every post, newest first. Each post is its
-   own page (blog-<slug>.html). To add a post, copy
-   a .pkg-card below and point it at the new page.
+   ORDERS LIST for Elever staff. Hidden from search engines.
+   Needs the ADMIN_KEY set in Cloudflare; the key is typed here and kept only for this visit.
+   Generated from tools/templates/orders.html by tools/build_shop.py.
    ============================================ -->
-
-<!-- HERO -->
-<div class="page-hero" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.92)), url('assets/photos/large/blog-cover.jpg') center/cover; padding-top: 8rem;" role="img" aria-label="Uganda travel blog cover photo">
-  <div>
-    <div class="section-eyebrow">The Elever Travel Edit</div>
-    <h1 class="section-title">Stories from <em>the Pearl of Africa</em></h1>
-    <p class="page-hero-subtitle">Places worth the detour, journeys worth slowing down for, and ideas for your next escape.</p>
+<section class="admin-wrap">
+  <div class="section-eyebrow">Staff only</div>
+  <h1>Shop Orders</h1>
+  <div class="admin-key">
+    <input type="password" id="adminKey" placeholder="Staff key" autocomplete="off" aria-label="Staff key">
+    <button class="btn-primary" type="button" id="loadOrders">Load orders</button>
   </div>
-</div>
-
-<!-- POSTS -->
-<section>
-  <div class="section-eyebrow">Latest Articles</div>
-  <h2 class="section-title">From the <em>Journal</em></h2>
-  <div class="gold-line"></div>
-  <div class="packages-grid blog-index-grid">
-    <a class="pkg-card blog-index-card" href="blog-uganda-most-travellers-miss.html">
-      <div class="pkg-img" style="background-image: url('assets/photos/large/mburo-viewpoint-binoculars.jpg'); background-position: 30% center;" role="img" aria-label="A traveller with binoculars overlooking lake and savannah">
-        <span class="pkg-badge">Article 2</span>
-      </div>
-      <div class="pkg-body">
-        <div class="blog-index-date"><time datetime="2026-09-30">Sep 30, 2026</time></div>
-        <div class="pkg-name">The Uganda Most Travellers Miss</div>
-        <div class="pkg-desc">Six quieter corners of the Pearl of Africa, from Lake Bunyonyi to Kidepo Valley, and why they deserve a place on your next itinerary.</div>
-        <span class="pkg-cta">Read</span>
-      </div>
-    </a>
-    <a class="pkg-card blog-index-card" href="blog-uganda-beyond-the-safari.html">
-      <div class="pkg-img" style="background-image: url('assets/photos/large/fortportal-tea-aerial.jpg');" role="img" aria-label="Aerial view of Fort Portal tea plantations">
-        <span class="pkg-badge">Article 1</span>
-      </div>
-      <div class="pkg-body">
-        <div class="blog-index-date"><time datetime="2026-09-13">Sep 13, 2026</time></div>
-        <div class="pkg-name">Uganda, Beyond the Safari</div>
-        <div class="pkg-desc">The Pearl of Africa has always been beautiful. Perhaps it is time we travelled through it differently: Fort Portal, Bwindi, Murchison Falls and more.</div>
-        <span class="pkg-cta">Read</span>
-      </div>
-    </a>
-  </div>
+  <p id="adminMsg" class="section-text"></p>
+  <table class="admin-table" id="adminTable" hidden>
+    <thead><tr><th>Date</th><th>Reference</th><th>Status</th><th>Customer</th><th class="hide-sm">Phone</th><th>Items</th><th>Total</th></tr></thead>
+    <tbody id="adminBody"></tbody>
+  </table>
 </section>
+
+<script>
+(function () {
+  var keyInput = document.getElementById('adminKey');
+  var msg = document.getElementById('adminMsg');
+  var table = document.getElementById('adminTable');
+  var body = document.getElementById('adminBody');
+  try { keyInput.value = sessionStorage.getItem('elever_admin_key') || ''; } catch (e) {}
+
+  function cell(row, text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.textContent = text;
+    row.appendChild(td);
+    return td;
+  }
+
+  function api(query) {
+    return fetch('/api/admin/orders' + (query || ''), { headers: { Authorization: 'Bearer ' + keyInput.value.trim() }, cache: 'no-store' });
+  }
+
+  function detailText(o) {
+    var lines = ['Order ' + o.ref + ' — ' + o.status, ''];
+    o.items.forEach(function (i) {
+      lines.push(i.qty + ' × ' + i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' — UGX ' + (i.unitPrice * i.qty).toLocaleString());
+    });
+    lines.push('', 'Total: UGX ' + o.total.toLocaleString(), '',
+      'Customer: ' + o.customer.name, 'Email: ' + o.customer.email, 'Phone: ' + o.customer.phone, '',
+      'Placed: ' + new Date(o.createdAt).toLocaleString());
+    if (o.paymentMethod) lines.push('Paid by: ' + o.paymentMethod);
+    if (o.confirmationCode) lines.push('Confirmation code: ' + o.confirmationCode);
+    return lines.join('\n');
+  }
+
+  function toggleDetail(row, ref) {
+    var next = row.nextSibling;
+    if (next && next.className === 'admin-detail') { next.remove(); return; }
+    var tr = document.createElement('tr');
+    tr.className = 'admin-detail';
+    var td = document.createElement('td');
+    td.colSpan = 7;
+    td.textContent = 'Loading…';
+    tr.appendChild(td);
+    row.after(tr);
+    api('?ref=' + encodeURIComponent(ref))
+      .then(function (r) { return r.json(); })
+      .then(function (o) {
+        td.textContent = '';
+        var pre = document.createElement('pre');
+        pre.textContent = o.error ? o.error : detailText(o);
+        td.appendChild(pre);
+      })
+      .catch(function () { td.textContent = 'Could not load this order.'; });
+  }
+
+  function load() {
+    msg.textContent = 'Loading…';
+    table.hidden = true;
+    api()
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, d: d }; }); })
+      .then(function (res) {
+        if (res.status === 401) { msg.textContent = 'That key is not right.'; return; }
+        if (!res.ok) { msg.textContent = 'Orders are not set up yet.'; return; }
+        try { sessionStorage.setItem('elever_admin_key', keyInput.value.trim()); } catch (e) {}
+        body.textContent = '';
+        res.d.orders.forEach(function (o) {
+          var tr = document.createElement('tr');
+          tr.className = 'admin-row';
+          cell(tr, new Date(o.createdAt).toLocaleString());
+          cell(tr, o.ref);
+          var st = cell(tr, '');
+          var pill = document.createElement('span');
+          pill.className = 'status-pill status-' + o.status;
+          pill.textContent = o.status;
+          st.appendChild(pill);
+          cell(tr, o.name);
+          cell(tr, o.phone, 'hide-sm');
+          cell(tr, o.count + ' item' + (o.count === 1 ? '' : 's'));
+          cell(tr, 'UGX ' + Number(o.total).toLocaleString());
+          tr.addEventListener('click', function () { toggleDetail(tr, o.ref); });
+          body.appendChild(tr);
+        });
+        msg.textContent = res.d.orders.length ? 'Click an order to see what was bought and who to contact.' : 'No orders yet.';
+        table.hidden = res.d.orders.length === 0;
+      })
+      .catch(function () { msg.textContent = 'Could not reach the server.'; });
+  }
+
+  document.getElementById('loadOrders').addEventListener('click', load);
+  keyInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') load(); });
+  if (keyInput.value) load(); else msg.textContent = 'Enter the staff key to see orders.';
+})();
+</script>
 
 </main>
 

@@ -1,0 +1,113 @@
+
+<!-- ============================================
+   ORDER RESULT PAGE -- where Pesapal sends the customer after paying.
+   Generated from tools/templates/order-complete.html by tools/build_shop.py.
+   It never trusts the address bar: it asks /api/order-status, which checks with Pesapal.
+   ============================================ -->
+<section class="order-box" id="orderBox">
+  <div class="order-status-icon" id="osIcon" aria-hidden="true">…</div>
+  <div class="section-eyebrow">Your Order</div>
+  <h1 id="osTitle">Checking your payment…</h1>
+  <p id="osText">One moment while we confirm your payment.</p>
+  <ul class="order-lines" id="osLines" hidden></ul>
+  <p class="order-ref" id="osRef"></p>
+  <div class="order-actions" id="osActions"></div>
+</section>
+
+<script>
+(function () {
+  var WHATSAPP = '256740748155';
+  var params = new URLSearchParams(location.search);
+  var ref = params.get('OrderMerchantReference') || params.get('ref') || '';
+  var el = function (id) { return document.getElementById(id); };
+
+  function ugx(n) { return 'UGX ' + Number(n).toLocaleString(); }
+
+  function actions(list) {
+    var box = el('osActions');
+    box.textContent = '';
+    list.forEach(function (a) {
+      var link = document.createElement('a');
+      link.href = a.href;
+      link.textContent = a.label;
+      link.className = a.primary ? 'btn-primary' : 'btn-outline';
+      if (a.external) { link.target = '_blank'; link.rel = 'noopener'; }
+      box.appendChild(link);
+    });
+  }
+
+  function whatsappHelp(extra) {
+    var msg = 'Hello Elever Travel, I need help with my shop order ' + ref + '. ' + (extra || '');
+    return { label: 'Chat with us on WhatsApp', href: 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), external: true };
+  }
+
+  function show(order, finalState) {
+    el('osRef').textContent = 'Order reference: ' + order.ref;
+    var lines = el('osLines');
+    lines.textContent = '';
+    order.items.forEach(function (i) {
+      var li = document.createElement('li');
+      var left = document.createElement('span');
+      left.textContent = i.qty + ' × ' + i.name + (i.variant ? ' (' + i.variant + ')' : '');
+      li.appendChild(left);
+      lines.appendChild(li);
+    });
+    var total = document.createElement('li');
+    var a = document.createElement('strong'); a.textContent = 'Total';
+    var b = document.createElement('strong'); b.textContent = ugx(order.total);
+    total.appendChild(a); total.appendChild(b);
+    lines.appendChild(total);
+    lines.hidden = false;
+
+    if (order.status === 'COMPLETED') {
+      try { sessionStorage.removeItem('elever_cart'); } catch (e) {}
+      el('osIcon').textContent = '✓';
+      el('osTitle').textContent = 'Thank you! Payment received';
+      el('osText').textContent = 'We have received your payment. Our team will contact you on the phone number or email you gave us to arrange delivery.';
+      actions([{ label: 'Keep shopping', href: 'shop.html', primary: true }, whatsappHelp()]);
+    } else if (order.status === 'FAILED' || order.status === 'REVERSED') {
+      el('osIcon').textContent = '!';
+      el('osTitle').textContent = 'Payment was not completed';
+      el('osText').textContent = 'No money was taken for this order. Your cart is still saved, so you can try again.';
+      actions([{ label: 'Back to my cart', href: 'shop.html#shopCart', primary: true }, whatsappHelp()]);
+    } else if (order.status === 'AMOUNT_MISMATCH') {
+      el('osIcon').textContent = '!';
+      el('osTitle').textContent = 'We need to check your payment';
+      el('osText').textContent = 'The amount received did not match your order. Please contact us and we will sort it out quickly.';
+      actions([whatsappHelp('The amount did not match.')]);
+    } else if (finalState) {
+      el('osIcon').textContent = '…';
+      el('osTitle').textContent = 'Your payment is still being confirmed';
+      el('osText').textContent = 'Mobile Money payments can take a minute. If you have already approved the payment, there is nothing more to do: we will confirm your order shortly.';
+      actions([{ label: 'Keep shopping', href: 'shop.html', primary: true }, whatsappHelp('My payment is still pending.')]);
+    }
+  }
+
+  function problem(title, text) {
+    el('osIcon').textContent = '!';
+    el('osTitle').textContent = title;
+    el('osText').textContent = text;
+    actions([{ label: 'Back to the shop', href: 'shop.html', primary: true }]);
+  }
+
+  if (!ref) { problem('We could not find your order', 'This page is where you return after paying. If you were paying for an order, please check with us on WhatsApp.'); return; }
+
+  var tries = 0;
+  function check() {
+    tries++;
+    fetch('/api/order-status?ref=' + encodeURIComponent(ref), { cache: 'no-store' })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok) { problem('We could not find your order', 'Please check with us on WhatsApp and quote your reference: ' + ref); return; }
+        var done = res.d.status !== 'PENDING';
+        show(res.d, tries >= 8);
+        if (!done && tries < 8) setTimeout(check, 4000);
+      })
+      .catch(function () {
+        if (tries < 4) setTimeout(check, 4000);
+        else problem('We could not check your payment', 'Please check with us on WhatsApp and quote your reference: ' + ref);
+      });
+  }
+  check();
+})();
+</script>

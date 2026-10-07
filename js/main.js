@@ -699,12 +699,6 @@ window.togglePkgAccordion = function (btn) {
 // each cart line stores its own price/name/image snapshot at add-time
 // so the cart never has to re-read the shop page's DOM to render itself.
 
-// TODO: swap this for Elever's real Flutterwave public key once their
-// merchant account (mobile money + Visa/Mastercard) is approved. A TEST
-// key will open the widget but cannot take a real payment.
-// Orders go to this WhatsApp number until online payment is set up
-const SHOP_WHATSAPP = '256740748155';
-const FLW_PUBLIC_KEY = 'FLWPUBK_TEST-REPLACE-WITH-LIVE-PUBLIC-KEY-X';
 
 function getCart() {
   try { return JSON.parse(sessionStorage.getItem('elever_cart') || '[]'); }
@@ -811,75 +805,96 @@ window.renderCart = function () {
   if (totalEl) totalEl.textContent = 'UGX ' + total.toLocaleString();
 };
 
-window.checkoutCart = function () {
-  const cart = getCart();
-  if (cart.length === 0) { alert('Your cart is empty.'); return; }
+// --- Checkout ---------------------------------------------------------
+// Two ways to order:
+//   * Online payment (Pesapal): MTN, Airtel or card. Offered only when the server says
+//     it is switched on (GET /api/config), so until then the shop uses WhatsApp.
+//   * WhatsApp: sends the order to Elever with everything pre-filled.
+// Orders go to this WhatsApp number:
+const SHOP_WHATSAPP = '256740748155';
 
+function cartTotal(cart) {
+  return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+}
+
+// Reads and checks the name/email/phone fields. Returns null (after telling the
+// customer) if something is missing.
+function readCheckoutForm() {
+  const cart = getCart();
+  if (cart.length === 0) { alert('Your cart is empty.'); return null; }
   const name = document.getElementById('cartName').value.trim();
   const email = document.getElementById('cartEmail').value.trim();
   const phone = document.getElementById('cartPhone').value.trim();
   if (!name || !email || !phone) {
     alert('Please fill in your name, email, and phone number before checkout.');
-    return;
+    return null;
   }
+  return { cart, name, email, phone };
+}
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  const txRef = 'ELV-' + Date.now();
-  const orderSummary = cart.map(i => i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' x' + i.qty).join(', ');
-
-  if (typeof FlutterwaveCheckout !== 'function' || FLW_PUBLIC_KEY.indexOf('REPLACE') !== -1) {
-    // The payment script didn't load, or the shop isn't connected to a
-    // live payment account yet -- fail gracefully instead of leaving the
-    // Checkout button silently doing nothing.
-    // No online payment provider yet: send the order to Elever's WhatsApp
-    // with everything pre-filled, so the team can confirm and share payment details.
-    const lines = cart.map(i => '- ' + i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' x' + i.qty +
-      ' = UGX ' + (i.price * i.qty).toLocaleString());
-    const message = 'Hello Elever Travel, I would like to order:\n' + lines.join('\n') +
-      '\n\nTotal: UGX ' + total.toLocaleString() +
-      '\n\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone;
-    window.open('https://wa.me/' + SHOP_WHATSAPP + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
-    return;
-  }
-
-  FlutterwaveCheckout({
-    public_key: FLW_PUBLIC_KEY,
-    tx_ref: txRef,
-    amount: total,
-    currency: 'UGX',
-    payment_options: 'card, mobilemoneyuganda',
-    customer: { email: email, phone_number: phone, name: name },
-    customizations: {
-      title: 'Elever Travel Shop',
-      description: orderSummary,
-      logo: 'https://elevertravel.com/assets/LogoLight.svg'
-    },
-    callback: function () {
-      // This only confirms the customer *reached* a successful screen in
-      // the payment widget. The order is only truly marked "paid" once
-      // the payment provider's server-side webhook confirms it -- this
-      // callback just shows a friendly thank-you and clears the cart.
-      const summary = document.getElementById('cartSummary');
-      const itemsList = document.getElementById('cartItemsList');
-      const success = document.getElementById('checkoutSuccess');
-      if (summary) summary.style.display = 'none';
-      if (itemsList) itemsList.innerHTML = '';
-      if (success) success.style.display = '';
-      saveCart([]);
-    },
-    onclose: function () {}
-  });
+window.checkoutCart = function () {
+  const form = readCheckoutForm();
+  if (!form) return;
+  const { cart, name, email, phone } = form;
+  const lines = cart.map(i => '- ' + i.name + (i.variant ? ' (' + i.variant + ')' : '') + ' x' + i.qty +
+    ' = UGX ' + (i.price * i.qty).toLocaleString());
+  const message = 'Hello Elever Travel, I would like to order:\n' + lines.join('\n') +
+    '\n\nTotal: UGX ' + cartTotal(cart).toLocaleString() +
+    '\n\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone;
+  window.open('https://wa.me/' + SHOP_WHATSAPP + '?text=' + encodeURIComponent(message), '_blank', 'noopener');
 };
 
-// Draw any cart saved earlier in this visit when the Shop page loads
+window.payOnline = async function () {
+  const form = readCheckoutForm();
+  if (!form) return;
+  const btn = document.getElementById('payBtn');
+  const label = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Opening secure payment…';
+  try {
+    const res = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      // Only what was ordered and who is paying -- the server works out the price itself
+      body: JSON.stringify({
+        items: form.cart.map(i => ({ id: i.id, variant: i.variant, qty: i.qty })),
+        customer: { name: form.name, email: form.email, phone: form.phone }
+      })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.redirectUrl) throw new Error(data.error || 'Payment could not be started.');
+    window.location.href = data.redirectUrl; // Pesapal's secure payment page
+  } catch (e) {
+    alert((e && e.message) || 'We could not start the payment.');
+    btn.disabled = false;
+    btn.textContent = label;
+  }
+};
+
+// Show the payment buttons that fit what is switched on
+function applyPaymentMode(online) {
+  const pay = document.getElementById('payBtn');
+  const wa = document.getElementById('checkoutBtn');
+  const note = document.getElementById('checkoutNote');
+  if (!pay || !wa || !note) return; // not on the Shop page
+  pay.style.display = online ? '' : 'none';
+  wa.classList.toggle('submit-btn-secondary', online);
+  wa.textContent = online ? 'Or Order on WhatsApp Instead' : 'Send Order on WhatsApp';
+  note.textContent = online
+    ? 'Pay securely by MTN Mobile Money, Airtel Money or card. You will be taken to a secure payment page and brought back here.'
+    : 'Your order opens in WhatsApp, ready to send. We\'ll confirm availability and share Mobile Money payment details.';
+}
+
+// Draw any cart saved earlier in this visit (Shop page cart, and the cart count on product pages)
 document.addEventListener('DOMContentLoaded', function () { renderCart(); });
 
-// Product pages: clicking a thumbnail swaps it into the main photo
-window.showProductPhoto = function (thumb) {
-  const main = document.getElementById('productMainImage');
-  if (main) main.style.backgroundImage = "url('" + thumb.dataset.src + "')";
-  thumb.parentElement.querySelectorAll('.product-thumb').forEach(t => t.classList.toggle('active', t === thumb));
-};
+document.addEventListener('DOMContentLoaded', function () {
+  if (!document.getElementById('payBtn')) return;
+  fetch('/api/config', { cache: 'no-store' })
+    .then(r => (r.ok ? r.json() : { onlinePayments: false }))
+    .then(cfg => applyPaymentMode(Boolean(cfg && cfg.onlinePayments)))
+    .catch(() => applyPaymentMode(false));
+});
 
 // Options with their own price: show the chosen option's price on the card/page
 window.updateVariantPrice = function (select) {

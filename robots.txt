@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /orders.html
+Disallow: /order-complete.html
+Disallow: /api/
 
 Sitemap: https://elevertravel.com/sitemap.xml

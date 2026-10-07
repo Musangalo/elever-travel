@@ -10,19 +10,20 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Elever Travel Edit | Elever Travel Management Limited</title>
-<meta name="description" content="Travel stories and ideas from Elever Travel Management: the places worth the detour across Uganda and beyond.">
+<title>Your Order | Elever Travel Shop</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Your Elever Travel Shop order and payment status.">
 <meta name="keywords" content="luxury travel Uganda, Kampala travel agency, gorilla trekking, Uganda safari, honeymoon packages, business travel Uganda, visa guidance Uganda">
-<meta property="og:title" content="The Elever Travel Edit | Elever Travel Management Limited">
-<meta property="og:description" content="Travel stories and ideas from Elever Travel Management: the places worth the detour across Uganda and beyond.">
+<meta property="og:title" content="Your Order | Elever Travel Shop">
+<meta property="og:description" content="Your Elever Travel Shop order and payment status.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elevertravel.com/blog.html">
-<meta property="og:image" content="https://elevertravel.com/assets/photos/large/blog-cover.jpg">
+<meta property="og:url" content="https://elevertravel.com/order-complete.html">
+<meta property="og:image" content="https://elevertravel.com/assets/photos/shop/slippers-main.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:alt" content="Uganda travel blog cover photo">
+<meta property="og:image:alt" content="Foldable travel slippers">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://elevertravel.com/assets/photos/large/blog-cover.jpg">
-<link rel="canonical" href="https://elevertravel.com/blog.html">
+<meta name="twitter:image" content="https://elevertravel.com/assets/photos/shop/slippers-main.jpg">
+<link rel="canonical" href="https://elevertravel.com/order-complete.html">
 <link rel="icon" type="image/svg+xml" href="assets/LogoDark.svg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -96,8 +97,8 @@
         </div>
       </div>
     </li>
-    <li><a href="blog.html" data-page="blog" class="active" aria-current="page">Blog</a></li>
-    <li><a href="shop.html" data-page="shop">Shop</a></li>
+    <li><a href="blog.html" data-page="blog">Blog</a></li>
+    <li><a href="shop.html" data-page="shop" class="active" aria-current="page">Shop</a></li>
     <li><a href="contact.html" data-page="contact" class="nav-cta">Plan My Trip</a></li>
   </ul>
   <div class="nav-actions">
@@ -188,51 +189,117 @@
 <!-- ═══════════════════ PAGE CONTENT ═══════════════════ -->
 <main id="pageContent">
 <!-- ============================================
-   BLOG INDEX -- "The Elever Travel Edit"
-   Lists every post, newest first. Each post is its
-   own page (blog-<slug>.html). To add a post, copy
-   a .pkg-card below and point it at the new page.
+   ORDER RESULT PAGE -- where Pesapal sends the customer after paying.
+   Generated from tools/templates/order-complete.html by tools/build_shop.py.
+   It never trusts the address bar: it asks /api/order-status, which checks with Pesapal.
    ============================================ -->
-
-<!-- HERO -->
-<div class="page-hero" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.92)), url('assets/photos/large/blog-cover.jpg') center/cover; padding-top: 8rem;" role="img" aria-label="Uganda travel blog cover photo">
-  <div>
-    <div class="section-eyebrow">The Elever Travel Edit</div>
-    <h1 class="section-title">Stories from <em>the Pearl of Africa</em></h1>
-    <p class="page-hero-subtitle">Places worth the detour, journeys worth slowing down for, and ideas for your next escape.</p>
-  </div>
-</div>
-
-<!-- POSTS -->
-<section>
-  <div class="section-eyebrow">Latest Articles</div>
-  <h2 class="section-title">From the <em>Journal</em></h2>
-  <div class="gold-line"></div>
-  <div class="packages-grid blog-index-grid">
-    <a class="pkg-card blog-index-card" href="blog-uganda-most-travellers-miss.html">
-      <div class="pkg-img" style="background-image: url('assets/photos/large/mburo-viewpoint-binoculars.jpg'); background-position: 30% center;" role="img" aria-label="A traveller with binoculars overlooking lake and savannah">
-        <span class="pkg-badge">Article 2</span>
-      </div>
-      <div class="pkg-body">
-        <div class="blog-index-date"><time datetime="2026-09-30">Sep 30, 2026</time></div>
-        <div class="pkg-name">The Uganda Most Travellers Miss</div>
-        <div class="pkg-desc">Six quieter corners of the Pearl of Africa, from Lake Bunyonyi to Kidepo Valley, and why they deserve a place on your next itinerary.</div>
-        <span class="pkg-cta">Read</span>
-      </div>
-    </a>
-    <a class="pkg-card blog-index-card" href="blog-uganda-beyond-the-safari.html">
-      <div class="pkg-img" style="background-image: url('assets/photos/large/fortportal-tea-aerial.jpg');" role="img" aria-label="Aerial view of Fort Portal tea plantations">
-        <span class="pkg-badge">Article 1</span>
-      </div>
-      <div class="pkg-body">
-        <div class="blog-index-date"><time datetime="2026-09-13">Sep 13, 2026</time></div>
-        <div class="pkg-name">Uganda, Beyond the Safari</div>
-        <div class="pkg-desc">The Pearl of Africa has always been beautiful. Perhaps it is time we travelled through it differently: Fort Portal, Bwindi, Murchison Falls and more.</div>
-        <span class="pkg-cta">Read</span>
-      </div>
-    </a>
-  </div>
+<section class="order-box" id="orderBox">
+  <div class="order-status-icon" id="osIcon" aria-hidden="true">…</div>
+  <div class="section-eyebrow">Your Order</div>
+  <h1 id="osTitle">Checking your payment…</h1>
+  <p id="osText">One moment while we confirm your payment.</p>
+  <ul class="order-lines" id="osLines" hidden></ul>
+  <p class="order-ref" id="osRef"></p>
+  <div class="order-actions" id="osActions"></div>
 </section>
+
+<script>
+(function () {
+  var WHATSAPP = '256740748155';
+  var params = new URLSearchParams(location.search);
+  var ref = params.get('OrderMerchantReference') || params.get('ref') || '';
+  var el = function (id) { return document.getElementById(id); };
+
+  function ugx(n) { return 'UGX ' + Number(n).toLocaleString(); }
+
+  function actions(list) {
+    var box = el('osActions');
+    box.textContent = '';
+    list.forEach(function (a) {
+      var link = document.createElement('a');
+      link.href = a.href;
+      link.textContent = a.label;
+      link.className = a.primary ? 'btn-primary' : 'btn-outline';
+      if (a.external) { link.target = '_blank'; link.rel = 'noopener'; }
+      box.appendChild(link);
+    });
+  }
+
+  function whatsappHelp(extra) {
+    var msg = 'Hello Elever Travel, I need help with my shop order ' + ref + '. ' + (extra || '');
+    return { label: 'Chat with us on WhatsApp', href: 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), external: true };
+  }
+
+  function show(order, finalState) {
+    el('osRef').textContent = 'Order reference: ' + order.ref;
+    var lines = el('osLines');
+    lines.textContent = '';
+    order.items.forEach(function (i) {
+      var li = document.createElement('li');
+      var left = document.createElement('span');
+      left.textContent = i.qty + ' × ' + i.name + (i.variant ? ' (' + i.variant + ')' : '');
+      li.appendChild(left);
+      lines.appendChild(li);
+    });
+    var total = document.createElement('li');
+    var a = document.createElement('strong'); a.textContent = 'Total';
+    var b = document.createElement('strong'); b.textContent = ugx(order.total);
+    total.appendChild(a); total.appendChild(b);
+    lines.appendChild(total);
+    lines.hidden = false;
+
+    if (order.status === 'COMPLETED') {
+      try { sessionStorage.removeItem('elever_cart'); } catch (e) {}
+      el('osIcon').textContent = '✓';
+      el('osTitle').textContent = 'Thank you! Payment received';
+      el('osText').textContent = 'We have received your payment. Our team will contact you on the phone number or email you gave us to arrange delivery.';
+      actions([{ label: 'Keep shopping', href: 'shop.html', primary: true }, whatsappHelp()]);
+    } else if (order.status === 'FAILED' || order.status === 'REVERSED') {
+      el('osIcon').textContent = '!';
+      el('osTitle').textContent = 'Payment was not completed';
+      el('osText').textContent = 'No money was taken for this order. Your cart is still saved, so you can try again.';
+      actions([{ label: 'Back to my cart', href: 'shop.html#shopCart', primary: true }, whatsappHelp()]);
+    } else if (order.status === 'AMOUNT_MISMATCH') {
+      el('osIcon').textContent = '!';
+      el('osTitle').textContent = 'We need to check your payment';
+      el('osText').textContent = 'The amount received did not match your order. Please contact us and we will sort it out quickly.';
+      actions([whatsappHelp('The amount did not match.')]);
+    } else if (finalState) {
+      el('osIcon').textContent = '…';
+      el('osTitle').textContent = 'Your payment is still being confirmed';
+      el('osText').textContent = 'Mobile Money payments can take a minute. If you have already approved the payment, there is nothing more to do: we will confirm your order shortly.';
+      actions([{ label: 'Keep shopping', href: 'shop.html', primary: true }, whatsappHelp('My payment is still pending.')]);
+    }
+  }
+
+  function problem(title, text) {
+    el('osIcon').textContent = '!';
+    el('osTitle').textContent = title;
+    el('osText').textContent = text;
+    actions([{ label: 'Back to the shop', href: 'shop.html', primary: true }]);
+  }
+
+  if (!ref) { problem('We could not find your order', 'This page is where you return after paying. If you were paying for an order, please check with us on WhatsApp.'); return; }
+
+  var tries = 0;
+  function check() {
+    tries++;
+    fetch('/api/order-status?ref=' + encodeURIComponent(ref), { cache: 'no-store' })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!res.ok) { problem('We could not find your order', 'Please check with us on WhatsApp and quote your reference: ' + ref); return; }
+        var done = res.d.status !== 'PENDING';
+        show(res.d, tries >= 8);
+        if (!done && tries < 8) setTimeout(check, 4000);
+      })
+      .catch(function () {
+        if (tries < 4) setTimeout(check, 4000);
+        else problem('We could not check your payment', 'Please check with us on WhatsApp and quote your reference: ' + ref);
+      });
+  }
+  check();
+})();
+</script>
 
 </main>
 
