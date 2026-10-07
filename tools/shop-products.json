@@ -3,7 +3,7 @@
     "id": "slippers",
     "slug": "travel-slippers",
     "name": "Foldable Travel Slippers",
-    "price": 18500,
+    "price": 38500,
     "summary": "Compact, detachable flip-flops that fold flat into your suitcase — perfect for flights, hotel rooms, and poolside.",
     "note": "Few pieces available per size",
     "variants": [
@@ -42,7 +42,7 @@
     "slug": "sweat-pads",
     "name": "Underarm Sweat Pads",
     "qtytag": "10pcs",
-    "price": 15000,
+    "price": 35000,
     "summary": "Ultra-absorbent, leak-proof pads worn discreetly inside your clothing — keeps you dry and stain-free on hot travel days.",
     "note": "Currently on preorder",
     "photos": [
@@ -56,7 +56,7 @@
     "id": "earmuffs",
     "slug": "earmuffs",
     "name": "Foldable Cold Protection Earmuffs",
-    "price": 65000,
+    "price": 85000,
     "summary": "Soft, plush faux-fur earmuffs that fold flat for easy packing — ideal for chilly flights and cold-weather excursions.",
     "variants": [
       {
@@ -81,7 +81,7 @@
     "slug": "forefoot-insoles",
     "name": "Forefoot Insoles Shoe Protector",
     "qtytag": "pair",
-    "price": 15000,
+    "price": 35000,
     "summary": "Soft, anti-slip forefoot cushions that slip into heels or flats to ease pressure and prevent blisters on long days of sightseeing.",
     "note": "Readily available",
     "photos": [
@@ -95,7 +95,7 @@
     "slug": "packing-organizers",
     "name": "Luggage Travel Organisers with Toiletry Case",
     "qtytag": "8pcs",
-    "price": 85000,
+    "price": 105000,
     "summary": "Speed up packing and keep your suitcase sorted with this practical, beautiful 8-piece organiser set.",
     "details": [
       "8-piece set: 1 large and 2 medium cubes, 2 small cubes, 2 accessory bags and 1 laundry/shoe bag",
@@ -115,7 +115,7 @@
     "id": "toiletry-bag",
     "slug": "hanging-toiletry-bag",
     "name": "Hanging Large-Capacity Toiletry Bag",
-    "price": 65000,
+    "price": 85000,
     "summary": "A large-capacity toiletry bag that hangs up in any hotel bathroom, keeping everything organised and within reach.",
     "note": "Readily available",
     "photos": [
@@ -130,7 +130,7 @@
     "id": "neck-pillow",
     "slug": "inflatable-neck-pillow",
     "name": "Inflatable Travel Neck Pillow",
-    "price": 65000,
+    "price": 85000,
     "summary": "An inflatable neck pillow that packs small and supports your neck on long flights and road trips.",
     "note": "Readily available",
     "photos": [
@@ -147,7 +147,7 @@
     "id": "suitcase-cover",
     "slug": "suitcase-cover",
     "name": "Suitcase Cover",
-    "price": 25000,
+    "price": 45000,
     "summary": "A protective cover that keeps your suitcase clean and scuff-free in transit. Choose the size that matches your case.",
     "variants": [
       {
@@ -155,23 +155,23 @@
         "options": [
           {
             "value": "24",
-            "label": "Size 24 — UGX 25,000",
-            "price": 25000
-          },
-          {
-            "value": "26",
-            "label": "Size 26 — UGX 35,000",
-            "price": 35000
-          },
-          {
-            "value": "28",
-            "label": "Size 28 — UGX 45,000",
+            "label": "Size 24 — UGX 45,000",
             "price": 45000
           },
           {
-            "value": "30",
-            "label": "Size 30 — UGX 55,000",
+            "value": "26",
+            "label": "Size 26 — UGX 55,000",
             "price": 55000
+          },
+          {
+            "value": "28",
+            "label": "Size 28 — UGX 65,000",
+            "price": 65000
+          },
+          {
+            "value": "30",
+            "label": "Size 30 — UGX 75,000",
+            "price": 75000
           }
         ]
       }
@@ -183,7 +183,7 @@
     "id": "shoe-covers",
     "slug": "silicone-shoe-covers",
     "name": "Thickened Unisex Silicone Shoe Covers",
-    "price": 45000,
+    "price": 65000,
     "summary": "No more worrying about dirty shoes in the rainy season — thick silicone covers that keep your shoes clean and dry.",
     "details": [
       "Waterproof, sand-proof and anti-skid",
@@ -221,7 +221,7 @@
     "id": "beach-tote",
     "slug": "beach-tote-bag",
     "name": "Large-Capacity Beach & Swim Tote with Zip",
-    "price": 65000,
+    "price": 85000,
     "summary": "A roomy zip-top tote for the beach, the pool or a day out.",
     "details": [
       "Size: 35 cm × 28 cm × 15 cm",
@@ -247,7 +247,7 @@
     "slug": "short-stay-fashion-bags",
     "name": "Short-Stay Fashion Bags",
     "qtytag": "set",
-    "price": 185000,
+    "price": 205000,
     "summary": "A stylish set of travel bags sized for weekend getaways and short stays.",
     "note": "One set remaining",
     "photos": [
@@ -260,7 +260,7 @@
     "id": "soap-dish-case",
     "slug": "travel-soap-dish-case",
     "name": "Travel Soap Dish Case",
-    "price": 25000,
+    "price": 45000,
     "summary": "A portable soap case for business trips and travel — sealed with a lid and drainable.",
     "details": [
       "Portable soap holder for travelling",
@@ -281,7 +281,7 @@
     "id": "acrylic-soap-holder",
     "slug": "acrylic-soap-holder",
     "name": "Acrylic Travel Soap Holder",
-    "price": 35000,
+    "price": 55000,
     "summary": "A clear acrylic soap holder that keeps your bar of soap neat and contained on the go.",
     "note": "Running on preorder",
     "photos": [
@@ -297,7 +297,7 @@
     "id": "vanity-mirror",
     "slug": "led-travel-vanity-mirror",
     "name": "Rechargeable LED Travel Tablet Vanity Mirror",
-    "price": 85000,
+    "price": 105000,
     "summary": "A slim, rechargeable LED vanity mirror that packs like a tablet.",
     "details": [
       "Rechargeable",
@@ -318,7 +318,7 @@
     "id": "hair-bonnet",
     "slug": "large-hair-bonnet",
     "name": "Large Hair Bonnet",
-    "price": 25000,
+    "price": 45000,
     "summary": "A large hair bonnet to protect your hair overnight, at home or on the road.",
     "note": "Readily available",
     "photos": [
@@ -331,7 +331,7 @@
     "id": "back-scrubber",
     "slug": "back-scrubber",
     "name": "Back Scrubber with Handle",
-    "price": 35000,
+    "price": 55000,
     "summary": "An easy way to scrub your back. Can be used by both adults and kids.",
     "badge": "Restocked",
     "note": "Running on preorder",
@@ -350,7 +350,7 @@
     "slug": "portable-oral-irrigator",
     "name": "Rechargeable Portable Oral Irrigator",
     "qtytag": "4 nozzles",
-    "price": 75000,
+    "price": 95000,
     "summary": "A rechargeable, portable water flosser with 4 nozzles.",
     "details": [
       "Rechargeable",
@@ -376,7 +376,7 @@
     "id": "face-lifter",
     "slug": "face-shaping-mask",
     "name": "Face Shaping Mask / Face Lifter",
-    "price": 45000,
+    "price": 65000,
     "summary": "An elastic, adjustable face-shaping mask.",
     "details": [
       "Tightens the double chin",
@@ -402,7 +402,7 @@
     "id": "anti-snoring-clip",
     "slug": "anti-snoring-clip",
     "name": "Anti-Snoring Aid Clip",
-    "price": 65000,
+    "price": 85000,
     "summary": "Enjoy peaceful, uninterrupted sleep — a small silicone clip that improves airflow and reduces snoring.",
     "details": [
       "Material: silicone",
@@ -433,7 +433,7 @@
     "id": "neck-massager",
     "slug": "electric-neck-massager",
     "name": "Electric Neck Massager",
-    "price": 88000,
+    "price": 108000,
     "summary": "A smart, portable neck massager with heat-pulse technology.",
     "details": [
       "Heat-pulse technology",
@@ -458,7 +458,7 @@
     "id": "hot-water-bottle",
     "slug": "hot-water-bottle",
     "name": "2L Hot Water Bottle",
-    "price": 65000,
+    "price": 85000,
     "summary": "A 2-litre hot water bottle for warmth on cold nights and chilly trips.",
     "note": "Readily available",
     "photos": [
@@ -470,7 +470,7 @@
     "id": "camp-chair",
     "slug": "foldable-camp-chair",
     "name": "Foldable Camp Chair",
-    "price": 185000,
+    "price": 205000,
     "summary": "A foldable camp chair for safaris, picnics and the great outdoors.",
     "note": "Readily available",
     "photos": [
@@ -486,7 +486,7 @@
     "id": "outdoor-chair",
     "slug": "foldable-outdoor-chair",
     "name": "Foldable Outdoor Chair with Wooden Armrests",
-    "price": 150000,
+    "price": 170000,
     "summary": "A strong steel-frame folding chair with wooden armrests, now available in 2 colours.",
     "details": [
       "Strong steel frame",
@@ -522,7 +522,7 @@
     "id": "whisky-bottle",
     "slug": "double-wall-whisky-bottle",
     "name": "Women's Stainless Double-Wall Whisky Bottle",
-    "price": 45000,
+    "price": 65000,
     "summary": "A stainless steel, double-wall whisky bottle.",
     "note": "Only one piece remaining, in green",
     "photos": [
@@ -536,7 +536,7 @@
     "id": "wine-set",
     "slug": "electric-wine-set",
     "name": "Electric Wine Set",
-    "price": 85000,
+    "price": 105000,
     "summary": "A complete electric wine set built around a rechargeable opener.",
     "details": [
       "Included: pourer, stopper, foil cutter, storage base and rechargeable opener"
@@ -552,7 +552,7 @@
     "slug": "washing-machine-mesh-bags",
     "name": "Washing Machine Mesh Net Bags",
     "qtytag": "7pcs",
-    "price": 65000,
+    "price": 85000,
     "summary": "A set of seven mesh laundry bags that protect your clothes in the washing machine and keep laundry sorted. Watch the video to see how to use them.",
     "details": [
       "Set of 7 mesh net bags in different sizes"
@@ -578,7 +578,7 @@
     "id": "ironing-mat",
     "slug": "foldable-ironing-mat",
     "name": "Foldable Ironing Mat",
-    "price": 65000,
+    "price": 85000,
     "summary": "A foldable ironing mat that turns any table into an ironing surface.",
     "photos": [
       "ironing-mat-main.jpg",
@@ -591,7 +591,7 @@
     "id": "lint-remover",
     "slug": "rechargeable-lint-remover",
     "name": "Rechargeable Lint Remover",
-    "price": 65000,
+    "price": 85000,
     "summary": "A new-design rechargeable lint remover that keeps clothes looking fresh.",
     "details": [
       "Rechargeable",
@@ -611,7 +611,7 @@
     "id": "sewing-machine",
     "slug": "handheld-sewing-machine",
     "name": "Portable Handheld Sewing Machine",
-    "price": 55000,
+    "price": 75000,
     "summary": "A compact handheld sewing machine for quick fixes and hems, at home or away.",
     "details": [
       "Colour: white"
@@ -628,8 +628,8 @@
     "id": "budget-planner",
     "slug": "binder-budget-planner",
     "name": "Binder Budget Planner",
-    "price": 55000,
-    "was": 75000,
+    "price": 75000,
+    "was": 95000,
     "summary": "A binder-style budget planner to keep your savings and spending on track.",
     "badge": "Clearance sale",
     "variants": [
@@ -653,7 +653,7 @@
     "id": "mobile-dustbins",
     "slug": "aesthetic-mobile-dustbins",
     "name": "Aesthetic Mobile Dustbins",
-    "price": 185000,
+    "price": 205000,
     "summary": "Stylish dustbins on wheels that look good in any room.",
     "note": "Readily available",
     "photos": [
@@ -668,7 +668,7 @@
     "id": "epilator",
     "slug": "nano-glass-epilator",
     "name": "Rechargeable Nano Glass 2-in-1 Epilator",
-    "price": 45000,
+    "price": 65000,
     "summary": "A painless 2-in-1 hair and skin remover that charges over USB.",
     "details": [
       "2-in-1: painless hair removal and skin smoothing",
@@ -691,7 +691,7 @@
     "id": "neck-fan",
     "slug": "hanging-neck-fan",
     "name": "Gold Hanging Neck Fan",
-    "price": 85000,
+    "price": 105000,
     "summary": "A silent, leafless neck fan with three speeds that charges over USB, for home, office and outdoors.",
     "details": [
       "Hands-free: hangs around your neck",
