@@ -686,5 +686,30 @@
       "epilator-05.jpg"
     ],
     "alt": "Cream 2-in-1 nano glass epilator"
+  },
+  {
+    "id": "neck-fan",
+    "slug": "hanging-neck-fan",
+    "name": "Gold Hanging Neck Fan",
+    "price": 85000,
+    "summary": "A silent, leafless neck fan with three speeds that charges over USB, for home, office and outdoors.",
+    "details": [
+      "Hands-free: hangs around your neck",
+      "Three adjustable speeds",
+      "Silent, leafless design",
+      "USB charging with a built-in 18650 lithium battery",
+      "Charging light stays on while charging and goes out when full",
+      "Size: about 30 cm × 18 cm, fan heads 5 cm",
+      "For home, office, indoor and outdoor use"
+    ],
+    "note": "One piece available",
+    "photos": [
+      "neck-fan-main.jpg",
+      "neck-fan-02.jpg",
+      "neck-fan-03.jpg",
+      "neck-fan-04.jpg",
+      "neck-fan-05.jpg"
+    ],
+    "alt": "White and gold hanging neck fan held in one hand"
   }
 ]
