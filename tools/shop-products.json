@@ -711,5 +711,25 @@
       "neck-fan-05.jpg"
     ],
     "alt": "White and gold hanging neck fan held in one hand"
+  },
+  {
+    "id": "hooded-neck-pillow",
+    "slug": "hooded-neck-pillow",
+    "name": "Hooded Neck Pillow",
+    "price": 85000,
+    "summary": "A comfy hooded neck pillow: lean back, relax and enjoy the ride.",
+    "details": [
+      "Comfy neck support with a hood",
+      "Seat back, relax and enjoy the ride"
+    ],
+    "note": "Running on preorder",
+    "alt": "Grey hooded neck pillow worn while resting in a car seat",
+    "photos": [
+      "hooded-neck-pillow-main.jpg",
+      "hooded-neck-pillow-02.jpg",
+      "hooded-neck-pillow-03.jpg",
+      "hooded-neck-pillow-04.jpg",
+      "hooded-neck-pillow-05.jpg"
+    ]
   }
 ]

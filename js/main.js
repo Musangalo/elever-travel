@@ -905,3 +905,10 @@ window.updateVariantPrice = function (select) {
     priceEl.textContent = 'UGX ' + parseInt(opt.dataset.price, 10).toLocaleString();
   }
 };
+
+// Product pages: clicking a thumbnail swaps it into the main photo
+window.showProductPhoto = function (thumb) {
+  const main = document.getElementById('productMainImage');
+  if (main) main.style.backgroundImage = "url('" + thumb.dataset.src + "')";
+  thumb.parentElement.querySelectorAll('.product-thumb').forEach(t => t.classList.toggle('active', t === thumb));
+};

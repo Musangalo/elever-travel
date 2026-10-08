@@ -272,5 +272,10 @@ export default {
     "name": "Gold Hanging Neck Fan",
     "price": 105000,
     "variants": []
+  },
+  "hooded-neck-pillow": {
+    "name": "Hooded Neck Pillow",
+    "price": 85000,
+    "variants": []
   }
 };
