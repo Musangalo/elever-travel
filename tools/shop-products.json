@@ -731,5 +731,198 @@
       "hooded-neck-pillow-04.jpg",
       "hooded-neck-pillow-05.jpg"
     ]
+  },
+  {
+    "id": "mini-perfume",
+    "slug": "mini-perfume-spray",
+    "name": "Portable Travel Mini Perfume Spray Bottle",
+    "qtytag": "5–8ml",
+    "price": 28500,
+    "summary": "A portable 5–8 ml mini perfume spray bottle for travel, available in 12 colours. Price is for each bottle.",
+    "details": [
+      "Portable 5–8 ml travel size",
+      "Available in 12 colours",
+      "Price is for each bottle"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "mini-perfume-main.jpg",
+      "mini-perfume-02.jpg",
+      "mini-perfume-03.jpg",
+      "mini-perfume-04.jpg",
+      "mini-perfume-05.jpg"
+    ],
+    "alt": "Mini perfume spray bottles in many colours"
+  },
+  {
+    "id": "sokany-steam-iron",
+    "slug": "sokany-travel-steam-iron",
+    "name": "Sokany Foldable Travel Steam Iron",
+    "price": 95000,
+    "summary": "A foldable travel steam iron from Sokany that packs easily into your suitcase.",
+    "details": [
+      "Brand: Sokany",
+      "Foldable design for travel"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "sokany-steam-iron-main.jpg",
+      "sokany-steam-iron-02.jpg"
+    ],
+    "alt": "Sokany foldable travel steam iron in white and blue"
+  },
+  {
+    "id": "mist-grooming-brush",
+    "slug": "mist-grooming-brush",
+    "name": "3-in-1 Rechargeable Mist Grooming Brush",
+    "price": 85000,
+    "summary": "Give your hair a refreshing mist and a gentle massage with every brush.",
+    "details": [
+      "Refreshing mist for your hair-care routine",
+      "Gentle scalp massage for a relaxing experience",
+      "Add your favourite liquid hair oil to detangle your hair easily",
+      "Helps detangle and groom your hair",
+      "A button removes trapped hair from the brush easily",
+      "Perfect for wigs, natural hair and chemically treated hair",
+      "Rechargeable, convenient and easy to use, with a USB charging cable",
+      "Built-in 10 ml liquid chamber",
+      "Size: about 21.7 cm × 7.8 cm"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "mist-grooming-brush-main.jpg",
+      "mist-grooming-brush-02.jpg",
+      "mist-grooming-brush-03.jpg",
+      "mist-grooming-brush-04.jpg",
+      "mist-grooming-brush-05.jpg",
+      "mist-grooming-brush-06.jpg",
+      "mist-grooming-brush-07.jpg",
+      "mist-grooming-brush-08.jpg",
+      "mist-grooming-brush-09.jpg"
+    ],
+    "alt": "3-in-1 rechargeable mist grooming brush with its USB cable and hair oil"
+  },
+  {
+    "id": "handheld-steam-iron",
+    "slug": "handheld-steam-iron",
+    "name": "Electric Handheld Steam Iron",
+    "price": 85000,
+    "summary": "A micro steam iron: a portable ironing machine you can take anywhere.",
+    "details": [
+      "Micro steam iron",
+      "Professional ironing machine",
+      "Portable steam iron"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "handheld-steam-iron-main.jpg",
+      "handheld-steam-iron-02.jpg",
+      "handheld-steam-iron-03.jpg",
+      "handheld-steam-iron-04.jpg",
+      "handheld-steam-iron-05.jpg",
+      "handheld-steam-iron-06.jpg",
+      "handheld-steam-iron-07.jpg"
+    ],
+    "alt": "Lavender electric handheld steam iron"
+  },
+  {
+    "id": "bath-towel",
+    "slug": "disposable-bath-towel",
+    "name": "Disposable Thickened Bath Towel",
+    "price": 35000,
+    "badge": "Reduced price",
+    "summary": "A soft, super-absorbent disposable bath towel, perfect for travelling.",
+    "details": [
+      "Perfect for travelling",
+      "Comfortable and soft",
+      "Super absorbent",
+      "Independent towel",
+      "Size: 70 cm × 140 cm",
+      "Colour: white"
+    ],
+    "note": "Readily available",
+    "videos": [
+      "bath-towel-1.mp4"
+    ],
+    "alt": "Hand holding a packaged disposable bath towel",
+    "photos": [
+      "bath-towel-main.jpg"
+    ]
+  },
+  {
+    "id": "wash-bag-set",
+    "slug": "waterproof-wash-bag-set",
+    "name": "Waterproof Toiletry Wash Bags",
+    "qtytag": "3pc set",
+    "price": 75000,
+    "summary": "Let's organise our bags: a set of three lovely-quality toiletry wash bags that are waterproof and durable.",
+    "details": [
+      "3-piece set",
+      "Lovely-quality toiletry bags",
+      "Wash bags",
+      "Waterproof and durable"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "wash-bag-set-main.jpg",
+      "wash-bag-set-02.jpg",
+      "wash-bag-set-03.jpg",
+      "wash-bag-set-04.jpg"
+    ],
+    "alt": "Set of three pink waterproof toiletry wash bags"
+  },
+  {
+    "id": "car-trash-bin",
+    "slug": "hanging-car-trash-bin",
+    "name": "Car Hanging Trash Bin",
+    "price": 65000,
+    "summary": "A hanging car trash bin and storage box with a push-in top. Garbage bag included.",
+    "details": [
+      "Hangs in your car",
+      "Works as a trash bin and a storage box",
+      "Push-in top",
+      "Comes with a garbage bag",
+      "ABS material, with a back clip to hang it"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "car-trash-bin-main.jpg",
+      "car-trash-bin-02.jpg",
+      "car-trash-bin-03.jpg",
+      "car-trash-bin-04.jpg",
+      "car-trash-bin-05.jpg",
+      "car-trash-bin-06.jpg"
+    ],
+    "videos": [
+      "car-trash-bin-1.mp4"
+    ],
+    "alt": "Black car hanging trash bin with a push-in top"
+  },
+  {
+    "id": "petal-soap-paper",
+    "slug": "petal-soap-paper",
+    "name": "Disposable Petal Soap Paper",
+    "qtytag": "60pc set",
+    "price": 35000,
+    "summary": "A pack of 60 petal-shaped soap papers: ideal for travel.",
+    "details": [
+      "Pack of 60 pieces",
+      "Petal soap paper",
+      "Ideal for travel"
+    ],
+    "note": "Running on preorder",
+    "photos": [
+      "petal-soap-paper-main.jpg",
+      "petal-soap-paper-02.jpg",
+      "petal-soap-paper-03.jpg",
+      "petal-soap-paper-04.jpg",
+      "petal-soap-paper-05.jpg",
+      "petal-soap-paper-06.jpg",
+      "petal-soap-paper-07.jpg"
+    ],
+    "videos": [
+      "petal-soap-paper-1.mp4"
+    ],
+    "alt": "Pink petal soap papers in a clear box"
   }
 ]

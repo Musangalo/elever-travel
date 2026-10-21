@@ -277,5 +277,45 @@ export default {
     "name": "Hooded Neck Pillow",
     "price": 85000,
     "variants": []
+  },
+  "mini-perfume": {
+    "name": "Portable Travel Mini Perfume Spray Bottle (5–8ml)",
+    "price": 28500,
+    "variants": []
+  },
+  "sokany-steam-iron": {
+    "name": "Sokany Foldable Travel Steam Iron",
+    "price": 95000,
+    "variants": []
+  },
+  "mist-grooming-brush": {
+    "name": "3-in-1 Rechargeable Mist Grooming Brush",
+    "price": 85000,
+    "variants": []
+  },
+  "handheld-steam-iron": {
+    "name": "Electric Handheld Steam Iron",
+    "price": 85000,
+    "variants": []
+  },
+  "bath-towel": {
+    "name": "Disposable Thickened Bath Towel",
+    "price": 35000,
+    "variants": []
+  },
+  "wash-bag-set": {
+    "name": "Waterproof Toiletry Wash Bags (3pc set)",
+    "price": 75000,
+    "variants": []
+  },
+  "car-trash-bin": {
+    "name": "Car Hanging Trash Bin",
+    "price": 65000,
+    "variants": []
+  },
+  "petal-soap-paper": {
+    "name": "Disposable Petal Soap Paper (60pc set)",
+    "price": 35000,
+    "variants": []
   }
 };
