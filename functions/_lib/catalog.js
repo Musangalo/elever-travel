@@ -317,5 +317,10 @@ export default {
     "name": "Disposable Petal Soap Paper (60pc set)",
     "price": 35000,
     "variants": []
+  },
+  "foldable-kettle": {
+    "name": "Foldable Electric Kettle (800ml)",
+    "price": 95000,
+    "variants": []
   }
 };

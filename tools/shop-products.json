@@ -924,5 +924,29 @@
       "petal-soap-paper-1.mp4"
     ],
     "alt": "Pink petal soap papers in a clear box"
+  },
+  {
+    "id": "foldable-kettle",
+    "slug": "foldable-electric-kettle",
+    "name": "Foldable Electric Kettle",
+    "qtytag": "800ml",
+    "price": 95000,
+    "summary": "A portable, easy-to-carry silicone electric kettle that folds down for packing.",
+    "details": [
+      "Material: silicone",
+      "Portable and easy to carry",
+      "Capacity: 800 ml",
+      "Folds down: about 18 cm tall open, 12 cm folded, 16.5 cm wide",
+      "304 stainless steel heating base"
+    ],
+    "note": "Readily available",
+    "photos": [
+      "foldable-kettle-main.jpg",
+      "foldable-kettle-02.jpg"
+    ],
+    "videos": [
+      "foldable-kettle-1.mp4"
+    ],
+    "alt": "White foldable electric kettle shown open and folded, with its power cable"
   }
 ]
