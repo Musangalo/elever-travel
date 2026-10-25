@@ -322,5 +322,10 @@ export default {
     "name": "Foldable Electric Kettle (800ml)",
     "price": 95000,
     "variants": []
+  },
+  "bow-organizer": {
+    "name": "Cute Bow & Heart Design Sanitary Pad / Cable Organizer",
+    "price": 65000,
+    "variants": []
   }
 };
