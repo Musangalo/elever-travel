@@ -108,7 +108,8 @@
         payment_method: tx.status === 'COMPLETED' ? 'MtnUganda' : '',
         confirmation_code: tx.status === 'COMPLETED' ? 'DEV-' + tx.order.id.slice(-5) : '',
         merchant_reference: tx.order.id,
-        error: null,
+        // the real Pesapal sends an EMPTY error box on a normal answer, not null
+        error: { error_type: null, code: null, message: null },
         status: '200'
       });
     }

@@ -43,7 +43,11 @@ async function call(env, path, { method = 'GET', token, body, okErrorCodes = [] 
   // Some "errors" are normal answers, e.g. Pesapal says "payment_details_not_found / Pending Payment"
   // for an order nobody has paid yet. Those are handed back to the caller instead of thrown.
   if (res.ok && data && data.error && okErrorCodes.includes(data.error.code)) return data;
-  if (!res.ok || (data && data.error)) {
+  // A successful answer can still carry an EMPTY error box ({error_type:null, code:null, message:null}).
+  // Only an error with something in it counts as a failure.
+  const err = data && data.error;
+  const realError = err && (typeof err !== 'object' || err.code || err.message || err.error_type);
+  if (!res.ok || realError) {
     console.error('Pesapal error', path, res.status, JSON.stringify(data && data.error));
     // The message carries Pesapal's own error code/text (never keys), so sandbox testing can see what went wrong
     throw new Error('Pesapal ' + path + ' -> HTTP ' + res.status + ': ' + JSON.stringify((data && (data.error || data)) || null).slice(0, 300));
