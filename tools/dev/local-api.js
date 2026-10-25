@@ -96,6 +96,10 @@
     if (path.endsWith('/api/Transactions/GetTransactionStatus') && method === 'GET') {
       var tx = readTx(url.searchParams.get('orderTrackingId'));
       if (!tx) return reply({ error: { code: 'not_found' }, status: '404' }, 404);
+      // The real Pesapal answers an unpaid order with this error-shaped message (not a status)
+      if (tx.status === 'INVALID') {
+        return reply({ error: { error_type: 'api_error', code: 'payment_details_not_found', message: 'Pending Payment' }, status: '200' });
+      }
       return reply({
         payment_status_description: tx.status,
         status_code: tx.code,

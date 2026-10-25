@@ -28,7 +28,7 @@ export function isConfigured(env) {
   return Boolean(env.PESAPAL_CONSUMER_KEY && env.PESAPAL_CONSUMER_SECRET && env.ORDERS);
 }
 
-async function call(env, path, { method = 'GET', token, body } = {}) {
+async function call(env, path, { method = 'GET', token, body, okErrorCodes = [] } = {}) {
   const res = await fetch(apiBase(env) + path, {
     method,
     headers: {
@@ -40,6 +40,9 @@ async function call(env, path, { method = 'GET', token, body } = {}) {
   });
   let data = null;
   try { data = await res.json(); } catch (e) { /* non-JSON error page */ }
+  // Some "errors" are normal answers, e.g. Pesapal says "payment_details_not_found / Pending Payment"
+  // for an order nobody has paid yet. Those are handed back to the caller instead of thrown.
+  if (res.ok && data && data.error && okErrorCodes.includes(data.error.code)) return data;
   if (!res.ok || (data && data.error)) {
     console.error('Pesapal error', path, res.status, JSON.stringify(data && data.error));
     // The message carries Pesapal's own error code/text (never keys), so sandbox testing can see what went wrong
@@ -79,7 +82,10 @@ export function submitOrder(env, token, order) {
 }
 
 export function getTransactionStatus(env, token, trackingId) {
-  return call(env, '/api/Transactions/GetTransactionStatus?orderTrackingId=' + encodeURIComponent(trackingId), { token });
+  return call(env, '/api/Transactions/GetTransactionStatus?orderTrackingId=' + encodeURIComponent(trackingId), {
+    token,
+    okErrorCodes: ['payment_details_not_found'], // Pesapal's answer for "not paid yet"
+  });
 }
 
 // ---- orders in KV -------------------------------------------------------
