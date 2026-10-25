@@ -42,7 +42,8 @@ async function call(env, path, { method = 'GET', token, body } = {}) {
   try { data = await res.json(); } catch (e) { /* non-JSON error page */ }
   if (!res.ok || (data && data.error)) {
     console.error('Pesapal error', path, res.status, JSON.stringify(data && data.error));
-    throw new Error('Pesapal request failed: ' + path);
+    // The message carries Pesapal's own error code/text (never keys), so sandbox testing can see what went wrong
+    throw new Error('Pesapal ' + path + ' -> HTTP ' + res.status + ': ' + JSON.stringify((data && (data.error || data)) || null).slice(0, 300));
   }
   return data;
 }

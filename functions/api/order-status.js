@@ -18,6 +18,9 @@ export async function onRequestGet({ request, env }) {
     });
   } catch (e) {
     console.error('Order status failed', e && e.message);
-    return json({ error: 'Could not check the order right now.' }, 502);
+    // In sandbox mode only, say why (helps testing); in live mode keep the message generic
+    const body = { error: 'Could not check the order right now.' };
+    if (env.PESAPAL_ENV !== 'live') body.detail = String(e && e.message).slice(0, 400);
+    return json(body, 502);
   }
 }
