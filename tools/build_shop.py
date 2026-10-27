@@ -152,6 +152,19 @@ def product_main(p):
         details = '\n        <ul>\n' + '\n'.join(f'          <li>{e(d)}</li>' for d in p['details']) + '\n        </ul>\n      '
     variants = variants_html(p, '      ', 'product')
     variants = '\n' + variants if variants else ''
+    # Delivery promise, from the shop's policy: preorder items 5 working days; ready items straight
+    # after payment within Kampala. Items with no availability note just link to the policy.
+    if re.search(r'pre-?order', p.get('note', ''), re.I):
+        promise = 'Preorder item: delivered within 5 working days (Monday to Friday) after your payment is confirmed.'
+    elif re.search(r'medium|per size', p.get('note', ''), re.I):  # only some sizes are ready
+        promise = 'Delivery depends on the size you choose. Message us on WhatsApp to confirm.'
+    elif p.get('note'):
+        promise = 'In stock: delivered in Kampala straight after your payment is confirmed.'
+    else:
+        promise = ''
+    delivery = (f'\n      <p class="product-delivery">{promise}{" " if promise else ""}'
+                'The delivery fee depends on the distance from our office. '
+                '<a href="delivery-returns.html">Delivery &amp; returns policy</a></p>')
     return f'''
 <!-- ============================================
    PRODUCT PAGE: {e(full_name(p))}
@@ -168,7 +181,7 @@ def product_main(p):
       <div class="section-eyebrow">Travel Essentials</div>
       <h1 class="product-name">{name_html(p)}</h1>
       {price_html(p, ' product-price')}{note}
-      <p class="product-desc">{e(p["summary"])}</p>
+      <p class="product-desc">{e(p["summary"])}</p>{delivery}
       <div class="product-details">{details}</div>{variants}
       <div class="product-buy">
         {QTY.format(i="        ")}
@@ -200,11 +213,17 @@ def write_catalog(products):
 
 
 SERVICE_PAGES = [
-    # file, template, title, description, hide from search engines?
+    # file, template, title, description, hide from search engines?, [no menu item highlighted?]
     ('order-complete.html', 'tools/templates/order-complete.html', 'Your Order | Elever Travel Shop',
      'Your Elever Travel Shop order and payment status.', True),
     ('orders.html', 'tools/templates/orders.html', 'Shop Orders | Elever Travel',
      'Staff order list.', True),
+    ('delivery-returns.html', 'tools/templates/delivery-returns.html', 'Delivery & Returns | Elever Travel Shop',
+     'How and when Elever Travel Shop orders are delivered, and our returns and refunds policy.', False, True),
+    ('terms.html', 'tools/templates/terms.html', 'Terms & Conditions | Elever Travel Management Limited',
+     'Terms and conditions for using the Elever Travel website and buying from the Elever Travel Shop.', False, True),
+    ('faq.html', 'tools/templates/faq.html', 'FAQ | Elever Travel Shop',
+     'Answers about ordering, paying, delivery and returns from the Elever Travel Shop.', False, True),
 ]
 
 
@@ -213,8 +232,10 @@ def write_service_pages(shop):
     tail = rest.split('</main>', 1)[1]
     tail = re.sub(r'<!-- Payment checkout widget.*?</script>\s*', '', tail, flags=re.S)
     nl = '\r\n' if '\r\n' in shop else '\n'
-    for filename, template, title, desc, hidden in SERVICE_PAGES:
+    for filename, template, title, desc, hidden, *opts in SERVICE_PAGES:
         h = re.sub(r'<title>.*?</title>', lambda m: f'<title>{e(title)}</title>', head)
+        if opts and opts[0]:  # legal/help pages: don't light up "Shop" in the menu
+            h = h.replace(' class="active" aria-current="page"', '', 1)
         h = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m.group(1) + e(title), h)
         for k in ('name="description"', 'property="og:description"'):
             h = re.sub(r'(<meta ' + k + r' content=")[^"]*', lambda m: m.group(1) + e(desc), h)
@@ -267,9 +288,14 @@ def main():
 
     sm = read('sitemap.xml')
     snl = '\r\n' if '\r\n' in sm else '\n'
+    public_pages = [sp[0] for sp in SERVICE_PAGES if not sp[4]]   # indexable help/legal pages
     sm = re.sub(r'\s*<url>\s*<loc>' + re.escape(SITE) + r'shop-[^<]*</loc>.*?</url>', '', sm, flags=re.S)
+    for page in public_pages:
+        sm = re.sub(r'\s*<url>\s*<loc>' + re.escape(SITE + page) + r'</loc>.*?</url>', '', sm, flags=re.S)
     entries = ''.join(f'  <url>{snl}    <loc>{SITE}{page_url(p)}</loc>{snl}    <changefreq>weekly</changefreq>{snl}'
                       f'    <priority>0.6</priority>{snl}  </url>{snl}' for p in products)
+    entries += ''.join(f'  <url>{snl}    <loc>{SITE}{page}</loc>{snl}    <changefreq>monthly</changefreq>{snl}'
+                       f'    <priority>0.4</priority>{snl}  </url>{snl}' for page in public_pages)
     sm = sm.replace('</urlset>', entries + '</urlset>').replace(f'</url>  <url>', f'</url>{snl}  <url>')
     write('sitemap.xml', sm)
     print(f'Built {len(products)} products.')
