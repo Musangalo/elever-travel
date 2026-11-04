@@ -1528,6 +1528,10 @@ footer {
 .testimonial-stars { color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem; }
 .testimonial-quote { color: var(--text-light); font-style: italic; line-height: 1.7; }
 .testimonial-author { margin-top: 1rem; color: var(--gold); font-size: 0.8rem; }
+/* A lone testimonial on the last row sits in the middle column */
+@media (min-width: 901px) {
+  .icon-card-grid > .testimonial-card:last-child:nth-child(3n+1) { grid-column: 2; }
+}
 .testimonial-card:hover .testimonial-stars,
 .testimonial-card:hover .testimonial-author { color: #F5B942; }
 .testimonial-card:hover .testimonial-quote { color: rgba(255,255,255,0.92); }
