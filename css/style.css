@@ -749,12 +749,17 @@ section { padding: 6rem 4rem; }
    TESTIMONIALS
    ============================================ */
 .testi-section { background: var(--dark-3); }
+/* Three reviews to a row; a part-filled last row sits in the middle. */
 .testi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 3rem;
 }
+.testi-grid > .testi-card { flex: 0 1 calc((100% - 3rem) / 3); }
+@media (max-width: 900px) { .testi-grid > .testi-card { flex-basis: calc((100% - 1.5rem) / 2); } }
+@media (max-width: 640px) { .testi-grid > .testi-card { flex-basis: 100%; } }
 .testi-card {
   background: var(--dark-2);
   border: 1px solid rgba(var(--accent-rgb),0.1);
@@ -1528,10 +1533,11 @@ footer {
 .testimonial-stars { color: var(--gold); font-size: 1.5rem; margin-bottom: 1rem; }
 .testimonial-quote { color: var(--text-light); font-style: italic; line-height: 1.7; }
 .testimonial-author { margin-top: 1rem; color: var(--gold); font-size: 0.8rem; }
-/* A lone testimonial on the last row sits in the middle column */
-@media (min-width: 901px) {
-  .icon-card-grid > .testimonial-card:last-child:nth-child(3n+1) { grid-column: 2; }
-}
+/* Testimonials: three to a row; a part-filled last row sits in the middle */
+.icon-card-grid.testimonial-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+.testimonial-grid > .testimonial-card { flex: 0 1 calc((100% - 4rem) / 3); }
+@media (max-width: 900px) { .testimonial-grid > .testimonial-card { flex-basis: calc((100% - 1.2rem) / 2); } }
+@media (max-width: 640px) { .testimonial-grid > .testimonial-card { flex-basis: 100%; } }
 .testimonial-card:hover .testimonial-stars,
 .testimonial-card:hover .testimonial-author { color: #F5B942; }
 .testimonial-card:hover .testimonial-quote { color: rgba(255,255,255,0.92); }
