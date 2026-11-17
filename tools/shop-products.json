@@ -981,6 +981,11 @@
       "One Type-C port",
       "Three USB ports"
     ],
+    "photos": [
+      "travel-adapter-main.jpg",
+      "travel-adapter-2.jpg",
+      "travel-adapter-3.jpg"
+    ],
     "alt": "Universal travel adapter with plugs for Europe, USA, Australia and the UK"
   },
   {
@@ -992,7 +997,11 @@
     "details": [
       "Dedicated compartments for your passport, cards, tickets and other travel documents"
     ],
-    "alt": "Passport and travel document holder"
+    "photos": [
+      "passport-holder-main.jpg",
+      "passport-holder-2.jpg"
+    ],
+    "alt": "Dark brown passport and travel document holder"
   },
   {
     "id": "travel-toothbrush",
@@ -1005,6 +1014,10 @@
       "Folds closed to protect the bristles",
       "Medium bristles"
     ],
-    "alt": "Foldable travel toothbrush with medium bristles"
+    "photos": [
+      "travel-toothbrush-main.jpg",
+      "travel-toothbrush-2.jpg"
+    ],
+    "alt": "Foldable travel toothbrush with medium bristles, in its packaging"
   }
 ]
