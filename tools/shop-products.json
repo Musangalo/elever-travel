@@ -986,6 +986,9 @@
       "travel-adapter-2.jpg",
       "travel-adapter-3.jpg"
     ],
+    "videos": [
+      "travel-adapter-1.mp4"
+    ],
     "alt": "Universal travel adapter with plugs for Europe, USA, Australia and the UK"
   },
   {
@@ -1000,6 +1003,9 @@
     "photos": [
       "passport-holder-main.jpg",
       "passport-holder-2.jpg"
+    ],
+    "videos": [
+      "passport-holder-1.mp4"
     ],
     "alt": "Dark brown passport and travel document holder"
   },
@@ -1017,6 +1023,9 @@
     "photos": [
       "travel-toothbrush-main.jpg",
       "travel-toothbrush-2.jpg"
+    ],
+    "videos": [
+      "travel-toothbrush-1.mp4"
     ],
     "alt": "Foldable travel toothbrush with medium bristles, in its packaging"
   }
