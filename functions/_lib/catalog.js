@@ -327,5 +327,20 @@ export default {
     "name": "Cute Bow & Heart Design Sanitary Pad / Cable Organizer",
     "price": 65000,
     "variants": []
+  },
+  "travel-adapter": {
+    "name": "Universal Travel Adapter",
+    "price": 200000,
+    "variants": []
+  },
+  "passport-holder": {
+    "name": "Passport & Travel Document Holder",
+    "price": 200000,
+    "variants": []
+  },
+  "travel-toothbrush": {
+    "name": "Foldable Travel Toothbrush",
+    "price": 20000,
+    "variants": []
   }
 };

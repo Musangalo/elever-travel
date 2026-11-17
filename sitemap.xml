@@ -283,6 +283,21 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://elevertravel.com/shop-universal-travel-adapter.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/shop-passport-travel-document-holder.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elevertravel.com/shop-foldable-travel-toothbrush.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://elevertravel.com/delivery-returns.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>

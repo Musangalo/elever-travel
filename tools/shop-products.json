@@ -969,5 +969,42 @@
       "bow-organizer-main.jpg"
     ],
     "alt": "Hard-shell bow organiser bags in cream, pink, blue, lilac and black"
+  },
+  {
+    "id": "travel-adapter",
+    "slug": "universal-travel-adapter",
+    "name": "Universal Travel Adapter",
+    "price": 200000,
+    "summary": "Stay connected wherever your adventures take you — adjustable plug options for different destinations power your essential devices while you travel internationally.",
+    "details": [
+      "Plugs for Europe, USA, Australia and the UK",
+      "One Type-C port",
+      "Three USB ports"
+    ],
+    "alt": "Universal travel adapter with plugs for Europe, USA, Australia and the UK"
+  },
+  {
+    "id": "passport-holder",
+    "slug": "passport-travel-document-holder",
+    "name": "Passport & Travel Document Holder",
+    "price": 200000,
+    "summary": "Travel in style and stay organised with this elegant holder — the perfect companion for business trips, holidays and international adventures.",
+    "details": [
+      "Dedicated compartments for your passport, cards, tickets and other travel documents"
+    ],
+    "alt": "Passport and travel document holder"
+  },
+  {
+    "id": "travel-toothbrush",
+    "slug": "foldable-travel-toothbrush",
+    "name": "Foldable Travel Toothbrush",
+    "price": 20000,
+    "summary": "A foldable toothbrush that makes packing easy and protects the bristles — you may not need a separate toothbrush holder.",
+    "details": [
+      "Suitable for adults",
+      "Folds closed to protect the bristles",
+      "Medium bristles"
+    ],
+    "alt": "Foldable travel toothbrush with medium bristles"
   }
 ]
